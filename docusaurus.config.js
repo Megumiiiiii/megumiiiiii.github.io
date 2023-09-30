@@ -71,8 +71,12 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/Megumiiiiii',
-            label: 'GitHub',
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
+            href: 'https://megumii.ar-io.dev',
+            label: 'Website',
             position: 'right',
           },
         ],

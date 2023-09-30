@@ -18,7 +18,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/blog">
-            A Permaweb was built on Arweave
+            A Permaweb built on Arweave
           </Link>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="<head />">
+      description={`${siteConfig.description}`}>
       <HomepageHeader />
       <main>
       </main>

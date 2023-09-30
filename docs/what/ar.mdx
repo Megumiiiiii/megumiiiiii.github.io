@@ -1,0 +1,330 @@
+---
+title: AR
+sidebar_position: 2
+---
+
+## Official Links
+
+- [Announcement](https://ar.io/testnet)
+- [Docs](https://ar.io/docs/)
+- [Twitter](https://x.com/ar_io_network)
+- [Discord](https://discord.gg/Y3DJuFb3qE)
+- [Website](https://ar.io)
+
+## NOTE!
+
+You need a small amount of $AR token as gas fee. You can buy $AR on Binance or elsewhere.
+![Screenshot_58](https://github.com/Megumiiiiii/ar-node/assets/98658943/de2cfade-8c74-4049-9893-d5533cd438a5)
+
+## Minimum Specifications
+
+| Spec | Size |
+|----------|----------|
+| CPU | 4 |
+| RAM | 4 GB |
+| SSD | 500 GB |
+| Bandwidth | 50 Mbps |
+
+## Install Docker and More
+
+```sh filename="update system" copy
+sudo apt update; sudo apt upgrade -y
+```
+
+
+
+
+```sh filename="install docker and more" copy
+sudo apt-get update && sudo apt install jq git certbot nginx sqlite3 build-essential -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+### Install Node.js & Yarn
+
+#### Node.js
+
+```sh filename="Node.js" copy
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install 16.15.1
+nvm use 16.15.1
+```
+
+#### Yarn
+
+```sh filename="Yarn" copy
+curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update -y
+sudo apt-get install yarn -y
+```
+
+## Open Ports
+
+```sh filename="port" copy
+sudo ufw allow ssh; sudo ufw allow 80; sudo ufw allow 443; sudo ufw enable
+```
+
+## Clone AR Repo
+
+```sh filename="clone" copy
+git clone https://github.com/ar-io/ar-io-node.git
+cd ~/ar-io-node
+```
+
+## Configure `.env`
+
+```sh filename="edit env" copy
+nano .env
+```
+
+- Fill it with the following, replacing `domainmu.zzz` with your domain, `Password123` with your password, and `Address` with your wallet address from [ARConnect](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap)
+
+```ts filename="isi .env" copy
+GRAPHQL_HOST=arweave.net
+GRAPHQL_PORT=443
+START_HEIGHT=1000000
+ARNS_ROOT_HOST=domainmu.zzz
+ADMIN_API_KEY=Password123
+AR_IO_WALLET=Address
+```
+
+- Save it with `Ctrl+X`, `Y`, `Enter`
+
+## Configure Domain
+
+**Go to Manage Domain, buy from wherever you want. Make sure the domain is not used for other projects or personal websites.**
+
+1. Remove all default DNS Records if there are any.
+2. Set up an A Record pointing to your VPS IP, name it `@`.
+3. Set up another A Record pointing to your VPS IP, name it `*`.
+
+![Screenshot_34](https://github.com/Megumiiiiii/ar-node/assets/98658943/7d878692-bd6b-4920-8f60-21e77d9fc15c)
+
+## Configure SSL
+
+Replace `EmailMU@gmail.com` with your email and all instances of `domainmu.zzz` with your domain.
+
+```sh filename="certbot" copy
+sudo certbot certonly --manual --preferred-challenges dns --email EmailMu@gmail.com -d domainmu.zzz -d '*.domainmu.zzz'
+```
+
+**At this step, you will receive instructions to set up `TXT Records`. Follow the instructions:**
+
+- Copy it, don't press Enter/Continue yet.
+- Go to your domain manager, add a DNS Record.
+- Choose TXT.
+- Set name to `_acme-challenge`.
+- Set value to what you copied on your VPS.
+- Then check https://dnschecker.org/#TXT/
+- Once everything is checked and the content is correct, go back to your VPS and continue.
+
+## Configure Nginx
+
+```sh filename="edit nginx" copy
+rm /etc/nginx/sites-available/default
+nano /etc/nginx/sites-available/default
+```
+
+- Fill it with the following, replacing all instances of `domainmu.zzz` with your domain:
+
+```sh filename="isi file default nginx" copy
+# Force redirects from HTTP to HTTPS
+server {
+    listen 80;
+    listen [::]:80;
+    server_name domainmu.zzz *.domainmu.zzz;
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+# Forward traffic to your node and provide SSL certificates
+server {
+    listen 443 ssl;
+    listen [::]:
+
+443 ssl;
+    server_name domainmu.zzz *.domainmu.zzz;
+
+    ssl_certificate /etc/letsencrypt/live/domainmu.zzz/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/domainmu.zzz/privkey.pem;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_http_version 1.1;
+    }
+}
+```
+
+- Save it with `Ctrl+X`, `Y`, `Enter`
+
+#### Check Nginx Configuration
+
+```sh filename="cek stat nginx" copy
+sudo nginx -t
+```
+
+#### Restart Nginx and Re-check Configuration
+
+```sh filename="restart + cek stat" copy
+sudo service nginx restart
+sudo nginx -t
+```
+
+![Screenshot_35](https://github.com/Megumiiiiii/ar-node/assets/98658943/27f4b34d-8782-4170-a8f8-5e36253a8344)
+
+**OK!**
+
+## Set Up Node
+
+```sh filename="compose up" copy
+cd ~/ar-io-node
+sudo docker compose up -d --build
+```
+
+Wait until it's finished...
+
+#### Next, check if it's running
+
+- Open this in your browser, replacing `IP.VPS.MU` with your VPS IP:
+
+```url
+http://IP.VPS.MU:3000/3lyxgbgEvqNSvJrTX2J7CfRychUD5KClFhhVLyTPNCQ
+```
+
+- If you see something like this, CONGRATULATIONS!
+- ![3lyxgbgEvqNSvJrTX2J7CfRychUD5KClFhhVLyTPNCQ](https://github.com/Megumiiiiii/ar-node/assets/98658943/37ca28a4-b9bd-454e-b9ec-62c4aee48796)
+
+## If There's a Future Update
+
+### Stop the Node
+
+```sh filename="compose down" copy
+cd ~/ar-io-node
+docker compose down
+```
+
+### Update the Repo
+
+```sh filename="git pull" copy
+git pull
+```
+
+### Update the Image
+
+```sh filename="compose pull" copy
+sudo docker compose pull
+```
+
+### Re-build
+
+```sh filename="compose up" copy
+sudo docker compose up -d --build
+```
+
+## Request Test Tokens on Discord
+- Join [Discord](https://discord.gg/Y3DJuFb3qE)
+- Go to the `#testnet` channel.
+- Use the `/apply` command.
+- Fill out the survey and wait for delivery.
+
+***
+
+***
+
+# After Receiving Test Tokens
+
+## Clone the Contract Repo
+
+```sh filename="clone" copy
+cd
+git clone https://github.com/ar-io/testnet-contract.git
+cd ~/testnet-contract
+git checkout -b develop origin/develop
+git checkout develop
+```
+
+```sh filename="yarn install" copy
+yarn install
+```
+
+```sh filename="yarn build" copy
+yarn build
+```
+
+## Open [ARConnect Extension Wallet](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap)
+
+- Export and name it `key.json`
+![Screenshot_38](https://github.com/Megumiiiiii/ar-node/assets/98658943/05eaa252-765e-46be-98c5-56adf22a7c63)
+
+- Move the `key.json` file to your VPS and place it in the `/testnet-contract` directory.
+![Screenshot_39](https://github.com/Megumiiiiii/ar-node/assets/98658943/ce246183-49b6-400c-91c0-71b5780d9fcc)
+
+### Create `.env` file (Optional)
+
+```sh filename="env" copy
+nano .env
+```
+
+- fill with this
+**JWK** is the content of your `key.json`, but edit that to 1 line only
+```sh filename="env" copy
+JWK=
+ARNS_CONTRACT_TX_ID=bLAgYxAdX2Ry-nt6aH2ixgvJXbpsEYm28NgJgyqfs-U
+```
+## Edit the `join-network.ts` file
+
+```sh filename="edit join network" copy
+nano tools/join-network.ts
+```
+
+1. Set `qty` to `10_000`
+2. Set `label` to your nickname
+3. Set `fqdn` to `domainmu.zzz`
+4. Set `note` to your notes, like "Notes, bebasssssssss"
+
+![code](https://github.com/Megumiiiiii/ar-node/assets/98658943/45bf0c34-cd7e-48e9-82c4-67c24d2beeb0)
+
+- Save it with `Ctrl+X`, `Y`, `Enter`
+
+### Check in your browser if everything is normal
+
+Uptime
+
+```url
+https://domainmu.zzz/ar-io/healthcheck
+```
+
+ArDrive
+
+```url
+https://ardrive.domainmu.zzz
+```
+
+Just check
+
+```url
+https://domainmu.zzz/UymRNCv22DbIB1KpAtC0qy5oeC1TdGDgoEKWs7J8Y_Q
+```
+
+## Finally...
+
+- Run this command
+
+```sh filename="join network" copy
+yarn ts-node tools/join-network.ts
+```
+
+## ⚠️ If you want to delete the node ⚠️
+
+```sh filename="DELETE" copy
+cd ~/ar-io-node
+docker compose down -v
+docker rmi ghcr.io/ar-io/ar-io-core ghcr.io/ar-io/ar-io-envoy
+```
+
+#

@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.What": {
+    "message": "What",
+    "description": "The label for category What in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.What.link.generated-index.description": {
+    "message": "List Guides",
+    "description": "The generated-index page description for category What in sidebar tutorialSidebar"
+  }
+}
