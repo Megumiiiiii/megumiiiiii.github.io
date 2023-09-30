@@ -39,7 +39,7 @@ jobs:
           # Upload entire repository
           path: '.'
       - name: Setup
-      - uses: actions/setup-node@v1
+        uses: actions/setup-node@v1
         with:
           node-version: 18.x
       - run: npm install
