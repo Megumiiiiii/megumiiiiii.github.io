@@ -12,6 +12,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
       - name: Mengatur Konfigurasi Git
         run: |
           git config --global user.name "${{ secrets.GITHUB_ACTOR }}"
