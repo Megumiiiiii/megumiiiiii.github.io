@@ -4,18 +4,33 @@
         <title>Elysian Blog</title>
         <link>https://megumiiiiii.github.io/ja/blog</link>
         <description>Elysian Blog</description>
-        <lastBuildDate>Sat, 30 Sep 2023 09:20:03 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 Sep 2023 15:36:05 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ja</language>
         <item>
-            <title><![CDATA[arweave video test]]></title>
-            <link>https://megumiiiiii.github.io/ja/blog/arweave video test</link>
-            <guid>https://megumiiiiii.github.io/ja/blog/arweave video test</guid>
+            <title><![CDATA[Gurumi]]></title>
+            <link>https://megumiiiiii.github.io/ja/blog/gurumi</link>
+            <guid>https://megumiiiiii.github.io/ja/blog/gurumi</guid>
+            <pubDate>Sat, 30 Sep 2023 15:36:05 GMT</pubDate>
+            <content:encoded><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/bx5szOf1MxstkmvthtLiBCE7LLJZW8hIyfK4WgnWzIo" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
+        </item>
+        <item>
+            <title><![CDATA[Juveline]]></title>
+            <link>https://megumiiiiii.github.io/ja/blog/juveline</link>
+            <guid>https://megumiiiiii.github.io/ja/blog/juveline</guid>
+            <pubDate>Sat, 30 Sep 2023 15:36:05 GMT</pubDate>
+            <content:encoded><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/HoeHIGEBOTYgRMIgaJlxmQcoonkWJrinR-IE83PUQeo" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
+        </item>
+        <item>
+            <title><![CDATA[Colorful]]></title>
+            <link>https://megumiiiiii.github.io/ja/blog/colorful</link>
+            <guid>https://megumiiiiii.github.io/ja/blog/colorful</guid>
             <pubDate>Sat, 30 Sep 2023 09:20:03 GMT</pubDate>
-            <description><![CDATA[Learn more about Permaweb]]></description>
-            <content:encoded><![CDATA[<p><a href="https://cookbook.arweave.dev" target="_blank" rel="noopener noreferrer">Learn more about Permaweb</a></p><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/GnDZJ_jT3xxtBqQ4iwFTnJjZ_NGnHw1aE4HmAUXmnEw" type="video/mp4"></video>]]></content:encoded>
-            <category>permaweb</category>
+            <content:encoded><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/GnDZJ_jT3xxtBqQ4iwFTnJjZ_NGnHw1aE4HmAUXmnEw" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
         </item>
     </channel>
 </rss>

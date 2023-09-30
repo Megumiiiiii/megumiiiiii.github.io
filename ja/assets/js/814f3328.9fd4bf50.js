@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Gurumi","permalink":"/ja/blog/gurumi"},{"title":"Juveline","permalink":"/ja/blog/juveline"},{"title":"Colorful","permalink":"/ja/blog/colorful"}]}')}}]);

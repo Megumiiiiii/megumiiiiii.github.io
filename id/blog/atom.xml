@@ -2,22 +2,45 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://megumiiiiii.github.io/id/blog</id>
     <title>Elysian Blog</title>
-    <updated>2023-09-30T09:20:03.000Z</updated>
+    <updated>2023-09-30T15:36:05.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://megumiiiiii.github.io/id/blog"/>
     <subtitle>Elysian Blog</subtitle>
     <icon>https://megumiiiiii.github.io/id/img/a.png</icon>
     <entry>
-        <title type="html"><![CDATA[arweave video test]]></title>
-        <id>https://megumiiiiii.github.io/id/blog/arweave video test</id>
-        <link href="https://megumiiiiii.github.io/id/blog/arweave video test"/>
-        <updated>2023-09-30T09:20:03.000Z</updated>
-        <summary type="html"><![CDATA[Learn more about Permaweb]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://cookbook.arweave.dev" target="_blank" rel="noopener noreferrer">Learn more about Permaweb</a></p><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/GnDZJ_jT3xxtBqQ4iwFTnJjZ_NGnHw1aE4HmAUXmnEw" type="video/mp4"></video>]]></content>
+        <title type="html"><![CDATA[Gurumi]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/gurumi</id>
+        <link href="https://megumiiiiii.github.io/id/blog/gurumi"/>
+        <updated>2023-09-30T15:36:05.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/bx5szOf1MxstkmvthtLiBCE7LLJZW8hIyfK4WgnWzIo" type="video/mp4"></video>]]></content>
         <author>
             <name>Megumii</name>
             <uri>https://github.com/Megumiiiiii</uri>
         </author>
-        <category label="permaweb" term="permaweb"/>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Juveline]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/juveline</id>
+        <link href="https://megumiiiiii.github.io/id/blog/juveline"/>
+        <updated>2023-09-30T15:36:05.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/HoeHIGEBOTYgRMIgaJlxmQcoonkWJrinR-IE83PUQeo" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Colorful]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/colorful</id>
+        <link href="https://megumiiiiii.github.io/id/blog/colorful"/>
+        <updated>2023-09-30T09:20:03.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/GnDZJ_jT3xxtBqQ4iwFTnJjZ_NGnHw1aE4HmAUXmnEw" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
     </entry>
 </feed>
