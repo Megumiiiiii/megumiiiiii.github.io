@@ -12,12 +12,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Mengatur Konfigurasi Git
+        run: |
+          git config --global user.name "${{ secrets.GITHUB_ACTOR }}"
+          git config --global user.email "${{ secrets.GITHUB_ACTOR }}@users.noreply.github.com"
+
       # ...
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.name ${{ secrets.GITHUB_ACTOR }}
-          git config --global user.email ${{ secrets.GITHUB_ACTOR }}@users.noreply.github.com
           git checkout gh-pages
           git rm -rf .
           git clean -fxd
