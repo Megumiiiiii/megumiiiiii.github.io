@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/a.png',
 
   // Set the production url of your site here
-  url: 'https://test_elylisan.blessingway.xyz',
+  url: 'https://megumiiiiii.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Megumiiiiii', // Usually your GitHub org/user name.
-  projectName: 'elysian-docs', // Usually your repo name.
+  projectName: 'megumiiiiii.github.io', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -42,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/Megumiiiiii/elysian-docs/edit/main/',
+            'https://github.com/Megumiiiiii/megumiiiiii.github.io/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
