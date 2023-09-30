@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[876],{9630:e=>{e.exports=JSON.parse('[{"label":"permaweb","permalink":"/ja/blog/tags/permaweb","count":1}]')}}]);

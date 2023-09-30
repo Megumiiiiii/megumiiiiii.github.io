@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://test_elylisan.blessingway.xyz/blog</id>
+    <title>Elysian Blog</title>
+    <updated>2023-09-30T09:20:03.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://test_elylisan.blessingway.xyz/blog"/>
+    <subtitle>Elysian Blog</subtitle>
+    <icon>https://test_elylisan.blessingway.xyz/img/a.png</icon>
+    <entry>
+        <title type="html"><![CDATA[arweave video test]]></title>
+        <id>https://test_elylisan.blessingway.xyz/blog/arweave video test</id>
+        <link href="https://test_elylisan.blessingway.xyz/blog/arweave video test"/>
+        <updated>2023-09-30T09:20:03.000Z</updated>
+        <summary type="html"><![CDATA[Learn more about Permaweb]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://cookbook.arweave.dev" target="_blank" rel="noopener noreferrer">Learn more about Permaweb</a></p><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/GnDZJ_jT3xxtBqQ4iwFTnJjZ_NGnHw1aE4HmAUXmnEw" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="permaweb" term="permaweb"/>
+    </entry>
+</feed>

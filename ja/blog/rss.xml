@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Elysian Blog</title>
+        <link>https://test_elylisan.blessingway.xyz/ja/blog</link>
+        <description>Elysian Blog</description>
+        <lastBuildDate>Sat, 30 Sep 2023 09:20:03 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ja</language>
+        <item>
+            <title><![CDATA[arweave video test]]></title>
+            <link>https://test_elylisan.blessingway.xyz/ja/blog/arweave video test</link>
+            <guid>https://test_elylisan.blessingway.xyz/ja/blog/arweave video test</guid>
+            <pubDate>Sat, 30 Sep 2023 09:20:03 GMT</pubDate>
+            <description><![CDATA[Learn more about Permaweb]]></description>
+            <content:encoded><![CDATA[<p><a href="https://cookbook.arweave.dev" target="_blank" rel="noopener noreferrer">Learn more about Permaweb</a></p><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/GnDZJ_jT3xxtBqQ4iwFTnJjZ_NGnHw1aE4HmAUXmnEw" type="video/mp4"></video>]]></content:encoded>
+            <category>permaweb</category>
+        </item>
+    </channel>
+</rss>
