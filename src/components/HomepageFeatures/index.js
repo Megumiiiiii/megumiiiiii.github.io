@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Poweren by Arweave',
+    title: 'Powered by Arweave',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
@@ -14,7 +14,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Poweren by Github',
+    title: 'Powered by Github',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
