@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://megumiiiiii.github.io/id/blog</id>
     <title>Elysian Blog</title>
-    <updated>2023-09-30T15:36:05.000Z</updated>
+    <updated>2023-10-02T20:23:28.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://megumiiiiii.github.io/id/blog"/>
     <subtitle>Elysian Blog</subtitle>
     <icon>https://megumiiiiii.github.io/id/img/a.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Arkadia]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/arkadia</id>
+        <link href="https://megumiiiiii.github.io/id/blog/arkadia"/>
+        <updated>2023-10-02T20:23:28.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/2HaguVRp-cZw7jXfoLIjdpYtzwc8jvzKk0mnd83R9J8" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Gurumi]]></title>
         <id>https://megumiiiiii.github.io/id/blog/gurumi</id>

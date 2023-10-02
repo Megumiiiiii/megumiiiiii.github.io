@@ -4,10 +4,18 @@
         <title>Elysian Blog</title>
         <link>https://megumiiiiii.github.io/id/blog</link>
         <description>Elysian Blog</description>
-        <lastBuildDate>Sat, 30 Sep 2023 15:36:05 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Oct 2023 20:23:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>id</language>
+        <item>
+            <title><![CDATA[Arkadia]]></title>
+            <link>https://megumiiiiii.github.io/id/blog/arkadia</link>
+            <guid>https://megumiiiiii.github.io/id/blog/arkadia</guid>
+            <pubDate>Mon, 02 Oct 2023 20:23:28 GMT</pubDate>
+            <content:encoded><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/2HaguVRp-cZw7jXfoLIjdpYtzwc8jvzKk0mnd83R9J8" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
+        </item>
         <item>
             <title><![CDATA[Gurumi]]></title>
             <link>https://megumiiiiii.github.io/id/blog/gurumi</link>
