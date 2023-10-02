@@ -57,6 +57,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/b.png',
       darkMode: true,
+      banner: 'Built with 💜 by the Arweave community',
       navbar: {
         title: 'Elysian',
         logo: {
@@ -74,6 +75,11 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
+          },
+          {
+            type: 'search',
+            position: 'right',
+            className: 'search',
           },
           {
             href: 'https://megumii.ar-io.dev',
