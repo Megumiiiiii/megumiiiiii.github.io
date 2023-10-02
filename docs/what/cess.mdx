@@ -1,0 +1,143 @@
+---
+title: CESS
+sidebar_position: 3
+---
+
+## Official Links
+- [Docs](https://docs.cess.cloud/cess-build-book/storage-miner)
+- [Discord](https://discord.gg/mj3u57BkDv)
+- [Twitter](https://twitter.com/CESS_Storage)
+
+
+## Minimum Specifications
+
+| Spec | Size |
+|----------|----------|
+| CPU | 4 |
+| RAM | 8 GB |
+| SSD | 100 GB |
+| Bandwidth | 5 MB |
+
+## Initial Setup
+
+1. Create 2 wallets on [Polkadot](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc1.cess.cloud%2Fws%2F#/accounts)
+2. Then, get the faucet [HERE](https://testnet-faucet.cess.cloud/)
+3. The first wallet is used to receive mining rewards
+4. The second wallet is used for mining
+
+### Open Ports
+
+```sh filename="port" copy
+sudo ufw allow ssh; sudo ufw allow 4001; sudo ufw allow 15001; sudo ufw enable
+```
+
+### Install Docker (Skip if already installed)
+
+```sh filename="update system" copy
+sudo apt update; sudo apt upgrade -y
+```
+
+```sh filename="install docker and others" copy
+sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+### Install CESS
+
+```sh filename="install CESS" copy
+mkdir -p /opt/cess
+git clone https://github.com/CESSProject/cess-nodeadm
+cd cess-nodeadm
+git checkout tags/v0.4.4
+./install.sh
+```
+
+### Set Configuration
+
+- Paste this
+
+```sh filename="set profile" copy
+cess profile testnet
+```
+
+```sh filename="set config" copy
+cess config set
+```
+
+- Type `storage` then press Enter
+
+- Paste the address from the first wallet
+
+- Then paste the phrase from the second wallet
+
+- Type `/opt/cess`
+
+- Finally, fill it with `100`
+
+## Start Node
+
+```sh filename="reload" copy
+cess reload
+```
+
+then
+
+```sh filename="GAS" copy
+cess start
+```
+
+### List of Commands
+
+- Check chain logs
+
+```sh filename="logs chain" copy
+docker logs -f chain
+```
+
+- Check bucket logs
+
+```sh filename="logs bucket" copy
+docker logs -f bucket
+```
+
+- Check status
+
+```sh filename="stat bucket" copy
+cess bucket stat
+```
+
+## If There's an Update
+
+- The latest node version can be checked [HERE](https://github.com/CESSProject/cess-nodeadm/tags)
+
+### How to Update
+
+#### First, Stop
+
+```sh filename="stop & down" copy
+cess stop
+cess down
+```
+
+#### Delete
+
+```sh filename="delete" copy
+cess purge
+```
+
+#### Delete old folders and files
+
+```sh filename="pull latest tags" copy
+cd cess-nodeadm
+git checkout tags/INSERT_LATEST_VERSION_IF_ALREADY_AVAILABLE
+```
+
+#### After that, start again from the [Set Configuration](#set-configuration) step
+
+## ⚠️ If you want to delete the node ⚠️
+
+```sh filename="DELETE" copy
+cess down; cess purge
+docker rmi cesslab/cess-bucket; docker rmi cesslab/cess-chain; docker rmi cesslab/config-gen; docker rmi containrrr/watchtower
+```
+
+#

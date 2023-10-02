@@ -56,6 +56,7 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/b.png',
+      darkMode: true,
       navbar: {
         title: 'Elysian',
         logo: {
@@ -69,7 +70,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Random Post', position: 'left'},
           {
             type: 'localeDropdown',
             position: 'right',
@@ -114,7 +115,7 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
+                label: 'Random Post',
                 to: '/blog',
               },
               {

@@ -1,0 +1,142 @@
+---
+title: CESS
+sidebar_position: 3
+---
+
+## Official Links
+- [Docs](https://docs.cess.cloud/cess-build-book/storage-miner)
+- [Discord](https://discord.gg/mj3u57BkDv)
+- [Twitter](https://twitter.com/CESS_Storage)
+
+
+## Spek Minimal
+
+| Spek | Ukuran |
+|----------|----------|
+| CPU | 4 |
+| RAM | 8 GB |
+| SSD | 100 GB |
+| Bandwith | 5 MB |
+
+## Setup Awal
+
+1. Buatlah 2 wallet di [Polkadot](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc1.cess.cloud%2Fws%2F#/accounts)
+2. Lalu ambil faucet [DISINI](https://testnet-faucet.cess.cloud/)
+3. Wallet pertama digunakan untuk menerima hasil mining
+4. Wallet kedua digunakan untuk mining
+
+### Buka Port
+
+```sh filename="port" copy
+sudo ufw allow ssh; sudo ufw allow 4001; sudo ufw allow 15001; sudo ufw enable
+```
+
+### Install Docker ( Skip kalo udah )
+
+```sh filename="update system" copy
+sudo apt update; sudo apt upgrade -y
+```
+
+```sh filename="install docker dkk" copy
+sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+### Install CESS
+
+```sh filename="install CESS" copy
+mkdir -p /opt/cess
+git clone https://github.com/CESSProject/cess-nodeadm
+cd cess-nodeadm
+git checkout tags/v0.4.4
+./install.sh
+```
+
+### Set Config
+
+- Paste ini
+
+```sh filename="set profile" copy
+cess profile testnet
+```
+
+```sh filename="set config" copy
+cess config set
+```
+
+- Ketik `storage` kemudian enter
+
+- Paste address dari wallet pertama
+
+- Lalu paste pharse dari wallet kedua
+
+- Ketik `/opt/cess`
+
+- Terkahir, isi dengan `100`
+
+## Start Node
+
+```sh filename="reload" copy
+cess reload
+```
+
+lalu
+
+```sh filename="GAS" copy
+cess start
+```
+
+### Daftar Command
+
+- Cek logs chain
+
+```sh filename="logs chain" copy
+docker logs -f chain
+```
+
+- Cek logs bucket
+
+```sh filename="logs bucket" copy
+docker logs -f bucket
+```
+
+- Cek status
+
+```sh filename="stat bucket" copy
+cess bucket stat
+```
+## Jika ada Update
+
+- Versi terakhir node bisa cek [DISINI](https://github.com/CESSProject/cess-nodeadm/tags)
+
+### Cara Update
+
+#### Stop dulu
+
+```sh filename="stop & down" copy
+cess stop
+cess down
+```
+
+#### Hapus
+
+```sh filename="hapus" copy
+cess purge
+```
+
+#### Hapus folder dan file yang lama
+
+```sh filename="pull tags terbaru" copy
+cd cess-nodeadm
+git checkout tags/SESUAI_VERSITERBARU_JIKA_SUDAH_ADA
+```
+
+#### Setelah itu mulai kembali dari langkah [Set Config](#set-config)
+
+## ⚠️ Jika ingin menghapus node ⚠️
+
+```sh filename="DELETE" copy
+cess down; cess purge
+docker rmi cesslab/cess-bucket; docker rmi cesslab/cess-chain; docker rmi cesslab/config-gen; docker rmi containrrr/watchtower
+```
+
+#
