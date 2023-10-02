@@ -120,7 +120,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/Megumiii',
+                href: 'https://github.com/Megumiiiiii',
               },
             ],
           },
