@@ -44,6 +44,16 @@ const config = {
           editUrl:
             'https://github.com/Megumiiiiii/megumiiiiii.github.io/edit/main/',
         },
+        blog: {
+          blogTitle: 'Random Post',
+          blogDescription: 'Just a random post',
+          blogSidebarTitle: 'Recent posts',
+          postsPerPage: 3,
+          blogSidebarCount: 'ALL',
+          showReadingTime: true,
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
