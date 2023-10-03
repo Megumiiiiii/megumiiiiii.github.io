@@ -1,0 +1,49 @@
+---
+title: Double Proc
+sidebar_position: 2
+tags:
+  - Subsquid
+---
+
+### Buat Folder & init
+
+```sh filename="Node.js" copy
+cd ~/proc
+sqd init double-proc -t https://github.com/subsquid-quests/double-chain-squid
+cd double-proc
+```
+
+## Download key
+
+- https://app.subsquid.io/quests
+- Pindah ke VPS, ke folder `/proc/double-proc/query-gateway/keys`
+- ![SS](/img/squidproc.png)
+
+## build
+
+```sh filename="build" copy
+npm ci
+sqd build
+```
+
+```sh filename="migrate" copy
+sqd migration:apply
+```
+
+### Run
+
+```sh filename="run" copy
+sqd run .
+```
+
+Tunggu sampai di web nya jadi 100%
+
+### Setelah selesai
+ - Stop proc menggunakan CTRL+C
+ - Stop Docker
+
+ ```sh filename="delete" copy
+ docker compose down -v
+ ```
+
+ ---

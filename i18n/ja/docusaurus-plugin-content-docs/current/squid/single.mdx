@@ -1,0 +1,69 @@
+---
+title: Single Proc
+sidebar_position: 1
+tags:
+  - Subsquid
+---
+
+## Install NodeJS, Docker, git ( Jika Belum Punya)
+
+```sh filename="install docker and more" copy
+sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+```sh filename="Node.js" copy
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install 18
+nvm use 18
+```
+
+### Install Subsquid cli
+
+```sh filename="Node.js" copy
+npm install --global @subsquid/cli@latest
+```
+
+### Buat Folder & init
+
+```sh filename="Node.js" copy
+mkdir proc
+cd proc
+sqd init single-proc -t https://github.com/subsquid-quests/single-chain-squid
+cd single-proc
+```
+
+## Download key
+
+- https://app.subsquid.io/quests
+- Pindah ke VPS, ke folder `/proc/single-proc/query-gateway/keys`
+- ![SS](/img/squidproc.png)
+
+## build
+
+```sh filename="build" copy
+npm ci
+sqd build
+```
+
+```sh filename="migrate" copy
+sqd migration:apply
+```
+
+### Run
+
+```sh filename="run" copy
+sqd run .
+```
+
+Tunggu sampai di web nya jadi 100%
+
+### Setelah selesai
+ - Stop proc menggunakan CTRL+C
+ - Stop Docker
+
+ ```sh filename="delete" copy
+ docker compose down -v
+ ```
+
+ ---

@@ -1,0 +1,49 @@
+---
+title: Quad Proc
+sidebar_position: 4
+tags:
+  - Subsquid
+---
+
+### Buat Folder & init
+
+```sh filename="Node.js" copy
+cd ~/proc
+sqd init quad-proc -t https://github.com/subsquid-quests/quad-chain-squid
+cd quad-proc
+```
+
+## Download key
+
+- https://app.subsquid.io/quests
+- Pindah ke VPS, ke folder `/proc/quad-proc/query-gateway/keys`
+- ![SS](/img/squidproc.png)
+
+## build
+
+```sh filename="build" copy
+npm ci
+sqd build
+```
+
+```sh filename="migrate" copy
+sqd migration:apply
+```
+
+### Run
+
+```sh filename="run" copy
+sqd run .
+```
+
+Tunggu sampai di web nya jadi 100%
+
+### Setelah selesai
+ - Stop proc menggunakan CTRL+C
+ - Stop Docker
+
+ ```sh filename="delete" copy
+ docker compose down -v
+ ```
+
+ ---
