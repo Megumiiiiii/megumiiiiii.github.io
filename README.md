@@ -11,5 +11,5 @@ USE_SSH=true npm run deploy
 Not using SSH:
 
 ```sh
-GIT_USER=<Your GitHub username> npm tun deploy
+GIT_USER=<Your GitHub username> npm run deploy
 ```
