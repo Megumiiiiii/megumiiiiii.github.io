@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[5360],{1512:a=>{a.exports=JSON.parse('{"label":"Substrate","permalink":"/docs/tags/substrate","allTagsPath":"/docs/tags","count":1,"items":[{"id":"what/tangle","title":"Tangle","description":"Official Links","permalink":"/docs/what/tangle"}]}')}}]);
