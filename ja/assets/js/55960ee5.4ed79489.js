@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[4121],{8070:a=>{a.exports=JSON.parse('[{"label":"Arweave","permalink":"/ja/docs/tags/arweave","count":2},{"label":"Substrate","permalink":"/ja/docs/tags/substrate","count":1},{"label":"EVM","permalink":"/ja/docs/tags/evm","count":1}]')}}]);

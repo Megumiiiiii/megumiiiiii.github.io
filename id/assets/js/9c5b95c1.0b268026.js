@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[8279],{6274:s=>{s.exports=JSON.parse('{"label":"Substrate","permalink":"/id/docs/tags/substrate","allTagsPath":"/id/docs/tags","count":1,"items":[{"id":"what/cess","title":"CESS","description":"Official Links","permalink":"/id/docs/what/cess"}]}')}}]);

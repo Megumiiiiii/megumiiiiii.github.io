@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[647],{4244:e=>{e.exports=JSON.parse('{"title":"Guides","description":"List Guides","slug":"/category/guides","permalink":"/id/docs/category/guides","navigation":{"previous":{"title":"?!??!?!","permalink":"/id/docs/intro"},"next":{"title":"Sarcophagus","permalink":"/id/docs/what/sarco"}}}')}}]);
