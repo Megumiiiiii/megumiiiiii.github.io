@@ -5,11 +5,11 @@
 Using SSH:
 
 ```sh
-USE_SSH=true yarn deploy
+USE_SSH=true npm run deploy
 ```
 
 Not using SSH:
 
 ```sh
-GIT_USER=<Your GitHub username> yarn deploy
+GIT_USER=<Your GitHub username> npm tun deploy
 ```
