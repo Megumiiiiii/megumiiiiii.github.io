@@ -145,9 +145,7 @@ server {
 # Forward traffic to your node and provide SSL certificates
 server {
     listen 443 ssl;
-    listen [::]:
-
-443 ssl;
+    listen [::]:443 ssl;
     server_name domainmu.zzz *.domainmu.zzz;
 
     ssl_certificate /etc/letsencrypt/live/domainmu.zzz/fullchain.pem;
