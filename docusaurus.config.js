@@ -105,17 +105,16 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Docs',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
             title: 'Social Media',
             items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/Megumiiiiii',
+              },
+              {
+                label: 'X',
+                href: 'https://x.com/megumii_tez',
+              },
               {
                 label: 'Telegram',
                 href: 'https://KatouMegumii.t.me',
@@ -124,26 +123,37 @@ const config = {
                 label: 'Discord',
                 href: 'https://discordapp.com/users/873803230042263563',
               },
-              {
-                label: 'Twitter',
-                href: 'https://x.com/megumii_tez',
-              },
             ],
           },
+          {},
+          {title: '?',},
+          {},   
+          {title: '!!',},
+          {},
+          {title: '!!'},
+          {},
+          {title: '?'},
           {
             title: 'More',
             items: [
               {
+                label: 'Docs',
+                to: '/docs/intro',
+              },
+              {
                 label: 'Random Post',
                 to: '/blog',
               },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Megumiiiiii',
-              },
+
             ],
           },
         ],
+        logo: {
+          alt: 'a',
+          src: 'img/miku.gif',
+          width: 'auto',
+          height: 'auto',
+        },
         copyright: `Copyright © ${new Date().getFullYear()} Elysian, Inc. Built with 💜 by the Arweave community.`,
       },
       prism: {
