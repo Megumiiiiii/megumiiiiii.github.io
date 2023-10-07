@@ -67,6 +67,7 @@ export default function Home() {
                             耳を澄ませば 今でも聞こえる
                             君の声 オレンジ色に染まる街の中"</p>
       </main>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3151803879329926" crossorigin="anonymous"></script>
     </Layout>
   );
 }
