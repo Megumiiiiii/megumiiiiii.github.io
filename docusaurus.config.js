@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCode = require('prism-react-renderer/themes/vsLight');
-const darkCode = require('prism-react-renderer/themes/vsDark');
+// const lightCode = require('prism-react-renderer/themes/vsLight');
+const darkCode = require('prism-react-renderer/themes/okaidia');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -71,6 +71,9 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/miku.jpg',
+      liveCodeBlock: {
+        playgroundPosition: 'bottom',
+      },
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
@@ -188,7 +191,6 @@ const config = {
       },
       prism: {
         theme: darkCode,
-        darkTheme: lightCode,
         magicComments: [
           {
             className: 'theme-code-block-highlighted-line',

@@ -40,51 +40,51 @@ tags:
 - Save
   
 ## Install Dependencies
-```sh filename="update system" copy
+```bash title="update system"
 sudo apt update; sudo apt upgrade
 ```
-```sh filename="install docker git etc." copy
+```bash filename="install docker git etc."
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ## Open Port
-```sh filename="port" copy
+```bash title="Open port"
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
 ## Clone Repo
-```sh filename="clone" copy
+```bash title="clone"
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
 ### Copy `.env.sample` to `.env`
-```sh filename="membuat .env" copy
+```bash title="cp env"
 cp .env.example .env
 ```
 
 ### Generate Mnemonic Pharse
-```sh filename="generate pharse baru" copy
+```bash title="generate pharse"
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
 **BACKUP**
 
 ### Create a blank `peer-id.json` file
 
-```sh filename="membuat peer-id" copy
+```bash title="peer-id"
 touch peer-id.json
 ```
 
 ### Edit `.env` file
-```sh filename="edit .env" copy
+```bash title="edit .env"
 nano .env
 ```
 Fill in your data
-example:
+
 
 - ↓ ↓ ↓
 
-```env filename=" .env"
+```yml title=".env"
 ## Key used to encrypt secrets and sign ETH transactions
 ## The address associated with this key is your archaeologist identifier
 ETH_PRIVATE_KEY=gsgstgsthsrthtrhtetneetn211241413r3g24h5h42
@@ -107,13 +107,13 @@ PROVIDER_URL=https://cloudflare-eth.com
 - SC Sarco: `0x7697B462A7c4Ff5F8b55BDBC2F4076c2aF9cF51A`
 
 ## Register
-```sh filename="compose register" copy
+```bash title="compose register" copy
 COMPOSE_PROFILES=register docker compose run register
 ```
 Y, Enter
 
 **Then enter the nominal ( recommended: DiggingFee 100 - 500, CurseFee 300, and FreeBond  1000 )**
-```console filename="ouput"
+```bash title="Ouput"
 =========================================================================================================
 
 ARCHAEOLOGIST PROFILE: 
@@ -133,7 +133,7 @@ address                    0x897015991ABC646a69EC8701B8459aA806aCf70a
 ```
 
 ### Start the node
-```sh filename="compose up" copy
+```bash title="compose up"
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
@@ -142,25 +142,25 @@ COMPOSE_PROFILES=service docker compose up -d
 
 - Check Archaeologist Service's logs
 
-```sh filename="archaeologist-service" copy
+```bash filename="archaeologist-service" copy
 docker logs -f quickstart-archaeologist-archaeologist-1
 ```
 
 - Check Acme Companion's logs
 
-```sh filename="acme-companion" copy
+```bash filename="acme-companion" copy
 docker logs -f  quickstart-archaeologist-acme-companion-1
 ```
 
 - Check Nginx's logs
 
-```sh filename="nginx-proxy" copy
+```bash filename="nginx-proxy" copy
 docker logs -f nginx-proxy
 ```
 	
 - Updating the service
 
-```sh filename="step update" copy
+```bash filename="step update" copy
 cd ~/quickstart-archaeologist
 git pull
 COMPOSE_PROFILES=service docker compose stop
@@ -169,66 +169,66 @@ COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - Restarting the service
-```sh filename="restart" copy
+```bash filename="restart" copy
 COMPOSE_PROFILES=service docker compose stop
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - If you change the domain after registering
 
-```sh filename="add 1 freebond" copy
+```bash filename="add 1 freebond" copy
 docker compose exec -it archaeologist sh
 cli update -u
 ```
-```sh filename="exit cli" copy
+```bash filename="exit cli" copy
 exit
 ```
 
 - Updating Digging Fee
-```sh filename="update digging fee" copy
+```bash filename="update digging fee" copy
 docker compose exec -it archaeologist sh
 cli update -d 300
 ```
-```sh filename="exit cli" copy
+```bash filename="exit cli" copy
 exit
 ```
 300 can be changed to any amount
 
 - Updating Free Bond 
-```sh filename="update freebond" copy
+```bash filename="update freebond" copy
 docker compose exec -it archaeologist sh
 cli update -f 100
 ```
-```sh filename="exit cli" copy
+```bash filename="exit cli" copy
 exit
 ```
 100 can be changed to any amount
 
 #### CheckProfile
 - Check Profile
-```sh filename="view profile" copy
+```bash filename="view profile" copy
 docker compose exec -it archaeologist sh
 cli view -p
 ```
-```sh filename="exit cli" copy
+```bash filename="exit cli" copy
 exit
 ```
 
 - Claim Rewards
-```sh filename="claim reward" copy
+```bash filename="claim reward" copy
 docker compose exec -it archaeologist sh
 cli claim
 ```
-```sh filename="exit cli" copy
+```bash filename="exit cli" copy
 exit
 ```
 
 - Withdraw Free Bond
-```sh filename="withdraw freebond" copy
+```bash filename="withdraw freebond" copy
 docker compose exec -it archaeologist sh
 cli free-bond -w 10
 ```
-```sh filename="exit cli" copy
+```bash filename="exit cli" copy
 exit
 ```
 10 can be changed to any amount
@@ -256,7 +256,7 @@ To get your domain and peerID, run: [Check Profile](#checkprofile)
 ⚠️ If you want to delete ⚠️
 :::
 
-```sh filename="DELETE" copy
+```bash title="DELETE" copy
 cd ~/quickstart-archaeologist
 COMPOSE_PROFILES=service docker compose down -v
 docker rmi jwilder/nginx-proxy nginxproxy/acme-companion ghcr.io/sarcophagus-org/sarcophagus-v2-archaeologist-service

@@ -39,50 +39,49 @@ tags:
 - 保存
 
 ## 依存関係のインストール
-```sh filename="システムのアップデート" copy
+```bash title="update system"
 sudo apt update; sudo apt upgrade
 ```
-```sh filename="docker gitなどのインストール" copy
+```bash title="install docker git etc."
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ## ポートの開放
-```sh filename="ポート" copy
+```bash title="Open port"
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
 ## リポジトリのクローン
-```sh filename="クローン" copy
+```bash title="clone"
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
 ### `.env.sample`を`.env`にコピー
-```sh filename=" .envを作成" copy
+```bash title="cp env"
 cp .env.example .env
 ```
 
 ### ニーモニックフレーズの生成
-```sh filename="新しいフレーズの生成" copy
+```bash title="generate pharse"
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
 **バックアップ**
 
 ### 空の`peer-id.json`ファイルを作成
-```sh filename="peer-idを作成" copy
+```bash title="peer-id"
 touch peer-id.json
 ```
 
 ### `.env`ファイルを編集
-```sh filename=" .envを編集" copy
+```bash title="edit .env"
 nano .env
 ```
 データを入力してください
-例：
 
 - ↓ ↓ ↓
 
-```env filename=" .env"
+```yml title=" .env"
 ## Key used to encrypt secrets and sign ETH transactions
 ## The address associated with this key is your archaeologist identifier
 ETH_PRIVATE_KEY=gsgstgsthsrthtrhtetneetn211241413r3g24h5h42

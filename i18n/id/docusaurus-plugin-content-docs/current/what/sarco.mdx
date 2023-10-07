@@ -39,51 +39,50 @@ tags:
 - Simpan
   
 ## Install Dependensi
-```sh filename="update system" copy
+```bash title="update system"
 sudo apt update; sudo apt upgrade
 ```
-```sh filename="install docker git etc." copy
+```bash title="install docker git etc."
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ## Buka Port
-```sh filename="port" copy
+```bash title="Open port"
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
 ## Clone Repo
-```sh filename="clone" copy
+```bash title="clone"
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
 ### Salin `.env.sample` menjadi `.env`
-```sh filename="buat .env" copy
+```bash title="cp env"
 cp .env.example .env
 ```
 
 ### Membuat Mnemonik
-```sh filename="generate pharse baru" copy
+```bash title="generate pharse"
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
 **BACKUP**
 
 ### Buat file kosong `peer-id.json` 
 
-```sh filename="buat peer-id" copy
+```bash title="peer-id"
 touch peer-id.json
 ```
 
 ### Edit file `.env`
-```sh filename="edit .env" copy
+```bash title="edit .env"
 nano .env
 ```
 Isi data Anda
-contoh:
 
 - ↓ ↓ ↓
 
-```env filename=" .env"
+```yml title=" .env"
 ## Key used to encrypt secrets and sign ETH transactions
 ## The address associated with this key is your archaeologist identifier
 ETH_PRIVATE_KEY=gsgstgsthsrthtrhtetneetn211241413r3g24h5h42
