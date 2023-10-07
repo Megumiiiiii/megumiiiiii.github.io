@@ -61,6 +61,7 @@ const config = {
         },
         gtag: {
           trackingID: 'G-7P16H5X5M1',
+          
         },
       }),
     ],
@@ -159,17 +160,6 @@ const config = {
           },
           {},
           {
-            title: '?',
-            items: [
-                {
-                   html: `
-                      <a href="https://osu.ppy.sh/users/29234830" target="_blank" rel="nofollow">
-                      <img src="https://img.shields.io/static/v1?label=Osu!&message=727&logo=Osu&color=f533ff" alt="osu"></img>
-                      </a>`,
-              },
-          ],
-          },
-          {
             title: 'More',
             items: [
               {
@@ -181,6 +171,12 @@ const config = {
                 to: '/blog',
               },
             ],
+          },
+          {
+            items:[
+            { html: `
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3151803879329926" crossorigin="anonymous"></script>`
+            },],
           },
         ],
         logo: {
