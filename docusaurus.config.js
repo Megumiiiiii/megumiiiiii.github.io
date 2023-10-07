@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCode = require('prism-react-renderer/themes/vsLight');
+const darkCode = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -39,6 +39,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -57,6 +59,9 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-7P16H5X5M1',
+        },
       }),
     ],
   ],
@@ -65,14 +70,15 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/b.png',
+      image: 'img/miku.jpg',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
       navbar: {
         title: 'Elysian',
+        hideOnScroll: true,
         logo: {
           alt: 'A',
           src: 'img/a.png',
@@ -105,34 +111,64 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Social Media',
+            title: 'Discord',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/Megumiiiiii',
+                {
+                   html: `
+                   <a href="https://discordapp.com/users/873803230042263563" target="_blank" rel="nofollow">
+                      <img src="https://lanyard.cnrad.dev/api/873803230042263563?idleMessage=doing%20something%20else..."  alt="Discord Presence"></img>
+                      </a>`,
               },
-              {
-                label: 'X',
-                href: 'https://x.com/megumii_tez',
-              },
-              {
-                label: 'Telegram',
-                href: 'https://KatouMegumii.t.me',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/users/873803230042263563',
-              },
-            ],
+          ],
           },
           {},
-          {title: '?',},
-          {},   
-          {title: '!!',},
+          {
+            title: 'Github',
+            items: [
+                {
+                   html: `
+                      <a href="https://github.com/Megumiiiiii" target="_blank" rel="nofollow">
+                      <img src="https://img.shields.io/static/v1?label=Github&message=727&logo=GitHub&color=b9bbbd" alt="github"></img>
+                      </a>`,
+              },
+          ],
+          },
           {},
-          {title: '!!'},
+          {
+            title: 'X',
+            items: [
+                {
+                   html: `
+                      <a href="https://x.com/megumii_tez" ttarget="_blank" rel="nofollow">
+                      <img src="https://img.shields.io/static/v1?label=Twitter&message=727&logo=X&color=ffffff" alt="x"></img>
+                      </a>`,
+              },
+          ],
+          },
           {},
-          {title: '?'},
+          {
+            title: 'Telegram',
+            items: [
+                {
+                   html: `
+                      <a href="https://KatouMegumii.t.me" target="_blank" rel="nofollow">
+                      <img src="https://img.shields.io/static/v1?label=Telegram&message=727&logo=Telegram&color=48bffa" alt="telegram"></img>
+                      </a>`,
+              },
+          ],
+          },
+          {},
+          {
+            title: '?',
+            items: [
+                {
+                   html: `
+                      <a href="https://osu.ppy.sh/users/29234830" target="_blank" rel="nofollow">
+                      <img src="https://img.shields.io/static/v1?label=Osu!&message=727&logo=Osu&color=f533ff" alt="osu"></img>
+                      </a>`,
+              },
+          ],
+          },
           {
             title: 'More',
             items: [
@@ -144,7 +180,6 @@ const config = {
                 label: 'Random Post',
                 to: '/blog',
               },
-
             ],
           },
         ],
@@ -157,8 +192,15 @@ const config = {
         copyright: `<a href="https://github.com/Megumiiiiii/megumiiiiii.github.io/blob/main/LICENSE">Copyright</a> © ${new Date().getFullYear()} Elysian, Inc. Built with 💜 by the Arweave community.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: darkCode,
+        darkTheme: lightCode,
+        magicComments: [
+          {
+            className: 'theme-code-block-highlighted-line',
+            line: 'highlight-next-line',
+            block: {start: 'highlight-start', end: 'highlight-end'},
+          },
+        ],
       },
       trailingSlash: true,
     }),
