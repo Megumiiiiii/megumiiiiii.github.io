@@ -9,12 +9,6 @@ const config = {
   title: 'Elysian',
   tagline: 'A Permaweb',
   favicon: 'img/a.png',
-  scripts: [
-    {
-      src: 'img/ads.txt',
-      async: true,
-    },
-  ],
 
   // Set the production url of your site here
   url: 'https://megumiiiiii.github.io',
@@ -67,7 +61,6 @@ const config = {
         },
         gtag: {
           trackingID: 'G-7P16H5X5M1',
-          
         },
       }),
     ],
