@@ -11,7 +11,7 @@ tags:
 - [Twitter](https://twitter.com/CESS_Storage)
 
 
-## Minimum Specifications
+## 最低要件
 
 | Spec | Size |
 |----------|----------|
@@ -20,32 +20,32 @@ tags:
 | SSD | 100 GB |
 | Bandwidth | 5 MB |
 
-## Initial Setup
+## 初期セットアップ
 
-1. Create 2 wallets on [Polkadot](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc1.cess.cloud%2Fws%2F#/accounts)
-2. Then, get the faucet [HERE](https://testnet-faucet.cess.cloud/)
-3. The first wallet is used to receive mining rewards
-4. The second wallet is used for mining
+1. [Polkadot](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc1.cess.cloud%2Fws%2F#/accounts)で2つのウォレットを作成します。
+2. 次に、[ここ](https://testnet-faucet.cess.cloud/)から蛇口を取得します。
+3. 最初のウォレットはマイニング報酬の受け取りに使用されます。
+4. 2番目のウォレットはマイニングに使用されます。
 
-### Open Ports
+### ポートを開く
 
-```sh filename="port" copy
+```sh filename="ポート" copy
 sudo ufw allow ssh; sudo ufw allow 4001; sudo ufw allow 15001; sudo ufw enable
 ```
 
-### Install Docker (Skip if already installed)
+### Dockerをインストール（既にインストールされている場合はスキップ）
 
-```sh filename="update system" copy
+```sh filename="システムのアップデート" copy
 sudo apt update; sudo apt upgrade -y
 ```
 
-```sh filename="install docker and others" copy
+```sh filename="dockerおよびその他のインストール" copy
 sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
-### Install CESS
+### CESSをインストール
 
-```sh filename="install CESS" copy
+```sh filename="CESSをインストール" copy
 mkdir -p /opt/cess
 git clone https://github.com/CESSProject/cess-nodeadm
 cd cess-nodeadm
@@ -53,89 +53,93 @@ git checkout tags/v0.4.4
 ./install.sh
 ```
 
-### Set Configuration
+### 設定を行う
 
-- Paste this
+- これを貼り付ける
 
-```sh filename="set profile" copy
+```sh filename="プロファイルを設定" copy
 cess profile testnet
 ```
 
-```sh filename="set config" copy
+```sh filename="設定を行う" copy
 cess config set
 ```
 
-- Type `storage` then press Enter
+- `storage` と入力し、Enterを押す
 
-- Paste the address from the first wallet
+- 最初のウォレットからアドレスを貼り付ける
 
-- Then paste the phrase from the second wallet
+- 2番目のウォレットからフレーズを貼り付ける
 
-- Type `/opt/cess`
+- `/opt/cess` と入力
 
-- Finally, fill it with `100`
+- 最後に、`100` で埋める
 
-## Start Node
+## ノードを起動
 
-```sh filename="reload" copy
+```sh filename="再読み込み" copy
 cess reload
 ```
 
-then
+その後
 
 ```sh filename="GAS" copy
 cess start
 ```
 
-### List of Commands
+### コマンドのリスト
 
-- Check chain logs
+- チェーンのログを確認する
 
-```sh filename="logs chain" copy
+```sh filename="チェーンのログ" copy
 docker logs -f chain
 ```
 
-- Check bucket logs
+- バケットのログを確認する
 
-```sh filename="logs bucket" copy
+```sh filename="バケットのログ" copy
 docker logs -f bucket
 ```
 
-- Check status
+- ステータスを確認する
 
-```sh filename="stat bucket" copy
+```sh filename="ステータス" copy
 cess bucket stat
 ```
 
-## If There's an Update
+## アップデートがある場合
 
-- The latest node version can be checked [HERE](https://github.com/CESSProject/cess-nodeadm/tags)
+- 最新のノードバージョンは[ここ](https://github.com/CESSProject/cess-nodeadm/tags)で確認できます。
 
-### How to Update
+### アップデート方法
 
-#### First, Stop
+#### 最初に、停止
 
-```sh filename="stop & down" copy
+```sh filename="停止 & ダウン" copy
 cess stop
 cess down
 ```
 
-#### Delete
+#### 削除
 
-```sh filename="delete" copy
+```sh filename="削除" copy
 cess purge
 ```
 
-#### Delete old folders and files
+#### 古いフォルダとファイルを削除
 
-```sh filename="pull latest tags" copy
+```sh filename="最新のタグをプル" copy
 cd cess-nodeadm
-git checkout tags/INSERT_LATEST_VERSION_IF_ALREADY_AVAILABLE
+git checkout tags/最新のバージョンを挿入（すでに利用可能な場合）
 ```
 
-#### After that, start again from the [Set Configuration](#set-configuration) step
+#### その後、[設定の実行](#set-configuration)ステップから再開します
 
-## ⚠️ If you want to delete the node ⚠️
+---
+
+:::danger
+⚠️ 削除したい場合 ⚠️
+:::
 
 ```sh filename="DELETE" copy
 cess down; cess purge

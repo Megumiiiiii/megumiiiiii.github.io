@@ -2,6 +2,7 @@
   "name": "elysian",
   "version": "0.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -10,7 +11,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "magic": "bundlr upload-dir ./build -h https://node2.bundlr.network --wallet ./wallet.json -c arweave --index-file index.html --no-confirmation",
+    "magic": "irys upload-dir ./build -h https://node1.irys.xyz --wallet ./wallet.json -t arweave --index-file index.html --no-confirmation",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },

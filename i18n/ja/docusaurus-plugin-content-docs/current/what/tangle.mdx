@@ -16,7 +16,7 @@ tags:
 Need Ubuntu 22.04 or higher
 :::
 
-## Minimum Specifications
+## 最低要件
 
 | Spec | Size |
 |----------|----------|
@@ -25,29 +25,29 @@ Need Ubuntu 22.04 or higher
 | SSD | 500 GB |
 | Port | 30333, 30334 TCP |
 
-## Install Dependencies
+## 依存関係をインストール
 
 ```sh filename="install" copy
 sudo apt install --assume-yes git clang curl libssl-dev llvm libudev-dev make protobuf-compiler
 ```
 
-### Open port
+### ポートを開放
 
 ```sh filename="port" copy
 sudo ufw allow ssh; sudo ufw allow 30333
 ```
 
-## Download Binary & Copy to /usr/bin
+## バイナリをダウンロードして/usr/binにコピー
 
 ```sh filename="bin" copy
 wget -O tangle https://github.com/webb-tools/tangle/releases/download/v0.4.7/tangle-standalone-linux-amd64 && chmod +x tangle
 sudo cp tangle /usr/bin/
 ```
 
-### Create a service
+### サービスを作成
 
 :::danger
-Change all **YourName** to your name
+すべての **YourName** を自分の名前に変更してください
 :::
 
 ```sh filename="systemd" copy
@@ -75,7 +75,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-### Enable service
+### サービスを有効化
 
 ```sh filename="start" copy
 sudo systemctl daemon-reload
@@ -83,13 +83,13 @@ sudo systemctl enable tangle
 sudo systemctl start tangle
 ```
 
-### Check the logs
+### ログを確認
 
 ```sh filename="logs" copy
 sudo journalctl -u tangle -f --no-hostname -o cat
 ```
 
-- Example Output:
+- 例の出力：
 
 ```
 2023-03-22 14:55:51 Tangle Standalone Node
@@ -114,16 +114,18 @@ sudo journalctl -u tangle -f --no-hostname -o cat
 2023-03-22 14:55:53 💻 CPU architecture: aarch64
 2023-03-22 14:55:53 📦 Highest known block at #0
 2023-03-22 14:55:53 〽️ Prometheus exporter started at 127.0.0.1:9615
-2023-03-22 14:55:53 Running JSON-RPC HTTP server: addr=127.0.0.1:9933, allowed origins=["http://localhost:*", "http://127.0.0.1:*", "https://localhost:*", "https://127.0.0.1:*", "https://polkadot.js.org"]
-2023-03-22 14:55:53 Running JSON-RPC WS server: addr=127.0.0.1:9944, allowed origins=["http://localhost:*", "http://127.0.0.1:*", "https://localhost:*", "https://127.0.0.1:*", "https://polkadot.js.org"]
+2023-03-22 14:55:53 Running JSON-RPC HTTP server: addr=127.0.0.1:9933, allowed origins=["http://localhost:*", "http://127.0.0.1:*", "https localhost:*", "https://127.0.0.1:*", "https://polkadot.js.org"]
+2023-03-22 14:55:53 Running JSON-RPC WS server: addr=127.0.0.1:9944, allowed origins=["http://localhost:*", "http://127.0.0.1:*", "https localhost:*", "https://127.0.0.1:*", "https://polkadot.js.org"]
 2023-03-22 14:55:53 discovered: 12D3KooWMr4L3Dun4BUyp23HZtLfxoQjR56dDp9eH42Va5X6Hfgi /ip4/192.168.0.125/tcp/30304
 2023-03-22 14:55:53 discovered: 12D3KooWNHhcCUsZTdTkADmDJbSK9YjbtscHHA8R4jvrbGwjPVez /ip4/192.168.0.125/tcp/30305
 2023-03-22 14:55:53 discovered: 12D3KooWMr4L3Dun4BUyp23HZtLfxoQjR56dDp9eH42Va5X6Hfgi /ip4/192.168.88.12/tcp/30304
-2023-03-22 14:55:53 discovered: 12D3KooWNHhcCUsZTdTkADmDJbSK9YjbtscHHA8R4jvrbGwjPVez /ip4/192.168.88.12/tcp/30305
+2023-03-22 14:55:53 discovered: 12D3KooWNHhcCUsZTdTkADmDJbSK9YjbtscHHA8R4jvrbGwjPVez /ip4/192.168.88.12
+
+/tcp/30305
 ```
 
 
-- Example Output after sync:
+- 同期後の出力例：
 
 ```
 2021-06-17 03:07:39 🔍 Discovered new external address for our node: /ip4/10.26.16.1/tcp/30333/ws/p2p/12D3KooWLtXFWf1oGrnxMGmPKPW54xWCHAXHbFh4Eap6KXmxoi9u
@@ -134,32 +136,41 @@ sudo journalctl -u tangle -f --no-hostname -o cat
 2021-06-17 03:08:00 ⚙️  Syncing 37.0 bps, target=#5553768 (22 peers), best: #27059 (0x5b73…6fc9), finalized #26624 (0x9dd9…27f8), ⬇ 14.3kiB/s ⬆ 4.4kiB/s
 ```
 
-## Bond TNT and setup validator Account
+## TNTをバインドしてバリデーターアカウントを設定
 
-- Go to [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/accounts)
-- Create 2 New Account, 1 for Stash 1 for Controller
-- ![stash](/img/tan.png)
-- Choose Stash & Controller account, then fill the amount you want to stake
-- Then back to your VPS
-- Do This 
+- [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/accounts)に移動
+- 新しいアカウントを2つ作成し、1つはStash、もう1つはController用です。
+- スタッシュとコントローラのアカウントを選択し、ステークする金額を入力します。
+- 次に、VPSに戻ります。
+- これを実行します。
 ```
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9944
 ```
-- Copy the `0x` Output
-- Back to [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/staking/actions)
-- Click that, **Set Session Key**
-- ![stash](/img/sessi.png)
-- Fill it with the `0x` Output before
-- Then Validate
+- `0x` の出力をコピーします。
+- [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/staking/actions)に戻ります。
+- **セッションキーの設定**をクリックします。
+- `0x` の出力を貼り付け、バリデートします。
 
-### Setting identity
+### アイデンティティの設定
 
+- [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/accounts)に移動
+- 自分のアドレスの隣にある3つの点をクリックしてオンチェーンアイデンティティを設定します。
+- 設定したいすべてのフィールドを入力します。
 
-- Go to [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/accounts)
-- Open the 3 dots next to your address: Set on-chain Identity
-- Enter all fields you want to set.
+### 審査をリクエスト
 
-### Request judgment
+- [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/extrinsics)に移動
+- アカウントを選択し、extrinsic タイプを identity | requestJudgment に設定します。
 
-- Go to the [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/extrinsics)
-- Select your account and extrinsic type: identity | requestJudgment
+---
+
+:::danger
+⚠️ 削除したい場合 ⚠️
+:::
+
+```sh filename="start" copy
+sudo systemctl stop tangle
+sudo systemctl disable tangle
+cd $HOME
+rm -r .tangle
+```

@@ -163,3 +163,16 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 - Go to the [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/extrinsics)
 - Select your account and extrinsic type: identity | requestJudgment
+
+---
+
+:::danger
+⚠️ If you want to delete ⚠️
+:::
+
+```sh filename="start" copy
+sudo systemctl stop tangle
+sudo systemctl disable tangle
+cd $HOME
+rm -r .tangle
+```

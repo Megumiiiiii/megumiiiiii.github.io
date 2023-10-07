@@ -9,7 +9,7 @@ tags:
 ![logo](/img/logo2.png)
 
 
-## Minimum requirements
+## 最低要件
 
 | Spec | Size |
 |------|-----|
@@ -21,65 +21,64 @@ tags:
 - Git
 - [Dokcer >= 20.0](https://www.simplilearn.com/tutorials/docker-tutorial/how-to-install-docker-on-ubuntu)
 - [Dokcer compose >= 2.0.0)](https://docs.docker.com/compose/install/linux/#install-the-plugin-manually)
-- Server must have ports 80 and 443 open
-- ETH wallet ( Private Key & Mnemonic )
-    > ETH balance (for signing transactions)
+- サーバーはポート80および443を開いている必要があります
+- ETHウォレット（プライベートキーとニーモニック）
+    > ETHの残高（トランザクションの署名用）
     >
-    > SARCO balance (for bonding your archaeologist to curses)
-- RPC URL (Infura, Alchemy, etc.)
-- Domain name pointed at your server's IP address
+    > SARCOの残高（考古学者を呪いにバインドするため）
+- RPC URL（Infura、Alchemyなど）
+- サーバーのIPアドレスを指すドメイン名
 
-*If running on Goerli (chain id = 5), then you will need Goerli ETH + Goerli SARCO.*
+*Goerli（チェーンID = 5）で実行する場合、Goerli ETH + Goerli SARCOが必要です。*
 
-### Setup DNS Record
-- Go to the domain management
-- Add DNS Records.
-- Select *A*.
-- Enter your name and your public IP as a value.
-- Save
-  
-## Install Dependencies
-```sh filename="update system" copy
+### DNSレコードの設定
+- ドメイン管理に移動します
+- DNSレコードを追加します。
+- *A* を選択します。
+- 名前とパブリックIPを値として入力します。
+- 保存
+
+## 依存関係のインストール
+```sh filename="システムのアップデート" copy
 sudo apt update; sudo apt upgrade
 ```
-```sh filename="install docker git etc." copy
+```sh filename="docker gitなどのインストール" copy
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
-## Open Port
-```sh filename="port" copy
+## ポートの開放
+```sh filename="ポート" copy
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
-## Clone Repo
-```sh filename="clone" copy
+## リポジトリのクローン
+```sh filename="クローン" copy
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
-### Copy `.env.sample` to `.env`
-```sh filename="membuat .env" copy
+### `.env.sample`を`.env`にコピー
+```sh filename=" .envを作成" copy
 cp .env.example .env
 ```
 
-### Generate Mnemonic Pharse
-```sh filename="generate pharse baru" copy
+### ニーモニックフレーズの生成
+```sh filename="新しいフレーズの生成" copy
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
-**BACKUP**
+**バックアップ**
 
-### Create a blank `peer-id.json` file
-
-```sh filename="membuat peer-id" copy
+### 空の`peer-id.json`ファイルを作成
+```sh filename="peer-idを作成" copy
 touch peer-id.json
 ```
 
-### Edit `.env` file
-```sh filename="edit .env" copy
+### `.env`ファイルを編集
+```sh filename=" .envを編集" copy
 nano .env
 ```
-Fill in your data
-example:
+データを入力してください
+例：
 ↓ ↓ ↓
 ```env filename=" .env"
 ## Key used to encrypt secrets and sign ETH transactions
@@ -99,17 +98,17 @@ PROVIDER_URL=https://cloudflare-eth.com
 ```
 
 ## $SARCO Token
-- To get $SARCO, you can swap them on Uniswap
-- Go to https://app.uniswap.org/
+- $SARCOを入手するには、Uniswapでそれらを交換できます
+- https://app.uniswap.org/ にアクセスしてください
 - SC Sarco: `0x7697B462A7c4Ff5F8b55BDBC2F4076c2aF9cF51A`
 
-## Register
+## 登録
 ```sh filename="compose register" copy
 COMPOSE_PROFILES=register docker compose run register
 ```
-Y, Enter
+Y、Enter
 
-**Then enter the nominal ( recommended: DiggingFee 100 - 500, CurseFee 300, and FreeBond  1000 )**
+**次に、名目を入力してください（推奨：DiggingFee 100 - 500、CurseFee 300、FreeBond 1000）**
 ```console filename="ouput"
 =========================================================================================================
 
@@ -129,35 +128,34 @@ address                    0x897015991ABC646a69EC8701B8459aA806aCf70a
 =========================================================================================================
 ```
 
-### Start the node
+### ノードの起動
 ```sh filename="compose up" copy
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
+## 便利なコマンド
 
-## Useful Command 
-
-- Check Archaeologist Service's logs
+- 考古学者サービスのログを確認する
 
 ```sh filename="archaeologist-service" copy
 docker logs -f quickstart-archaeologist-archaeologist-1
 ```
 
-- Check Acme Companion's logs
+- Acme Companionのログを確認する
 
 ```sh filename="acme-companion" copy
-docker logs -f  quickstart-archaeologist-acme-companion-1
+docker logs -f quickstart-archaeologist-acme-companion-1
 ```
 
-- Check Nginx's logs
+- Nginxのログを確認する
 
 ```sh filename="nginx-proxy" copy
 docker logs -f nginx-proxy
 ```
-	
-- Updating the service
 
-```sh filename="step update" copy
+- サービスの更新
+
+```sh filename="ステップ更新" copy
 cd ~/quickstart-archaeologist
 git pull
 COMPOSE_PROFILES=service docker compose stop
@@ -165,89 +163,93 @@ COMPOSE_PROFILES=service docker compose pull
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
-- Restarting the service
-```sh filename="restart" copy
+- サービスの再起動
+```sh filename="再起動" copy
 COMPOSE_PROFILES=service docker compose stop
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
-- If you change the domain after registering
+- 登録後にドメインを変更した場合
 
-```sh filename="add 1 freebond" copy
+```sh filename="1つのFreeBondを追加" copy
 docker compose exec -it archaeologist sh
 cli update -u
 ```
-```sh filename="exit cli" copy
+```sh filename="cliを終了" copy
 exit
 ```
 
-- Updating Digging Fee
-```sh filename="update digging fee" copy
+- 採掘手数料の更新
+```sh filename="採掘手数料の更新" copy
 docker compose exec -it archaeologist sh
 cli update -d 300
 ```
-```sh filename="exit cli" copy
+```sh filename="cliを終了" copy
 exit
 ```
-300 can be changed to any amount
+300は任意の金額に変更できます。
 
-- Updating Free Bond 
-```sh filename="update freebond" copy
+- Free Bondの更新
+```sh filename="FreeBondの更新" copy
 docker compose exec -it archaeologist sh
 cli update -f 100
 ```
-```sh filename="exit cli" copy
+```sh filename="cliを終了" copy
 exit
 ```
-100 can be changed to any amount
+100は任意の金額に変更できます。
 
-#### CheckProfile
-- Check Profile
-```sh filename="view profile" copy
+#### プロファイルの確認
+- プロファイルの確認
+```sh filename="プロファイルの表示" copy
 docker compose exec -it archaeologist sh
 cli view -p
 ```
-```sh filename="exit cli" copy
+```sh filename="cliを終了" copy
 exit
 ```
 
-- Claim Rewards
-```sh filename="claim reward" copy
+- 報酬の請求
+```sh filename="報酬の請求" copy
 docker compose exec -it archaeologist sh
 cli claim
 ```
-```sh filename="exit cli" copy
+```sh filename="cliを終了" copy
 exit
 ```
 
-- Withdraw Free Bond
-```sh filename="withdraw freebond" copy
+- Free Bondの引き出し
+```sh filename="FreeBondの引き出し" copy
 docker compose exec -it archaeologist sh
 cli free-bond -w 10
 ```
-```sh filename="exit cli" copy
+```sh filename="cliを終了" copy
 exit
 ```
-10 can be changed to any amount
+10は任意の金額に変更できます。
 
-### Troubleshooting
+### トラブルシューティング
 
-- Domain A Record
+- ドメインのAレコード
 
-Your domain must have an A record pointing at the IP address of your server that the archaeologist service is running on.
+あなたのドメインは、考古学者サービスが実行されているサーバーのIPアドレスを指すAレコードを持っている必要があります。
 https://www.nslookup.io/website-to-ip-lookup
-Use this tool to confirm that your domain is pointed correctly.
+このツールを使用して、ドメインが正しく指し示されていることを確認してください。
 
-- Test Websocket Connection
+- Websocket接続をテストする
 
 https://www.piesocket.com/websocket-tester
-Test that your Archaeologist can have websocket connection open by entering your websocket address in this format:
+Websocketアドレスを次の形式で入力して、考古学者がWebsocket接続を開けるかどうかをテストします。
 ```
-wss://<domain>/p2p/<libp2p peerID>
+wss://<ドメイン>/p2p/<libp2p peerID>
 ```
-To get your domain and peerID, run: [Check Profile](#checkprofile)
+ドメインとpeerIDを取得するには、[プロファイルの確認](#checkprofile)を実行してください。
 
-- ⚠️ If you want to delete ⚠️
+---
+
+:::danger
+⚠️ 削除したい場合 ⚠️
+:::
 
 ```sh filename="DELETE" copy
 cd ~/quickstart-archaeologist
