@@ -2,11 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://megumiiiiii.github.io/id/blog</id>
     <title>Elysian Blog</title>
-    <updated>2023-10-03T10:23:29.000Z</updated>
+    <updated>2023-10-08T08:40:54.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://megumiiiiii.github.io/id/blog"/>
     <subtitle>Elysian Blog</subtitle>
     <icon>https://megumiiiiii.github.io/id/img/a.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Heavy Rotation]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/heavy</id>
+        <link href="https://megumiiiiii.github.io/id/blog/heavy"/>
+        <updated>2023-10-08T08:40:54.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/pj9G7kAR4SkuNXbeUF0YisFPKkky3b3P244Wo1jcd6U" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C-Type]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/c-type</id>
+        <link href="https://megumiiiiii.github.io/id/blog/c-type"/>
+        <updated>2023-10-08T08:10:34.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/xTT-Tt7EmSdU_ALYDZSZqZqvk26KbA4rD7Q_gR5pIvA" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pudding Funfair]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/pudding</id>
+        <link href="https://megumiiiiii.github.io/id/blog/pudding"/>
+        <updated>2023-10-08T08:10:34.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/ACKWqx4OoHjb2BVpGynXOAWZ7D1Me6jfWyAT62ejhbk" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[And Again And Again]]></title>
         <id>https://megumiiiiii.github.io/id/blog/and-again</id>

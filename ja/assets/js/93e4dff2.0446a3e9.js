@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[4571],{9533:a=>{a.exports=JSON.parse('{"permalink":"/ja/blog/tags/osu/page/4","page":4,"postsPerPage":3,"totalPages":4,"totalCount":11,"previousPage":"/ja/blog/tags/osu/page/3","blogDescription":"Just a random post","blogTitle":"Random Post"}')}}]);

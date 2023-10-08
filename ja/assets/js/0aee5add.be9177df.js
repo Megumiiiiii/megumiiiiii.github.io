@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[8314],{6342:a=>{a.exports=JSON.parse('{"label":"EVM","permalink":"/ja/docs/tags/evm","allTagsPath":"/ja/docs/tags","count":1,"items":[{"id":"what/sarco","title":"Sarcophagus","description":"logo","permalink":"/ja/docs/what/sarco"}]}')}}]);
