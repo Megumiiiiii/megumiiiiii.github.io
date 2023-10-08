@@ -35,12 +35,13 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-      <a href="https://megumii.blessingway.xyz" target="_blank" rel="nofollow">
-        <img src="https://github.com/Megumiiiiii.png" width={333} height={333} alt="Web" align="left"></img>
-      </a>
+      <div align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3151803879329926" crossorigin="anonymous"></script>
+      </div>
       </main>
+      <div align="center">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3151803879329926" crossorigin="anonymous"></script>
+      </div>
     </Layout>
   );
 }

@@ -2,13 +2,27 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
+const textStyle = {
+  fontFamily: 'Courier',
+  fontWeight: 'bold',
+  fontSize: '1.2rem',
+};
 const FeatureList = [
+  {
+    title: '',
+    Svg: require('@site/static/img/000.svg').default,
+    description: (
+      <>
+        <span style={textStyle}><a href='https://megumii.blessingway.xyz' target="_blank" rel="nofollow">My Permaweb</a></span> 
+      </>
+    ),
+  },
   {
     title: 'Powered by Arweave',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Yes this is a Permaweb on Arweave.
+        <i>Yes this is a Permaweb on Arweave.</i>
       </>
     ),
   },
@@ -17,16 +31,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        And also deployed on Github too.
-      </>
-    ),
-  },
-  {
-    title: "I actually don't know what to put here",
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        "?".
+        <i>And also deployed on Github too.</i>
       </>
     ),
   },
