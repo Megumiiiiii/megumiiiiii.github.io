@@ -30,14 +30,11 @@ tags:
 
 ## Dockerおよびその他のインストール
 
-```sh filename="システムの更新" copy
+```bash
 sudo apt update; sudo apt upgrade -y
 ```
 
-
-
-
-```sh filename="Dockerおよびその他のインストール" copy
+```bash
 sudo apt-get update && sudo apt install jq git certbot nginx sqlite3 build-essential -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
@@ -45,7 +42,7 @@ sudo apt-get update && sudo apt install jq git certbot nginx sqlite3 build-essen
 
 #### Node.js
 
-```sh filename="Node.js" copy
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
 nvm install 16.15.1
@@ -54,7 +51,7 @@ nvm use 16.15.1
 
 #### Yarn
 
-```sh filename="Yarn" copy
+```bash
 curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update -y
@@ -63,26 +60,26 @@ sudo apt-get install yarn -y
 
 ## ポートを開放
 
-```sh filename="ポート" copy
+```bash
 sudo ufw allow ssh; sudo ufw allow 80; sudo ufw allow 443; sudo ufw enable
 ```
 
 ## ARリポジトリをクローン
 
-```sh filename="クローン" copy
+```bash
 git clone https://github.com/ar-io/ar-io-node.git
 cd ~/ar-io-node
 ```
 
 ## `.env`を設定
 
-```sh filename=".envを編集" copy
+```bash
 nano .env
 ```
 
 - 次のように設定し、`domainmu.zzz`のすべての場所を自分のウォレットアドレスに置き換えてください。[ARConnect](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap)から取得します。
 
-```ts filename=".envの内容" copy
+```tsx title=".env"
 GRAPHQL_HOST=arweave.net
 GRAPHQL_PORT=443
 START_HEIGHT=1000000
@@ -107,7 +104,7 @@ AR_IO_WALLET=Address
 
 `EmailMU@gmail.com`を自分のメールアドレスに置き換え、`domainmu.zzz`をすべて自分のドメインに置き換えます。
 
-```sh filename="certbot" copy
+```bash
 sudo certbot certonly --manual --preferred-challenges dns --email EmailMu@gmail.com -d domainmu.zzz -d '*.domainmu.zzz'
 ```
 
@@ -129,14 +126,15 @@ sudo certbot certonly --manual --preferred-challenges dns --email EmailMu@gmail.
 
 ## Nginxを設定
 
-```sh filename="Nginxを編集" copy
+```bash
 rm /etc/nginx/sites-available/default
 nano /etc/nginx/sites-available/default
 ```
 
-- 以下のように設定し、すべての`domainmu.zzz`を自分のドメインに置き換えます。
+:::info
+以下のように設定し、すべての`domainmu.zzz`を自分のドメインに置き換えます。
 
-```sh filename="default nginxファイルの内容" copy
+```yml title="default"
 # HTTPからHTTPSへの強制リダイレクト
 server {
     listen 80;
@@ -168,16 +166,17 @@ server {
 ```
 
 - 保存してください：`CTRl+X` `Y` `Enter`
+:::
 
 #### Nginxを確認
 
-```sh filename="nginxのステータスを確認" copy
+```bash
 sudo nginx -t
 ```
 
 #### Nginxを再起動して再度確認
 
-```sh filename="再起動+ステータスを確認" copy
+```bash
 sudo service nginx restart
 sudo nginx -t
 ```
@@ -189,7 +188,7 @@ sudo nginx -t
 
 ## ノードのセットアップ
 
-```sh filename="compose up" copy
+```bash
 cd ~/ar-io-node
 sudo docker compose up -d --build
 ```
@@ -200,7 +199,7 @@ sudo docker compose up -d --build
 
 - ブラウザで次を開きます：`IP.VPS.MU`をIP VPS MUのIPアドレスに置き換えます。
 
-```url
+```json title="url"
 http://IP.VPS.MU:3000/4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M
 ```
 
@@ -211,26 +210,26 @@ http://IP.VPS.MU:3000/4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M
 
 ### ノードを停止
 
-```sh filename="compose down" copy
+```bash
 cd ~/ar-io-node
 sudo docker compose down
 ```
 
 ### リポジトリを更新
 
-```sh filename="git pull" copy
+```bash
 git pull
 ```
 
 ### イメージを更新
 
-```sh filename="compose pull" copy
+```bash
 sudo docker compose pull
 ```
 
 ### 再ビルド
 
-```sh filename="compose up" copy
+```bash
 sudo docker compose up -d --build
 ```
 
@@ -249,7 +248,7 @@ sudo docker compose up -d --build
 
 ## リポジトリのコピー
 
-```sh filename="clone" copy
+```bash
 cd
 git clone https://github.com/ar-io/testnet-contract.git
 cd ~/testnet-contract
@@ -257,11 +256,11 @@ git checkout -b develop origin/develop
 git checkout develop
 ```
 
-```sh filename="yarn install" copy
+```bash
 yarn install
 ```
 
-```sh filename="yarn buidl" copy
+```bash
 yarn build
 ```
 
@@ -275,20 +274,20 @@ yarn build
 
 ### `.env` ファイルを作成 (Optional)
 
-```sh filename="env" copy
+```bash
 nano .env
 ```
 
 - これで埋めます
 **JWK** はあなたの `key.json` ファイルの内容ですが、それを1行に編集してください
-```sh filename="env" copy
+```bash title=".env"
 JWK=
 ARNS_CONTRACT_TX_ID=bLAgYxAdX2Ry-nt6aH2ixgvJXbpsEYm28NgJgyqfs-U
 ```
 
 ## `join-network.ts`ファイルを編集
 
-```sh filename="join-network.tsを編集" copy
+```bash
 nano tools/join-network.ts
 ```
 
@@ -308,19 +307,19 @@ CTRl+X` `Y` `Enter`
 
 Uptime
 
-```url
+```json title="url"
 https://あなたのドメイン/ar-io/healthcheck
 ```
 
 ArDrive
 
-```url
+```json title="url"
 https://ardrive.あなたのドメイン
 ```
 
 何かが表示されるかどうかを確認してください
 
-```url
+```json title="url"
 https://あなたのドメイン/UymRNCv22DbIB1KpAtC0qy5oeC1TdGDgoEKWs7J8Y_Q
 ```
 
@@ -328,7 +327,7 @@ https://あなたのドメイン/UymRNCv22DbIB1KpAtC0qy5oeC1TdGDgoEKWs7J8Y_Q
 ## 最後....
 
 - このコマンドを実行します。
-```sh filename="join network" copy
+```bash
 yarn ts-node tools/join-network.ts
 ```
 
@@ -338,10 +337,10 @@ yarn ts-node tools/join-network.ts
 ⚠️ 削除したい場合 ⚠️
 :::
 
-```bash title="DELETE"
+```bash
 cd ~/ar-io-node
 docker compose down -v
 docker rmi ghcr.io/ar-io/ar-io-core ghcr.io/ar-io/ar-io-envoy
 ```
 
-#
+:::

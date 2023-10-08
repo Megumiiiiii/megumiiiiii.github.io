@@ -30,23 +30,23 @@ tags:
 
 ### Open Ports
 
-```sh filename="port" copy
+```bash
 sudo ufw allow ssh; sudo ufw allow 4001; sudo ufw allow 15001; sudo ufw enable
 ```
 
 ### Install Docker (Skip if already installed)
 
-```sh filename="update system" copy
+```bash
 sudo apt update; sudo apt upgrade -y
 ```
 
-```sh filename="install docker and others" copy
+```bash
 sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ### Install CESS
 
-```sh filename="install CESS" copy
+```bash
 mkdir -p /opt/cess
 git clone https://github.com/CESSProject/cess-nodeadm
 cd cess-nodeadm
@@ -58,11 +58,11 @@ git checkout tags/v0.4.4
 
 - Paste this
 
-```sh filename="set profile" copy
+```bash
 cess profile testnet
 ```
 
-```sh filename="set config" copy
+```bash
 cess config set
 ```
 
@@ -78,13 +78,13 @@ cess config set
 
 ## Start Node
 
-```sh filename="reload" copy
+```bash
 cess reload
 ```
 
 then
 
-```sh filename="GAS" copy
+```bash
 cess start
 ```
 
@@ -92,19 +92,19 @@ cess start
 
 - Check chain logs
 
-```sh filename="logs chain" copy
+```bash
 docker logs -f chain
 ```
 
 - Check bucket logs
 
-```sh filename="logs bucket" copy
+```bash
 docker logs -f bucket
 ```
 
 - Check status
 
-```sh filename="stat bucket" copy
+```bash
 cess bucket stat
 ```
 
@@ -116,20 +116,20 @@ cess bucket stat
 
 #### First, Stop
 
-```sh filename="stop & down" copy
+```bash
 cess stop
 cess down
 ```
 
 #### Delete
 
-```sh filename="delete" copy
+```bash
 cess purge
 ```
 
 #### Delete old folders and files
 
-```sh filename="pull latest tags" copy
+```bash
 cd cess-nodeadm
 git checkout tags/INSERT_LATEST_VERSION_IF_ALREADY_AVAILABLE
 ```
@@ -140,11 +140,11 @@ git checkout tags/INSERT_LATEST_VERSION_IF_ALREADY_AVAILABLE
 
 :::danger
 ⚠️ If you want to delete ⚠️
-:::
 
-```sh filename="DELETE" copy
+
+```bash
 cess down; cess purge
 docker rmi cesslab/cess-bucket; docker rmi cesslab/cess-chain; docker rmi cesslab/config-gen; docker rmi containrrr/watchtower
 ```
 
-#
+:::

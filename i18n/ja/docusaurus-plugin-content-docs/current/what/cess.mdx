@@ -29,23 +29,23 @@ tags:
 
 ### ポートを開く
 
-```sh filename="ポート" copy
+```bash
 sudo ufw allow ssh; sudo ufw allow 4001; sudo ufw allow 15001; sudo ufw enable
 ```
 
 ### Dockerをインストール（既にインストールされている場合はスキップ）
 
-```sh filename="システムのアップデート" copy
+```bash
 sudo apt update; sudo apt upgrade -y
 ```
 
-```sh filename="dockerおよびその他のインストール" copy
+```bash
 sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ### CESSをインストール
 
-```sh filename="CESSをインストール" copy
+```bash
 mkdir -p /opt/cess
 git clone https://github.com/CESSProject/cess-nodeadm
 cd cess-nodeadm
@@ -57,11 +57,11 @@ git checkout tags/v0.4.4
 
 - これを貼り付ける
 
-```sh filename="プロファイルを設定" copy
+```bash
 cess profile testnet
 ```
 
-```sh filename="設定を行う" copy
+```bash
 cess config set
 ```
 
@@ -77,13 +77,13 @@ cess config set
 
 ## ノードを起動
 
-```sh filename="再読み込み" copy
+```bash
 cess reload
 ```
 
 その後
 
-```sh filename="GAS" copy
+```bash
 cess start
 ```
 
@@ -91,19 +91,19 @@ cess start
 
 - チェーンのログを確認する
 
-```sh filename="チェーンのログ" copy
+```bash
 docker logs -f chain
 ```
 
 - バケットのログを確認する
 
-```sh filename="バケットのログ" copy
+```bash
 docker logs -f bucket
 ```
 
 - ステータスを確認する
 
-```sh filename="ステータス" copy
+```bash
 cess bucket stat
 ```
 
@@ -115,20 +115,20 @@ cess bucket stat
 
 #### 最初に、停止
 
-```sh filename="停止 & ダウン" copy
+```bash
 cess stop
 cess down
 ```
 
 #### 削除
 
-```sh filename="削除" copy
+```bash
 cess purge
 ```
 
 #### 古いフォルダとファイルを削除
 
-```sh filename="最新のタグをプル" copy
+```bash
 cd cess-nodeadm
 git checkout tags/最新のバージョンを挿入（すでに利用可能な場合）
 ```
@@ -139,11 +139,11 @@ git checkout tags/最新のバージョンを挿入（すでに利用可能な�
 
 :::danger
 ⚠️ 削除したい場合 ⚠️
-:::
 
-```sh filename="DELETE" copy
+
+```bash
 cess down; cess purge
 docker rmi cesslab/cess-bucket; docker rmi cesslab/cess-chain; docker rmi cesslab/config-gen; docker rmi containrrr/watchtower
 ```
 
-#
+:::

@@ -35,9 +35,6 @@ You need a small amount of $AR token as gas fee. You can buy **$AR** on Binance 
 sudo apt update; sudo apt upgrade -y
 ```
 
-
-
-
 ```bash 
 sudo apt-get update && sudo apt install jq git certbot nginx sqlite3 build-essential -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
@@ -129,7 +126,8 @@ rm /etc/nginx/sites-available/default
 nano /etc/nginx/sites-available/default
 ```
 
-- Fill it with the following, replacing all instances of `domainmu.zzz` with your domain:
+:::info
+Fill it with the following, replacing all instances of `domainmu.zzz` with your domain:
 
 ```yml title="default"
 # Force redirects from HTTP to HTTPS
@@ -163,6 +161,7 @@ server {
 ```
 
 - Save it with `Ctrl+X`, `Y`, `Enter`
+:::
 
 #### Check Nginx Configuration
 
@@ -243,7 +242,7 @@ sudo docker compose up -d --build
 ## Clone the Contract Repo
 
 ```bash
-cd
+cd $HOME
 git clone https://github.com/ar-io/testnet-contract.git
 cd ~/testnet-contract
 git checkout -b develop origin/develop

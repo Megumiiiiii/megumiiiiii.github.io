@@ -29,23 +29,23 @@ tags:
 
 ### Buka Port
 
-```sh filename="port" copy
+```bash
 sudo ufw allow ssh; sudo ufw allow 4001; sudo ufw allow 15001; sudo ufw enable
 ```
 
 ### Install Docker ( Skip kalo udah )
 
-```sh filename="update system" copy
+```bash
 sudo apt update; sudo apt upgrade -y
 ```
 
-```sh filename="install docker dkk" copy
+```bash
 sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ### Install CESS
 
-```sh filename="install CESS" copy
+```bash
 mkdir -p /opt/cess
 git clone https://github.com/CESSProject/cess-nodeadm
 cd cess-nodeadm
@@ -57,11 +57,11 @@ git checkout tags/v0.4.4
 
 - Paste ini
 
-```sh filename="set profile" copy
+```bash
 cess profile testnet
 ```
 
-```sh filename="set config" copy
+```bash
 cess config set
 ```
 
@@ -77,13 +77,13 @@ cess config set
 
 ## Start Node
 
-```sh filename="reload" copy
+```bash
 cess reload
 ```
 
 lalu
 
-```sh filename="GAS" copy
+```bash
 cess start
 ```
 
@@ -91,19 +91,19 @@ cess start
 
 - Cek logs chain
 
-```sh filename="logs chain" copy
+```bash
 docker logs -f chain
 ```
 
 - Cek logs bucket
 
-```sh filename="logs bucket" copy
+```bash
 docker logs -f bucket
 ```
 
 - Cek status
 
-```sh filename="stat bucket" copy
+```bash
 cess bucket stat
 ```
 ## Jika ada Update
@@ -114,20 +114,20 @@ cess bucket stat
 
 #### Stop dulu
 
-```sh filename="stop & down" copy
+```bash
 cess stop
 cess down
 ```
 
 #### Hapus
 
-```sh filename="hapus" copy
+```bash
 cess purge
 ```
 
 #### Hapus folder dan file yang lama
 
-```sh filename="pull tags terbaru" copy
+```bash
 cd cess-nodeadm
 git checkout tags/SESUAI_VERSITERBARU_JIKA_SUDAH_ADA
 ```
@@ -138,11 +138,11 @@ git checkout tags/SESUAI_VERSITERBARU_JIKA_SUDAH_ADA
 
 :::danger
 ⚠️ Jika Anda ingin menghapus ⚠️
-:::
 
-```sh filename="DELETE" copy
+
+```bash
 cess down; cess purge
 docker rmi cesslab/cess-bucket; docker rmi cesslab/cess-chain; docker rmi cesslab/config-gen; docker rmi containrrr/watchtower
 ```
 
-#
+:::
