@@ -6,13 +6,31 @@ tags:
   - Subsquid
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ### Buat Folder & init
 
-```sh filename="Node.js" copy
+<Tabs>
+<TabItem value="VPS">
+
+```bash
 cd ~/proc
 sqd init quad-proc -t https://github.com/subsquid-quests/quad-chain-squid
 cd quad-proc
 ```
+
+</TabItem>
+<TabItem value="CodeSpace">
+
+```bash
+cd ..
+sqd init quad-proc -t https://github.com/subsquid-quests/quad-chain-squid
+cd quad-proc
+```
+
+</TabItem>
+</Tabs>
 
 ## Download key
 
@@ -22,13 +40,13 @@ cd quad-proc
 
 ## Start Docker
 
-```sh filename="build" copy
+```bash
 docker compose up -d
 ```
 
 ## build
 
-```sh filename="build" copy
+```bash
 npm ci
 sqd build
 ```
@@ -39,7 +57,7 @@ sqd migration:apply
 
 ### Run
 
-```sh filename="run" copy
+```bash
 sqd run .
 ```
 
@@ -49,7 +67,7 @@ Tunggu sampai di web nya jadi 100%
  - Stop proc menggunakan CTRL+C
  - Stop Docker
 
- ```sh filename="delete" copy
+ ```bash
  docker compose down -v
  ```
 
@@ -58,12 +76,12 @@ Hapus **SEMUA** jika sudah mendapat point
 :::
 
 
-```sh filename="delete" copy
+```bash
 cd
 rm -r proc
 ```
 
-```sh filename="delete" copy
+```bash
 docker rmi subsquid/query-gateway:0.1.5
 ```
 

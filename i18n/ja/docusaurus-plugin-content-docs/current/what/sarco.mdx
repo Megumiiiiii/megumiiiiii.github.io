@@ -39,42 +39,42 @@ tags:
 - 保存
 
 ## 依存関係のインストール
-```bash title="update system"
+```bash
 sudo apt update; sudo apt upgrade
 ```
-```bash title="install docker git etc."
+```bash
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ## ポートの開放
-```bash title="Open port"
+```bash
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
 ## リポジトリのクローン
-```bash title="clone"
+```bash
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
 ### `.env.sample`を`.env`にコピー
-```bash title="cp env"
+```bash
 cp .env.example .env
 ```
 
 ### ニーモニックフレーズの生成
-```bash title="generate pharse"
+```bash
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
 **バックアップ**
 
 ### 空の`peer-id.json`ファイルを作成
-```bash title="peer-id"
+```bash
 touch peer-id.json
 ```
 
 ### `.env`ファイルを編集
-```bash title="edit .env"
+```bash
 nano .env
 ```
 データを入力してください
@@ -104,13 +104,13 @@ PROVIDER_URL=https://cloudflare-eth.com
 - SC Sarco: `0x7697B462A7c4Ff5F8b55BDBC2F4076c2aF9cF51A`
 
 ## 登録
-```sh filename="compose register" copy
+```bash
 COMPOSE_PROFILES=register docker compose run register
 ```
 Y、Enter
 
 **次に、名目を入力してください（推奨：DiggingFee 100 - 500、CurseFee 300、FreeBond 1000）**
-```console filename="ouput"
+```bash title="Ouput"
 =========================================================================================================
 
 ARCHAEOLOGIST PROFILE: 
@@ -130,7 +130,7 @@ address                    0x897015991ABC646a69EC8701B8459aA806aCf70a
 ```
 
 ### ノードの起動
-```sh filename="compose up" copy
+```bash
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
@@ -138,25 +138,25 @@ COMPOSE_PROFILES=service docker compose up -d
 
 - 考古学者サービスのログを確認する
 
-```sh filename="archaeologist-service" copy
+```bash
 docker logs -f quickstart-archaeologist-archaeologist-1
 ```
 
 - Acme Companionのログを確認する
 
-```sh filename="acme-companion" copy
+```bash
 docker logs -f quickstart-archaeologist-acme-companion-1
 ```
 
 - Nginxのログを確認する
 
-```sh filename="nginx-proxy" copy
+```bash
 docker logs -f nginx-proxy
 ```
 
 - サービスの更新
 
-```sh filename="ステップ更新" copy
+```bash
 cd ~/quickstart-archaeologist
 git pull
 COMPOSE_PROFILES=service docker compose stop
@@ -165,66 +165,66 @@ COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - サービスの再起動
-```sh filename="再起動" copy
+```bash
 COMPOSE_PROFILES=service docker compose stop
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - 登録後にドメインを変更した場合
 
-```sh filename="1つのFreeBondを追加" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -u
 ```
-```sh filename="cliを終了" copy
+```bash
 exit
 ```
 
 - 採掘手数料の更新
-```sh filename="採掘手数料の更新" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -d 300
 ```
-```sh filename="cliを終了" copy
+```bash
 exit
 ```
 300は任意の金額に変更できます。
 
 - Free Bondの更新
-```sh filename="FreeBondの更新" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -f 100
 ```
-```sh filename="cliを終了" copy
+```bash
 exit
 ```
 100は任意の金額に変更できます。
 
 #### プロファイルの確認
 - プロファイルの確認
-```sh filename="プロファイルの表示" copy
+```bash
 docker compose exec -it archaeologist sh
 cli view -p
 ```
-```sh filename="cliを終了" copy
+```bash
 exit
 ```
 
 - 報酬の請求
-```sh filename="報酬の請求" copy
+```bash
 docker compose exec -it archaeologist sh
 cli claim
 ```
-```sh filename="cliを終了" copy
+```bash
 exit
 ```
 
 - Free Bondの引き出し
-```sh filename="FreeBondの引き出し" copy
+```bash
 docker compose exec -it archaeologist sh
 cli free-bond -w 10
 ```
-```sh filename="cliを終了" copy
+```bash
 exit
 ```
 10は任意の金額に変更できます。
@@ -250,12 +250,10 @@ wss://<ドメイン>/p2p/<libp2p peerID>
 
 :::danger
 ⚠️ 削除したい場合 ⚠️
-:::
 
-```sh filename="DELETE" copy
+```bash
 cd ~/quickstart-archaeologist
 COMPOSE_PROFILES=service docker compose down -v
 docker rmi jwilder/nginx-proxy nginxproxy/acme-companion ghcr.io/sarcophagus-org/sarcophagus-v2-archaeologist-service
 ```
-
-#
+:::

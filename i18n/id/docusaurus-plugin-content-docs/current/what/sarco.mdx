@@ -39,43 +39,43 @@ tags:
 - Simpan
   
 ## Install Dependensi
-```bash title="update system"
+```bash
 sudo apt update; sudo apt upgrade
 ```
-```bash title="install docker git etc."
+```bash
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ## Buka Port
-```bash title="Open port"
+```bash
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
 ## Clone Repo
-```bash title="clone"
+```bash
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
 ### Salin `.env.sample` menjadi `.env`
-```bash title="cp env"
+```bash
 cp .env.example .env
 ```
 
 ### Membuat Mnemonik
-```bash title="generate pharse"
+```bash
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
 **BACKUP**
 
 ### Buat file kosong `peer-id.json` 
 
-```bash title="peer-id"
+```bash
 touch peer-id.json
 ```
 
 ### Edit file `.env`
-```bash title="edit .env"
+```bash
 nano .env
 ```
 Isi data Anda
@@ -105,13 +105,13 @@ PROVIDER_URL=https://cloudflare-eth.com
 - SC Sarco: `0x7697B462A7c4Ff5F8b55BDBC2F4076c2aF9cF51A`
 
 ## Registrasi
-```sh filename="compose register" copy
+```bash
 COMPOSE_PROFILES=register docker compose run register
 ```
 Y, Enter
 
 **Kemudian masukkan jumlah (disarankan: DiggingFee 100 - 500, CurseFee 300, dan FreeBond 1000)**
-```console filename="ouput"
+```bash title="Ouput"
 =========================================================================================================
 
 ARCHAEOLOGIST PROFILE: 
@@ -131,7 +131,7 @@ address                    0x897015991ABC646a69EC8701B8459aA806aCf70a
 ```
 
 ### Memulai Node
-```sh filename="compose up" copy
+```bash
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
@@ -139,25 +139,25 @@ COMPOSE_PROFILES=service docker compose up -d
 
 - Periksa log Layanan Arkeolog
 
-```sh filename="archaeologist-service" copy
+```bash
 docker logs -f quickstart-archaeologist-archaeologist-1
 ```
 
 - Periksa log Acme Companion
 
-```sh filename="acme-companion" copy
+```bash
 docker logs -f quickstart-archaeologist-acme-companion-1
 ```
 
 - Periksa log Nginx
 
-```sh filename="nginx-proxy" copy
+```bash
 docker logs -f nginx-proxy
 ```
 	
 - Memperbarui layanan
 
-```sh filename="step update" copy
+```bash
 cd ~/quickstart-archaeologist
 git pull
 COMPOSE_PROFILES=service docker compose stop
@@ -166,66 +166,66 @@ COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - Memulai ulang layanan
-```sh filename="restart" copy
+```bash
 COMPOSE_PROFILES=service docker compose stop
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - Jika Anda mengubah domain setelah mendaftar
 
-```sh filename="add 1 freebond" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -u
 ```
-```sh filename="exit cli" copy
+```bash
 exit
 ```
 
 - Memperbarui Biaya Penambangan
-```sh filename="update digging fee" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -d 300
 ```
-```sh filename="exit cli" copy
+```bash
 exit
 ```
 300 dapat diubah menjadi jumlah yang lain
 
 - Memperbarui Free Bond 
-```sh filename="update freebond" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -f 100
 ```
-```sh filename="exit cli" copy
+```bash
 exit
 ```
 100 dapat diubah menjadi jumlah yang lain
 
 #### Cek Profil
 - Cek Profil
-```sh filename="view profile" copy
+```bash
 docker compose exec -it archaeologist sh
 cli view -p
 ```
-```sh filename="exit cli" copy
+```bash
 exit
 ```
 
 - Klaim Hadiah
-```sh filename="claim reward" copy
+```bash
 docker compose exec -it archaeologist sh
 cli claim
 ```
-```sh filename="exit cli" copy
+```bash
 exit
 ```
 
 - Tarik Free Bond
-```sh filename="withdraw freebond" copy
+```bash
 docker compose exec -it archaeologist sh
 cli free-bond -w 10
 ```
-```sh filename="exit cli" copy
+```bash
 exit
 ```
 10 dapat diubah menjadi jumlah yang lain
@@ -251,12 +251,11 @@ Untuk mendapatkan domain dan peerID Anda, jalankan: [Cek Profil](#checkprofile)
 
 :::danger
 ⚠️ Jika Anda ingin menghapus ⚠️
-:::
 
-```sh filename="DELETE" copy
+
+```bash
 cd ~/quickstart-archaeologist
 COMPOSE_PROFILES=service docker compose down -v
 docker rmi jwilder/nginx-proxy nginxproxy/acme-companion ghcr.io/sarcophagus-org/sarcophagus-v2-archaeologist-service
 ```
-
-#
+:::

@@ -28,19 +28,19 @@ Need Ubuntu 22.04 or higher
 
 ## Install Dependencies
 
-```bash title="install"
+```bash
 sudo apt install --assume-yes git clang curl libssl-dev llvm libudev-dev make protobuf-compiler
 ```
 
 ### Open port
 
-```bash title="port"
+```bash
 sudo ufw allow ssh; sudo ufw allow 30333
 ```
 
 ## Download Binary & Copy to /usr/bin
 
-```bash filename="bin"
+```bash
 wget -O tangle https://github.com/webb-tools/tangle/releases/download/v0.4.7/tangle-standalone-linux-amd64 && chmod +x tangle
 sudo cp tangle /usr/bin/
 ```
@@ -78,7 +78,7 @@ EOF
 
 ### Enable service
 
-```bash title="start"
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable tangle
 sudo systemctl start tangle
@@ -86,7 +86,7 @@ sudo systemctl start tangle
 
 ### Check the logs
 
-```bash title="logs"
+```bash
 sudo journalctl -u tangle -f --no-hostname -o cat
 ```
 
@@ -169,11 +169,11 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 :::danger
 ⚠️ If you want to delete ⚠️
-:::
 
-```bash title="DELETE" 
+```bash
 sudo systemctl stop tangle
 sudo systemctl disable tangle
 cd $HOME
 rm -r .tangle
 ```
+:::

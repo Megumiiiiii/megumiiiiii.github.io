@@ -40,43 +40,43 @@ tags:
 - Save
   
 ## Install Dependencies
-```bash title="update system"
+```bash
 sudo apt update; sudo apt upgrade
 ```
-```bash filename="install docker git etc."
+```bash
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
 ## Open Port
-```bash title="Open port"
+```bash
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
 ## Clone Repo
-```bash title="clone"
+```bash
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
 ### Copy `.env.sample` to `.env`
-```bash title="cp env"
+```bash
 cp .env.example .env
 ```
 
 ### Generate Mnemonic Pharse
-```bash title="generate pharse"
+```bash
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
 **BACKUP**
 
 ### Create a blank `peer-id.json` file
 
-```bash title="peer-id"
+```bash
 touch peer-id.json
 ```
 
 ### Edit `.env` file
-```bash title="edit .env"
+```bash
 nano .env
 ```
 Fill in your data
@@ -107,7 +107,7 @@ PROVIDER_URL=https://cloudflare-eth.com
 - SC Sarco: `0x7697B462A7c4Ff5F8b55BDBC2F4076c2aF9cF51A`
 
 ## Register
-```bash title="compose register" copy
+```bash
 COMPOSE_PROFILES=register docker compose run register
 ```
 Y, Enter
@@ -133,7 +133,7 @@ address                    0x897015991ABC646a69EC8701B8459aA806aCf70a
 ```
 
 ### Start the node
-```bash title="compose up"
+```bash
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
@@ -142,25 +142,25 @@ COMPOSE_PROFILES=service docker compose up -d
 
 - Check Archaeologist Service's logs
 
-```bash filename="archaeologist-service" copy
+```bash
 docker logs -f quickstart-archaeologist-archaeologist-1
 ```
 
 - Check Acme Companion's logs
 
-```bash filename="acme-companion" copy
+```bash
 docker logs -f  quickstart-archaeologist-acme-companion-1
 ```
 
 - Check Nginx's logs
 
-```bash filename="nginx-proxy" copy
+```bash
 docker logs -f nginx-proxy
 ```
 	
 - Updating the service
 
-```bash filename="step update" copy
+```bash
 cd ~/quickstart-archaeologist
 git pull
 COMPOSE_PROFILES=service docker compose stop
@@ -169,66 +169,66 @@ COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - Restarting the service
-```bash filename="restart" copy
+```bash
 COMPOSE_PROFILES=service docker compose stop
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
 - If you change the domain after registering
 
-```bash filename="add 1 freebond" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -u
 ```
-```bash filename="exit cli" copy
+```bash
 exit
 ```
 
 - Updating Digging Fee
-```bash filename="update digging fee" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -d 300
 ```
-```bash filename="exit cli" copy
+```bash
 exit
 ```
 300 can be changed to any amount
 
 - Updating Free Bond 
-```bash filename="update freebond" copy
+```bash
 docker compose exec -it archaeologist sh
 cli update -f 100
 ```
-```bash filename="exit cli" copy
+```bash
 exit
 ```
 100 can be changed to any amount
 
 #### CheckProfile
 - Check Profile
-```bash filename="view profile" copy
+```bash
 docker compose exec -it archaeologist sh
 cli view -p
 ```
-```bash filename="exit cli" copy
+```bash
 exit
 ```
 
 - Claim Rewards
-```bash filename="claim reward" copy
+```bash
 docker compose exec -it archaeologist sh
 cli claim
 ```
-```bash filename="exit cli" copy
+```bash
 exit
 ```
 
 - Withdraw Free Bond
-```bash filename="withdraw freebond" copy
+```bash
 docker compose exec -it archaeologist sh
 cli free-bond -w 10
 ```
-```bash filename="exit cli" copy
+```bash
 exit
 ```
 10 can be changed to any amount

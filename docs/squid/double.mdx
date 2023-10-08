@@ -6,13 +6,33 @@ tags:
   - Subsquid
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ### Buat Folder & init
 
-```sh filename="Node.js" copy
+<Tabs>
+<TabItem value="VPS">
+
+
+```bash
 cd ~/proc
 sqd init double-proc -t https://github.com/subsquid-quests/double-chain-squid
 cd double-proc
 ```
+
+</TabItem>
+<TabItem value="CodeSpace">
+
+```bash
+cd ..
+sqd init double-proc -t https://github.com/subsquid-quests/double-chain-squid
+cd double-proc
+```
+
+</TabItem>
+</Tabs>
+
 
 ## Download key
 
@@ -22,24 +42,24 @@ cd double-proc
 
 ## Start Docker
 
-```sh filename="build" copy
+```bash
 docker compose up -d
 ```
 
 ## build
 
-```sh filename="build" copy
+```bash
 npm ci
 sqd build
 ```
 
-```sh filename="migrate" copy
+```bash
 sqd migration:apply
 ```
 
 ### Run
 
-```sh filename="run" copy
+```bash
 sqd run .
 ```
 

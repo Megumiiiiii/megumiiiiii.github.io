@@ -6,13 +6,13 @@ tags:
   - Subsquid
 ---
 
-## Install NodeJS, Docker, git ( Jika Belum Punya)
-
-```sh filename="install docker and more" copy
+## Install NodeJS, Docker
+- Docker Git
+```bash
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
-
-```sh filename="Node.js" copy
+- NodeJS
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
 nvm install 18
@@ -21,13 +21,13 @@ nvm use 18
 
 ### Install Subsquid cli
 
-```sh filename="Node.js" copy
+```bash
 npm install --global @subsquid/cli@latest
 ```
 
 ### Buat Folder & init
 
-```sh filename="Node.js" copy
+```bash
 mkdir proc
 cd proc
 sqd init single-proc -t https://github.com/subsquid-quests/single-chain-squid
@@ -42,24 +42,24 @@ cd single-proc
 
 ## Start Docker
 
-```sh filename="build" copy
+```bash
 docker compose up -d
 ```
 
 ## build
 
-```sh filename="build" copy
+```bash
 npm ci
 sqd build
 ```
 
-```sh filename="migrate" copy
+```bash
 sqd migration:apply
 ```
 
 ### Run
 
-```sh filename="run" copy
+```bash
 sqd run .
 ```
 
@@ -69,7 +69,7 @@ Tunggu sampai di web nya jadi 100%
  - Stop proc menggunakan CTRL+C
  - Stop Docker
 
- ```sh filename="delete" copy
+ ```bash
  docker compose down -v
  ```
 

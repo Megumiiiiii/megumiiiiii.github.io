@@ -27,19 +27,19 @@ Perlu Ubuntu 22.04 atau lebih tinggi
 
 ## Install Dependencies
 
-```sh filename="install" copy
+```bash
 sudo apt install --assume-yes git clang curl libssl-dev llvm libudev-dev make protobuf-compiler
 ```
 
 ### Open port
 
-```sh filename="port" copy
+```bash
 sudo ufw allow ssh; sudo ufw allow 30333
 ```
 
 ## Download Binary & Copy ke /usr/bin
 
-```sh filename="bin" copy
+```bash
 wget -O tangle https://github.com/webb-tools/tangle/releases/download/v0.4.7/tangle-standalone-linux-amd64 && chmod +x tangle
 sudo cp tangle /usr/bin/
 ```
@@ -77,7 +77,7 @@ EOF
 
 ### Enable service
 
-```bash filename="start"
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable tangle
 sudo systemctl start tangle
@@ -85,7 +85,7 @@ sudo systemctl start tangle
 
 ### Check logs
 
-```bash filename="logs"
+```bash
 sudo journalctl -u tangle -f --no-hostname -o cat
 ```
 
@@ -168,11 +168,11 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 
 :::danger
 ⚠️ Jika Anda ingin menghapus ⚠️
-:::
 
-```bash title="DELETE" 
+```bash
 sudo systemctl stop tangle
 sudo systemctl disable tangle
 cd $HOME
 rm -r .tangle
 ```
+:::
