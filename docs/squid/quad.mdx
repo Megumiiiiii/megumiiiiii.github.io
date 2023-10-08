@@ -9,7 +9,7 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### Buat Folder & init
+### Create Folder & init
 
 <Tabs>
 <TabItem value="VPS">
@@ -35,7 +35,7 @@ cd quad-proc
 ## Download key
 
 - https://app.subsquid.io/quests
-- Pindah ke VPS, ke folder `/proc/quad-proc/query-gateway/keys`
+- Move it to VPS, into this folder `/proc/quad-proc/query-gateway/keys`
 - ![SS](/img/squidproc.png)
 
 ## Start Docker
@@ -51,7 +51,7 @@ npm ci
 sqd build
 ```
 
-```sh filename="migrate" copy
+```bash
 sqd migration:apply
 ```
 
@@ -61,10 +61,10 @@ sqd migration:apply
 sqd run .
 ```
 
-Tunggu sampai di web nya jadi 100%
+Wait after 100%
 
-### Setelah selesai
- - Stop proc menggunakan CTRL+C
+### After done
+ - Stop proc use CTRL+C
  - Stop Docker
 
  ```bash
@@ -72,8 +72,8 @@ Tunggu sampai di web nya jadi 100%
  ```
 
 :::tip 
-Hapus **SEMUA** jika sudah mendapat point 
-:::
+Delete **ALL**
+
 
 
 ```bash
@@ -84,5 +84,6 @@ rm -r proc
 ```bash
 docker rmi subsquid/query-gateway:0.1.5
 ```
+:::
 
  ---
