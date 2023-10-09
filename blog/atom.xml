@@ -2,11 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://megumiiiiii.github.io/blog</id>
     <title>Elysian Blog</title>
-    <updated>2023-10-08T08:40:54.000Z</updated>
+    <updated>2023-10-09T18:13:26.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://megumiiiiii.github.io/blog"/>
     <subtitle>Elysian Blog</subtitle>
     <icon>https://megumiiiiii.github.io/img/a.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Star Beat]]></title>
+        <id>https://megumiiiiii.github.io/blog/star-beat</id>
+        <link href="https://megumiiiiii.github.io/blog/star-beat"/>
+        <updated>2023-10-09T18:13:26.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/V9k9uuSQ4a6jubJbNJkkODnUpu815q9bP_hR0GGoh1w" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Heavy Rotation]]></title>
         <id>https://megumiiiiii.github.io/blog/heavy</id>
@@ -60,7 +72,7 @@
         <id>https://megumiiiiii.github.io/blog/marshmary</id>
         <link href="https://megumiiiiii.github.io/blog/marshmary"/>
         <updated>2023-10-03T10:23:29.000Z</updated>
-        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/9xwJo0YyGW4hjBIFGHjsQuJqu0ffU73dYuQWKDag06A" type="video/mp4"></video>]]></content>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/g5GrUOC577qRtccBB1yIu31em8gPbvew129ArUS4X7M" type="video/mp4"></video>]]></content>
         <author>
             <name>Megumii</name>
             <uri>https://github.com/Megumiiiiii</uri>
