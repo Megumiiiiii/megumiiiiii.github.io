@@ -69,6 +69,19 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: '4RYA5VPK00',
+        apiKey: '1dbbef9f28091d78a037fe984b48794d',
+        indexName: 'Elysian',
+        contextualSearch: true,
+        replaceSearchResultPathname: {
+          from: '/docs/', // or as RegExp: /\/docs\//
+          to: '/',
+        },
+        searchParameters: {},
+        searchPagePath: 'search',
+        //... other Algolia params
+      },
       // Replace with your project's social card
       image: 'img/miku.jpg',
       liveCodeBlock: {
@@ -97,11 +110,6 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
-          },
-          {
-            type: 'search',
-            position: 'right',
-            className: 'search',
           },
           {
             href: 'https://megumii.ar-io.dev',
