@@ -2,11 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://megumiiiiii.github.io/blog</id>
     <title>Elysian Blog</title>
-    <updated>2023-10-09T18:13:26.000Z</updated>
+    <updated>2023-10-10T06:58:43.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://megumiiiiii.github.io/blog"/>
     <subtitle>Elysian Blog</subtitle>
     <icon>https://megumiiiiii.github.io/img/a.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Seishun Complex]]></title>
+        <id>https://megumiiiiii.github.io/blog/seishun</id>
+        <link href="https://megumiiiiii.github.io/blog/seishun"/>
+        <updated>2023-10-10T06:58:43.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/QO_ElN_ioqmiIYIJHYQYvJXEWbHpHYilAE0TTBoi_P8" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Yume Chizu]]></title>
+        <id>https://megumiiiiii.github.io/blog/yume</id>
+        <link href="https://megumiiiiii.github.io/blog/yume"/>
+        <updated>2023-10-10T06:58:43.000Z</updated>
+        <content type="html"><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/76J2RtMOav-Ez3S3BnTxVYuD618a5vANhYZ1TT-EoLs" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://github.com/Megumiiiiii</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Star Beat]]></title>
         <id>https://megumiiiiii.github.io/blog/star-beat</id>

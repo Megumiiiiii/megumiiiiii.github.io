@@ -4,10 +4,26 @@
         <title>Elysian Blog</title>
         <link>https://megumiiiiii.github.io/ja/blog</link>
         <description>Elysian Blog</description>
-        <lastBuildDate>Mon, 09 Oct 2023 18:13:26 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 10 Oct 2023 06:58:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ja</language>
+        <item>
+            <title><![CDATA[Seishun Complex]]></title>
+            <link>https://megumiiiiii.github.io/ja/blog/seishun</link>
+            <guid>https://megumiiiiii.github.io/ja/blog/seishun</guid>
+            <pubDate>Tue, 10 Oct 2023 06:58:43 GMT</pubDate>
+            <content:encoded><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/QO_ElN_ioqmiIYIJHYQYvJXEWbHpHYilAE0TTBoi_P8" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
+        </item>
+        <item>
+            <title><![CDATA[Yume Chizu]]></title>
+            <link>https://megumiiiiii.github.io/ja/blog/yume</link>
+            <guid>https://megumiiiiii.github.io/ja/blog/yume</guid>
+            <pubDate>Tue, 10 Oct 2023 06:58:43 GMT</pubDate>
+            <content:encoded><![CDATA[<video width="100%" height="auto" controls="" loop="" src="https://arweave.net/76J2RtMOav-Ez3S3BnTxVYuD618a5vANhYZ1TT-EoLs" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
+        </item>
         <item>
             <title><![CDATA[Star Beat]]></title>
             <link>https://megumiiiiii.github.io/ja/blog/star-beat</link>
