@@ -187,7 +187,7 @@ const config = {
           width: 'auto',
           height: 'auto',
         },
-        copyright: `<a href="https://github.com/Megumiiiiii/megumiiiiii.github.io/blob/main/LICENSE" target="_blank" rel="nofollow">Copyright</a> © ${new Date().getFullYear()} Elysian, Inc. Built with 💜 by the Arweave community.`,
+        copyright: `<a href="https://github.com/Megumiiiiii/megumiiiiii.github.io/blob/main/LICENSE" target="_blank" rel="nofollow">Copyright</a> © ${new Date().getFullYear()} Elysian, Inc. Built with Docusaurus | Powered by Arweave and Github.`,
       },
       prism: {
         theme: darkCode,
