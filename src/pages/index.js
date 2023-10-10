@@ -18,7 +18,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/blog">
-            A Permaweb built on Arweave
+              This is Clickable
           </Link>
         </div>
       </div>

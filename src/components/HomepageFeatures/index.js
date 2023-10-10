@@ -31,7 +31,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        <i>And also deployed on Github too.</i>
+        <i>And deployed on Github too.</i>
       </>
     ),
   },

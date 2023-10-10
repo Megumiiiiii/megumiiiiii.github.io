@@ -7,7 +7,7 @@ const darkCode = require('prism-react-renderer/themes/okaidia');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Elysian',
-  tagline: 'A Permaweb',
+  tagline: 'List all of my Guides and Random Post',
   favicon: 'img/a.png',
 
   // Set the production url of your site here
