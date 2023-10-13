@@ -4,10 +4,17 @@
         <title>Elysian Blog</title>
         <link>https://megumiiiiii.github.io/ja/blog</link>
         <description>Elysian Blog</description>
-        <lastBuildDate>Tue, 10 Oct 2023 06:58:43 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Oct 2023 19:53:57 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ja</language>
+        <item>
+            <title><![CDATA[Highlight]]></title>
+            <link>https://megumiiiiii.github.io/ja/blog/yo</link>
+            <guid>https://megumiiiiii.github.io/ja/blog/yo</guid>
+            <pubDate>Fri, 13 Oct 2023 19:53:57 GMT</pubDate>
+            <content:encoded><![CDATA[<div class="twitter-tweet twitter-tweet-rendered" style="display:flex;max-width:550px;width:100%;margin-top:10px;margin-bottom:10px"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:static;visibility:visible;width:492px;height:419px;display:block;flex-grow:1" title="Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1707010385155432923&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Fmegum%2FOneDrive%2FDocuments%2Findex.html&amp;theme=light&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1707010385155432923"></iframe></div> <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><div class="twitter-tweet twitter-tweet-rendered" style="display:flex;max-width:550px;width:100%;margin-top:10px;margin-bottom:10px"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:static;visibility:visible;width:492px;height:419px;display:block;flex-grow:1" title="Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-1&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1681212232439595009&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Fmegum%2FOneDrive%2FDocuments%2Findex.html&amp;theme=light&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1681212232439595009"></iframe></div> <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:absolute;visibility:hidden;display:none;width:0px;height:0px;padding:0px;border:none" title="Twitter analytics iframe"></iframe>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Seishun Complex]]></title>
             <link>https://megumiiiiii.github.io/ja/blog/seishun</link>
