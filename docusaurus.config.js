@@ -49,12 +49,12 @@ const config = {
         blog: {
           blogTitle: 'Random Post',
           blogDescription: 'Just a random post',
-          blogSidebarTitle: 'Recent posts',
-          postsPerPage: 3,
+          blogSidebarTitle: '.',
+          postsPerPage: 'ALL',
           blogSidebarCount: 'ALL',
           showReadingTime: true,
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+            defaultReadingTime({content, options: {wordsPerMinute: 0.97}}),
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
