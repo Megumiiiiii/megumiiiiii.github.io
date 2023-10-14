@@ -4,10 +4,19 @@
         <title>Elysian Blog</title>
         <link>https://megumiiiiii.github.io/id/blog</link>
         <description>Elysian Blog</description>
-        <lastBuildDate>Fri, 13 Oct 2023 19:53:57 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 14 Oct 2023 11:06:21 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>id</language>
+        <item>
+            <title><![CDATA[Tokiiro Serenade]]></title>
+            <link>https://megumiiiiii.github.io/id/blog/serenade</link>
+            <guid>https://megumiiiiii.github.io/id/blog/serenade</guid>
+            <pubDate>Sat, 14 Oct 2023 11:06:21 GMT</pubDate>
+            <description><![CDATA[Beatmap Info]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/360654#osu/795140" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 138</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/8Wg3SHBx1slnjUxqfj7jA3_Z8LLv_p0tkxtEBg6mFbU" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
+        </item>
         <item>
             <title><![CDATA[Highlight]]></title>
             <link>https://megumiiiiii.github.io/id/blog/yo</link>
@@ -84,7 +93,7 @@
             <guid>https://megumiiiiii.github.io/id/blog/aoharu</guid>
             <pubDate>Tue, 03 Oct 2023 10:23:29 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/801074#osu/1681634" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 150</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/T1ydJjyz4tzFG8Vxs3VD8pqAmoIDcYV91VH0WrFejeU" type="video/mp4"></video>]]></content:encoded>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1935191#osu/4001171" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 180</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/T1ydJjyz4tzFG8Vxs3VD8pqAmoIDcYV91VH0WrFejeU" type="video/mp4"></video>]]></content:encoded>
             <category>Osu!</category>
         </item>
         <item>

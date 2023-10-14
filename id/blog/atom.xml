@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://megumiiiiii.github.io/id/blog</id>
     <title>Elysian Blog</title>
-    <updated>2023-10-13T19:53:57.000Z</updated>
+    <updated>2023-10-14T11:06:21.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://megumiiiiii.github.io/id/blog"/>
     <subtitle>Elysian Blog</subtitle>
     <icon>https://megumiiiiii.github.io/id/img/a.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Tokiiro Serenade]]></title>
+        <id>https://megumiiiiii.github.io/id/blog/serenade</id>
+        <link href="https://megumiiiiii.github.io/id/blog/serenade"/>
+        <updated>2023-10-14T11:06:21.000Z</updated>
+        <summary type="html"><![CDATA[Beatmap Info]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/360654#osu/795140" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 138</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/8Wg3SHBx1slnjUxqfj7jA3_Z8LLv_p0tkxtEBg6mFbU" type="video/mp4"></video>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://megumii.blessingway.xyz</uri>
+        </author>
+        <category label="Osu!" term="Osu!"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Highlight]]></title>
         <id>https://megumiiiiii.github.io/id/blog/yo</id>
@@ -115,7 +128,7 @@
         <link href="https://megumiiiiii.github.io/id/blog/aoharu"/>
         <updated>2023-10-03T10:23:29.000Z</updated>
         <summary type="html"><![CDATA[Beatmap Info]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/801074#osu/1681634" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 150</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/T1ydJjyz4tzFG8Vxs3VD8pqAmoIDcYV91VH0WrFejeU" type="video/mp4"></video>]]></content>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1935191#osu/4001171" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 180</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/T1ydJjyz4tzFG8Vxs3VD8pqAmoIDcYV91VH0WrFejeU" type="video/mp4"></video>]]></content>
         <author>
             <name>Megumii</name>
             <uri>https://megumii.blessingway.xyz</uri>
