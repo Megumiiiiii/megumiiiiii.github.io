@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[6053],{4823:e=>{e.exports=JSON.parse('{"label":"Note","permalink":"/id/docs/tags/note","allTagsPath":"/id/docs/tags","count":1,"items":[{"id":"docker","title":"Docker Notes","description":"Catatan Pengingat untuk command docker yang sering digunakan","permalink":"/id/docs/docker"}]}')}}]);
