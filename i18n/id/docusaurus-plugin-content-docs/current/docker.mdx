@@ -1,0 +1,109 @@
+---
+title: Docker Notes
+sidebar_position: 4
+authors: [megumii]
+tags:
+  - Note
+---
+
+## Catatan Pengingat untuk command `docker` yang sering digunakan
+
+### Install **Docker** dan **Docker Compose**
+
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+### Cek Versi
+
+```bash title="docker"
+docker version
+```
+
+```bash title="docker compose"
+docker compose version
+```
+
+### Cek Container yang aktif
+
+```bash
+docker ps
+```
+
+### Cek semua Container
+
+```bash
+docker ps -a
+```
+
+### Stop Container
+
+```bash
+docker stop NAMA_CONTAINER
+```
+
+### Restart Container
+
+```bash
+docker restart NAMA_CONTAINER
+```
+
+### Menghapus Container
+
+```bash
+docker rm NAMA_CONTAINER
+```
+
+### Cek semua Images
+
+```bash
+docker images -a
+```
+
+### Menghapus Images
+
+```bash
+docker rmi IMAGES_ID
+```
+
+### Cek semua Volume
+
+```bash
+docker volume ls
+```
+
+### Menghapus Images
+
+```bash
+docker volume rm NAMA_VOLUME
+```
+
+### Menghapus semua Container yang tidak aktif
+
+```bash
+docker container prune
+```
+
+### Menghapus semua Images yang tidak digunakan
+
+```bash
+docker image prune -a
+```
+
+### Menghapus semua Volume yang tidak aktif
+
+```bash
+docker volume prune
+```
+
+### Menghapus semua sisa build
+
+```bash
+docker builder prune
+```
+
+### Menghapus semua yang tidak aktif
+
+```
+docker system prune
+```

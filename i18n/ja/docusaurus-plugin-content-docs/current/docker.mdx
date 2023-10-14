@@ -1,0 +1,109 @@
+---
+title: Docker Notes
+sidebar_position: 4
+authors: [megumii]
+tags:
+  - Note
+---
+
+## よく使用される `docker` コマンドのリマインダーノート
+
+### **Docker** と **Docker Compose** のインストール
+
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+### バージョンを確認
+
+```bash title="docker"
+docker version
+```
+
+```bash title="docker compose"
+docker compose version
+```
+
+### アクティブなコンテナを確認
+
+```bash
+docker ps
+```
+
+### すべてのコンテナを確認
+
+```bash
+docker ps -a
+```
+
+### コンテナの停止
+
+```bash
+docker stop コンテナ名
+```
+
+### コンテナの再起動
+
+```bash
+docker restart コンテナ名
+```
+
+### コンテナの削除
+
+```bash
+docker rm コンテナ名
+```
+
+### すべてのイメージを確認
+
+```bash
+docker images -a
+```
+
+### イメージの削除
+
+```bash
+docker rmi イメージID
+```
+
+### すべてのボリュームを確認
+
+```bash
+docker volume ls
+```
+
+### ボリュームの削除
+
+```bash
+docker volume rm ボリューム名
+```
+
+### 非アクティブなコンテナをすべて削除
+
+```bash
+docker container prune
+```
+
+### 未使用のイメージをすべて削除
+
+```bash
+docker image prune -a
+```
+
+### 非アクティブなボリュームをすべて削除
+
+```bash
+docker volume prune
+```
+
+### 残っているすべてのビルドを削除
+
+```bash
+docker builder prune
+```
+
+### 非アクティブなコンポーネントをすべて削除
+
+```
+docker system prune
+```

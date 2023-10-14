@@ -1,0 +1,109 @@
+---
+title: Docker Notes
+sidebar_position: 4
+authors: [megumii]
+tags:
+  - Note
+---
+
+## Reminder Notes for commonly used `docker` commands
+
+### Install **Docker** and **Docker Compose**
+
+```bash
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+### Check Version
+
+```bash title="docker"
+docker version
+```
+
+```bash title="docker compose"
+docker compose version
+```
+
+### Check Active Containers
+
+```bash
+docker ps
+```
+
+### Check All Containers
+
+```bash
+docker ps -a
+```
+
+### Stop Container
+
+```bash
+docker stop CONTAINER_NAME
+```
+
+### Restart Container
+
+```bash
+docker restart CONTAINER_NAME
+```
+
+### Remove Container
+
+```bash
+docker rm CONTAINER_NAME
+```
+
+### Check All Images
+
+```bash
+docker images -a
+```
+
+### Remove Images
+
+```bash
+docker rmi IMAGE_ID
+```
+
+### Check All Volumes
+
+```bash
+docker volume ls
+```
+
+### Remove Volumes
+
+```bash
+docker volume rm VOLUME_NAME
+```
+
+### Remove all Inactive Containers
+
+```bash
+docker container prune
+```
+
+### Remove all Unused Images
+
+```bash
+docker image prune -a
+```
+
+### Remove all Inactive Volumes
+
+```bash
+docker volume prune
+```
+
+### Remove all Remaining Builds
+
+```bash
+docker builder prune
+```
+
+### Remove all Inactive Components
+
+```
+docker system prune
+```
