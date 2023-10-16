@@ -1,0 +1,119 @@
+---
+title: Migrate from Old Contract
+sidebar_position: 2
+authors: [megumii]
+tags:
+  - Arweave
+  - EVM
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Pull Repo
+```bash
+cd quickstart-archaeologist
+git pull
+```
+
+### Set .env
+
+- Remove old `.env` file
+```bash
+rm .env
+```
+
+- Copy sample
+```bash
+cp .env.example .env
+```
+
+- Then fill it
+```bash
+nano .env
+```
+
+:::note
+1. Use wss:// not https://
+2. Generate new Mnemonic for each chain, generate [Here](https://iancoleman.io/bip39/) or anything you want
+:::
+
+- Example
+
+```py title=".env"
+## Key used to encrypt secrets and sign ETH transactions
+## The address associated with this key is your archaeologist identifier
+ETH_PRIVATE_KEY=ugf awfihqwoid132b1231b23
+
+## Domain to use for your archaeologist
+## This domain should be pointed with an A record to your server's IP
+DOMAIN=my.exampledomain.com
+
+## Comma-separated list of chain ids of each network you want to run your service on.
+## Supported Chain IDS:
+## 1 = Mainnet
+## 5 = Goerli
+## 11155111 = Sepolia
+## 84531 = Base Goerli
+## 80001 = Polygon Mumbai
+## example, to run on mainnet, goerli, and sepolia, set:
+## CHAIN_IDS="1,5,11155111"
+CHAIN_IDS=1,137
+
+## Here, you should define:
+## - RPC provider urls.
+## - Mnemonics used to derive keypairs to encrypt sarcophagi.
+##   Generate a new one here - https://iancoleman.io/bip39/ or see README to generate one offline.
+## Uncomment and set, for each network chain id you want to run on, your own
+## private provider URL (infura, alchemy, etc) and a unique mnemonic for that network.
+## ================================================================================================
+MAINNET_PROVIDER_URL=wss://eth-mainnet
+MAINNET_ENCRYPTION_MNEMONIC=never gonna give you up never gonna let you down
+
+# GOERLI_PROVIDER_URL=
+# GOERLI_ENCRYPTION_MNEMONIC=
+
+POLYGON_MUMBAI_PROVIDER_URL=wss://polygon-mainnet
+POLYGON_MUMBAI_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
+```
+
+### Delete Container + Images
+```bash
+COMPOSE_PROFILES=service docker compose down --remove-orphans
+docker image prune
+```
+
+### Pull latest image
+```bash
+COMPOSE_PROFILES=service docker compose pull
+```
+
+### Register
+
+:::info
+If you want to run on multiple chain, you need to registering 1 by 1.
+
+
+<Tabs>
+<TabItem value="Ethereum">
+
+
+```bash
+COMPOSE_PROFILES=register NETWORK=mainnet docker compose run register
+```
+
+</TabItem>
+<TabItem value="Polygon">
+
+```bash
+COMPOSE_PROFILES=register NETWORK=polygon docker compose run register
+```
+
+</TabItem>
+</Tabs>
+:::
+
+## RUN!
+```bash
+COMPOSE_PROFILES=service NETWORK=all docker compose up -d
+```

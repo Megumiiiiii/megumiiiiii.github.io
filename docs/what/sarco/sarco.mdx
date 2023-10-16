@@ -1,6 +1,7 @@
 ---
-title: Sarcophagus
+title: Installation
 sidebar_position: 1
+authors: [megumii]
 tags:
   - Arweave
   - EVM
@@ -14,7 +15,7 @@ tags:
 ![logo](/img/logo2.png)
 
 
-## 最低要件
+## Minimum requirements
 
 | Spec | Size |
 |------|-----|
@@ -26,24 +27,24 @@ tags:
 - Git
 - [Dokcer >= 20.0](https://www.simplilearn.com/tutorials/docker-tutorial/how-to-install-docker-on-ubuntu)
 - [Dokcer compose >= 2.0.0)](https://docs.docker.com/compose/install/linux/#install-the-plugin-manually)
-- サーバーはポート80および443を開いている必要があります
-- ETHウォレット（プライベートキーとニーモニック）
-    > ETHの残高（トランザクションの署名用）
+- Server must have ports 80 and 443 open
+- ETH wallet ( Private Key & Mnemonic )
+    > ETH balance (for signing transactions)
     >
-    > SARCOの残高（考古学者を呪いにバインドするため）
-- RPC URL（Infura、Alchemyなど）
-- サーバーのIPアドレスを指すドメイン名
+    > SARCO balance (for bonding your archaeologist to curses)
+- RPC URL (Infura, Alchemy, etc.)
+- Domain name pointed at your server's IP address
 
-*Goerli（チェーンID = 5）で実行する場合、Goerli ETH + Goerli SARCOが必要です。*
+*If running on Goerli (chain id = 5), then you will need Goerli ETH + Goerli SARCO.*
 
-### DNSレコードの設定
-- ドメイン管理に移動します
-- DNSレコードを追加します。
-- *A* を選択します。
-- 名前とパブリックIPを値として入力します。
-- 保存
-
-## 依存関係のインストール
+### Setup DNS Record
+- Go to the domain management
+- Add DNS Records.
+- Select *A*.
+- Enter your name and your public IP as a value.
+- Save
+  
+## Install Dependencies
 ```bash
 sudo apt update; sudo apt upgrade
 ```
@@ -51,42 +52,44 @@ sudo apt update; sudo apt upgrade
 sudo apt-get update && sudo apt install git -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 ```
 
-## ポートの開放
+## Open Port
 ```bash
 sudo ufw allow ssh; sudo ufw allow 443/tcp; sudo ufw allow 80/tcp; sudo ufw enable
 ```
 
-## リポジトリのクローン
+## Clone Repo
 ```bash
 git clone https://github.com/sarcophagus-org/quickstart-archaeologist
 cd quickstart-archaeologist
 ```
 
-### `.env.sample`を`.env`にコピー
+### Copy `.env.sample` to `.env`
 ```bash
 cp .env.example .env
 ```
 
-### ニーモニックフレーズの生成
+### Generate Mnemonic Pharse
 ```bash
 COMPOSE_PROFILES=seed docker compose run seed-gen
 ```
-**バックアップ**
+**BACKUP**
 
-### 空の`peer-id.json`ファイルを作成
+### Create a blank `peer-id.json` file
+
 ```bash
 touch peer-id.json
 ```
 
-### `.env`ファイルを編集
+### Edit `.env` file
 ```bash
 nano .env
 ```
-データを入力してください
+Fill in your data
+
 
 - ↓ ↓ ↓
 
-```yml title=" .env"
+```yml title=".env"
 ## Key used to encrypt secrets and sign ETH transactions
 ## The address associated with this key is your archaeologist identifier
 ETH_PRIVATE_KEY=gsgstgsthsrthtrhtetneetn211241413r3g24h5h42
@@ -104,17 +107,17 @@ PROVIDER_URL=https://cloudflare-eth.com
 ```
 
 ## $SARCO Token
-- $SARCOを入手するには、Uniswapでそれらを交換できます
-- https://app.uniswap.org/ にアクセスしてください
+- To get $SARCO, you can swap them on Uniswap
+- Go to https://app.uniswap.org/
 - SC Sarco: `0x7697B462A7c4Ff5F8b55BDBC2F4076c2aF9cF51A`
 
-## 登録
+## Register
 ```bash
 COMPOSE_PROFILES=register docker compose run register
 ```
-Y、Enter
+Y, Enter
 
-**次に、名目を入力してください（推奨：DiggingFee 100 - 500、CurseFee 300、FreeBond 1000）**
+**Then enter the nominal ( recommended: DiggingFee 100 - 500, CurseFee 300, and FreeBond  1000 )**
 ```bash title="Ouput"
 =========================================================================================================
 
@@ -134,32 +137,33 @@ address                    0x897015991ABC646a69EC8701B8459aA806aCf70a
 =========================================================================================================
 ```
 
-### ノードの起動
+### Start the node
 ```bash
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
-## 便利なコマンド
 
-- 考古学者サービスのログを確認する
+## Useful Command 
+
+- Check Archaeologist Service's logs
 
 ```bash
 docker logs -f quickstart-archaeologist-archaeologist-1
 ```
 
-- Acme Companionのログを確認する
+- Check Acme Companion's logs
 
 ```bash
-docker logs -f quickstart-archaeologist-acme-companion-1
+docker logs -f  quickstart-archaeologist-acme-companion-1
 ```
 
-- Nginxのログを確認する
+- Check Nginx's logs
 
 ```bash
 docker logs -f nginx-proxy
 ```
-
-- サービスの更新
+	
+- Updating the service
 
 ```bash
 cd ~/quickstart-archaeologist
@@ -169,13 +173,13 @@ COMPOSE_PROFILES=service docker compose pull
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
-- サービスの再起動
+- Restarting the service
 ```bash
 COMPOSE_PROFILES=service docker compose stop
 COMPOSE_PROFILES=service docker compose up -d
 ```
 
-- 登録後にドメインを変更した場合
+- If you change the domain after registering
 
 ```bash
 docker compose exec -it archaeologist sh
@@ -185,7 +189,7 @@ cli update -u
 exit
 ```
 
-- 採掘手数料の更新
+- Updating Digging Fee
 ```bash
 docker compose exec -it archaeologist sh
 cli update -d 300
@@ -193,9 +197,9 @@ cli update -d 300
 ```bash
 exit
 ```
-300は任意の金額に変更できます。
+300 can be changed to any amount
 
-- Free Bondの更新
+- Updating Free Bond 
 ```bash
 docker compose exec -it archaeologist sh
 cli update -f 100
@@ -203,10 +207,10 @@ cli update -f 100
 ```bash
 exit
 ```
-100は任意の金額に変更できます。
+100 can be changed to any amount
 
-#### プロファイルの確認
-- プロファイルの確認
+#### CheckProfile
+- Check Profile
 ```bash
 docker compose exec -it archaeologist sh
 cli view -p
@@ -215,7 +219,7 @@ cli view -p
 exit
 ```
 
-- 報酬の請求
+- Claim Rewards
 ```bash
 docker compose exec -it archaeologist sh
 cli claim
@@ -224,7 +228,7 @@ cli claim
 exit
 ```
 
-- Free Bondの引き出し
+- Withdraw Free Bond
 ```bash
 docker compose exec -it archaeologist sh
 cli free-bond -w 10
@@ -232,33 +236,35 @@ cli free-bond -w 10
 ```bash
 exit
 ```
-10は任意の金額に変更できます。
+10 can be changed to any amount
 
-### トラブルシューティング
+### Troubleshooting
 
-- ドメインのAレコード
+- Domain A Record
 
-あなたのドメインは、考古学者サービスが実行されているサーバーのIPアドレスを指すAレコードを持っている必要があります。
+Your domain must have an A record pointing at the IP address of your server that the archaeologist service is running on.
 https://www.nslookup.io/website-to-ip-lookup
-このツールを使用して、ドメインが正しく指し示されていることを確認してください。
+Use this tool to confirm that your domain is pointed correctly.
 
-- Websocket接続をテストする
+- Test Websocket Connection
 
 https://www.piesocket.com/websocket-tester
-Websocketアドレスを次の形式で入力して、考古学者がWebsocket接続を開けるかどうかをテストします。
+Test that your Archaeologist can have websocket connection open by entering your websocket address in this format:
 ```
-wss://<ドメイン>/p2p/<libp2p peerID>
+wss://<domain>/p2p/<libp2p peerID>
 ```
-ドメインとpeerIDを取得するには、[プロファイルの確認](#checkprofile)を実行してください。
+To get your domain and peerID, run: [Check Profile](#checkprofile)
 
 ---
 
 :::danger
-⚠️ 削除したい場合 ⚠️
+⚠️ If you want to delete ⚠️
 
-```bash
+
+```bash 
 cd ~/quickstart-archaeologist
 COMPOSE_PROFILES=service docker compose down -v
 docker rmi jwilder/nginx-proxy nginxproxy/acme-companion ghcr.io/sarcophagus-org/sarcophagus-v2-archaeologist-service
 ```
+
 :::

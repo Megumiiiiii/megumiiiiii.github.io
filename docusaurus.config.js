@@ -41,6 +41,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
+          breadcrumbs: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -73,6 +74,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/miku.jpg',
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       liveCodeBlock: {
         playgroundPosition: 'bottom',
       },
