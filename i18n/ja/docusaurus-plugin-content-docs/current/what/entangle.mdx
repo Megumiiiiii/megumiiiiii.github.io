@@ -117,6 +117,12 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable entangle.service
 sudo systemctl start entangle.service && sudo journalctl -fu entangle -o cat
+```
+
+- Check logs
+```
+sudo journalctl -fu entangle -o cat
+```
 
 ## Register validator
 
