@@ -1,0 +1,110 @@
+---
+title: Entangle
+sidebar_position: 5
+authors: [megumii]
+tags:
+  - IBC
+---
+
+## Official Links
+
+- [Docs](https://entangle-protocol.gitbook.io/entangle-protocol/validator-guidelines-technical)
+- [Twitter](https://twitter.com/Entanglefi)
+- [Discord](https://discord.gg/entanglefi)
+
+## Minimum Specifications
+
+| Spec | Size |
+|----------|----------|
+| CPU | 2 |
+| RAM | 8 GB |
+| SSD | 200 GB |
+
+## Install Dependencies
+
+```bash
+sudo apt -q update
+sudo apt -qy install curl git jq lz4 build-essential
+sudo apt -qy upgrade
+```
+
+```bash
+sudo rm -rf /usr/local/go
+curl -Ls https://go.dev/dl/go1.21.3.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
+eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+```
+
+## Clone Repo
+
+```bash
+git clone https://github.com/Entangle-Protocol/entangle-blockchain
+cd entangle-blockchain
+```
+
+## Install
+
+```bash
+make install
+```
+
+## Add wallet / recover and export PrivKey
+
+- Add Wallet
+
+```bash title="New Wallet"
+entangled keys add wallet
+```
+
+```bash title="Recover"
+entangled keys add wallet --recover
+```
+
+- Export PrivKey
+
+```bash
+entangled keys unsafe-export-eth-key wallet
+```
+
+- Import the PrivKey to metamask, then request faucet on discord
+
+## Download Snapshot
+
+```bash
+sh get_snapshot.sh
+```
+
+## Run
+
+```bash
+sh run_node.sh
+```
+
+## Register validator
+
+- After Sync
+
+:::caution
+Don't forgert to change YourNAME to your Name
+
+```bash
+entangled tx staking create-validator \
+--amount="5000000000000000000aNGL" \
+--pubkey=$(entangled tendermint show-validator) \
+--moniker="YourNAME" \
+--chain-id=entangle_33133-1 \
+--commission-rate="0.10" \
+--identity " " \
+--website" " \
+--details " " \
+--commission-max-rate="0.20" \
+--commission-max-change-rate="0.01" \
+--min-self-delegation="1" \
+--gas=500000 \
+--gas-prices="10aNGL" \
+--from=wallet
+```
+:::
+
+### Apply
+Apply [Here](https://docs.google.com/forms/d/e/1FAIpQLSdbz39mklMegjmw4G4EBzvBbb-IAEOJrooOUwTesIc6xnDGUA/viewform)
