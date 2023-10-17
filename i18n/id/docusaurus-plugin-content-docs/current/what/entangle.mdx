@@ -74,11 +74,49 @@ entangled keys unsafe-export-eth-key wallet
 sh get_snapshot.sh
 ```
 
+## Setup
+
+- Init
+
+```
+entangled init YourNAME --chain-id entangle_33133-1
+```
+
+- Copy file
+
+```
+cp -f config/genesis.json $HOME/.entangled/config/
+cp -f config/config.toml $HOME/.entangled/config/ 
+```
+
+- Create Service
+
+```
+sudo tee /etc/systemd/system/entangle.service > /dev/null << EOF
+[Unit]
+Description=Entangle Validator
+Requires=network-online.target
+After=network-online.target
+
+
+[Service]
+Type=exec
+User=$USER
+ExecStart=$(which entangled) start
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
 ## Run
 
 ```bash
-sh run_node.sh
-```
+sudo systemctl daemon-reload
+sudo systemctl enable entangle.service
+sudo systemctl start entangle.service && sudo journalctl -fu entangle -o cat
 
 ## Register validator
 
