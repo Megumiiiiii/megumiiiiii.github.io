@@ -180,3 +180,17 @@ entangled tx staking create-validator \
 
 ### Apply
 Apply [Here](https://docs.google.com/forms/d/e/1FAIpQLSdbz39mklMegjmw4G4EBzvBbb-IAEOJrooOUwTesIc6xnDGUA/viewform)
+
+:::danger
+Delete nodes
+```js
+sudo systemctl stop entangle
+sudo systemctl disable entangle
+rm /etc/systemd/system/entangle.service
+sudo systemctl daemon-reload
+cd $HOME
+rm -rf entangle-blockchain
+rm -rf .entangled
+rm -rf $(which entangled)
+```
+:::
