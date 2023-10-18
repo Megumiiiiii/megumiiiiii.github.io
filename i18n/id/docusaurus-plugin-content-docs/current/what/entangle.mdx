@@ -6,6 +6,9 @@ tags:
   - IBC
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 ## Official Links
 
 - [Docs](https://entangle-protocol.gitbook.io/entangle-protocol/validator-guidelines-technical)
@@ -68,18 +71,13 @@ entangled keys unsafe-export-eth-key wallet
 
 - Import the PrivKey to metamask, then request faucet on discord
 
-## Download Snapshot
-
-```bash
-sh get_snapshot.sh
-```
-
 ## Setup
 
 - Init
 
 ```
 entangled init YourNAME --chain-id entangle_33133-1
+entangled config chain-id entangle_33133-1
 ```
 
 - Copy file
@@ -111,6 +109,35 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
+## Download Snapshot
+
+<Tabs>
+<TabItem value="STAVR Snapshot">
+
+- [Source](https://github.com/obajay/nodes-Guides/tree/main/Projects/Entangle#snapshot-testnet-07gb-archive-snapshot)
+
+```bash
+cd $HOME
+sudo systemctl stop entangle
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" ~/.entangled/config/config.toml
+cp $HOME/.entangled/data/priv_validator_state.json $HOME/.entangled/priv_validator_state.json.backup
+rm -rf $HOME/.entangled/data
+curl -o - -L https://entangle.snapshot.stavr.tech/entagle/entagle-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.entangled --strip-components 2
+mv $HOME/.entangled/priv_validator_state.json.backup $HOME/.entangled/data/priv_validator_state.json
+wget -O $HOME/.entangled/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Entangle/addrbook.json"
+sudo systemctl restart entangle
+```
+
+</TabItem>
+<TabItem value="Official Snapshot">
+
+```bash
+sh get_snapshot.sh
+```
+
+</TabItem>
+</Tabs>
+
 ## Run
 
 ```bash
