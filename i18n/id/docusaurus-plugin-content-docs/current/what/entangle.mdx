@@ -117,7 +117,7 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 ## Indexer
 
 ```bash
-indexer="null" && \
+indexer="kv" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.entangled/config/config.toml
 ```
 
