@@ -10,10 +10,18 @@ tags:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### Pull Repo
+### Delete previous Images
+
 ```bash
 cd quickstart-archaeologist
+COMPOSE_PROFILES=service docker compose down --remove-orphans
+docker rmi jwilder/nginx-proxy nginxproxy/acme-companion ghcr.io/sarcophagus-org/sarcophagus-v2-archaeologist-service
+```
+
+### Pull Repo
+```bash
 git pull
+COMPOSE_PROFILES=service docker compose pull
 ```
 
 ### Set .env
@@ -40,10 +48,19 @@ nano .env
 
 - Example
 
+:::tip .env
+`ETH_PRIVATE_KEY` is your Private Key which has ETH/Matic and $SARCO
+
+<Tabs>
+<TabItem value="Both Chain">
+
 ```py title=".env"
 ## Key used to encrypt secrets and sign ETH transactions
 ## The address associated with this key is your archaeologist identifier
-ETH_PRIVATE_KEY=ugfhgghwfihqwoid132b1231b23
+ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
+
+## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
+#GAS_MULTIPLIER=
 
 ## Domain to use for your archaeologist
 ## This domain should be pointed with an A record to your server's IP
@@ -73,20 +90,98 @@ MAINNET_ENCRYPTION_MNEMONIC=never gonna give you up never gonna let you down
 # GOERLI_PROVIDER_URL=
 # GOERLI_ENCRYPTION_MNEMONIC=
 
-POLYGON_PROVIDER_URL=wss://polygon-mainnet
-POLYGON_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
+POLYGON_MAINNET_PROVIDER_URL=wss://polygon-mainnet
+POLYGON_MAINNET_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
 ```
 
-### Delete Container + Images
-```bash
-COMPOSE_PROFILES=service docker compose down --remove-orphans
-docker image prune
-```
+</TabItem>
+<TabItem value="Ethereum Only">
 
-### Pull latest image
-```bash
-COMPOSE_PROFILES=service docker compose pull
+```py title=".env"
+## Key used to encrypt secrets and sign ETH transactions
+## The address associated with this key is your archaeologist identifier
+ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
+
+## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
+#GAS_MULTIPLIER=
+
+## Domain to use for your archaeologist
+## This domain should be pointed with an A record to your server's IP
+DOMAIN=my.exampledomain.com
+
+## Comma-separated list of chain ids of each network you want to run your service on.
+## Supported Chain IDS:
+## 1 = Mainnet
+## 5 = Goerli
+## 11155111 = Sepolia
+## 84531 = Base Goerli
+## 80001 = Polygon Mumbai
+## example, to run on mainnet, goerli, and sepolia, set:
+## CHAIN_IDS="1,5,11155111"
+CHAIN_IDS=1
+
+## Here, you should define:
+## - RPC provider urls.
+## - Mnemonics used to derive keypairs to encrypt sarcophagi.
+##   Generate a new one here - https://iancoleman.io/bip39/ or see README to generate one offline.
+## Uncomment and set, for each network chain id you want to run on, your own
+## private provider URL (infura, alchemy, etc) and a unique mnemonic for that network.
+## ================================================================================================
+MAINNET_PROVIDER_URL=wss://eth-mainnet
+MAINNET_ENCRYPTION_MNEMONIC=never gonna give you up never gonna let you down
+
+# GOERLI_PROVIDER_URL=
+# GOERLI_ENCRYPTION_MNEMONIC=
+
+##POLYGON_MAINNET_PROVIDER_URL=
+##POLYGON_MAINNET_ENCRYPTION_MNEMONIC=
 ```
+</TabItem>
+<TabItem value="Polygon Only">
+
+```py title=".env"
+## Key used to encrypt secrets and sign ETH transactions
+## The address associated with this key is your archaeologist identifier
+ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
+
+## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
+#GAS_MULTIPLIER=
+
+## Domain to use for your archaeologist
+## This domain should be pointed with an A record to your server's IP
+DOMAIN=my.exampledomain.com
+
+## Comma-separated list of chain ids of each network you want to run your service on.
+## Supported Chain IDS:
+## 1 = Mainnet
+## 5 = Goerli
+## 11155111 = Sepolia
+## 84531 = Base Goerli
+## 80001 = Polygon Mumbai
+## example, to run on mainnet, goerli, and sepolia, set:
+## CHAIN_IDS="1,5,11155111"
+CHAIN_IDS=137
+
+## Here, you should define:
+## - RPC provider urls.
+## - Mnemonics used to derive keypairs to encrypt sarcophagi.
+##   Generate a new one here - https://iancoleman.io/bip39/ or see README to generate one offline.
+## Uncomment and set, for each network chain id you want to run on, your own
+## private provider URL (infura, alchemy, etc) and a unique mnemonic for that network.
+## ================================================================================================
+##MAINNET_PROVIDER_URL=
+##MAINNET_ENCRYPTION_MNEMONIC=
+
+# GOERLI_PROVIDER_URL=
+# GOERLI_ENCRYPTION_MNEMONIC=
+
+POLYGON_MAINNET_PROVIDER_URL=wss://polygon-mainnet
+POLYGON_MAINNET_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
+```
+</TabItem>
+</Tabs>
+
+:::
 
 ### Register
 
@@ -117,3 +212,15 @@ COMPOSE_PROFILES=register NETWORK=polygonMainnet docker compose run register
 ```bash
 COMPOSE_PROFILES=service NETWORK=all docker compose up -d
 ```
+
+### Then update profile for Ethereum
+
+```bash
+COMPOSE_PROFILES=service NETWORK=mainnet docker compose exec -it archaeologist sh
+cli update -u --network mainnet
+```
+
+```bash
+exit
+```
+
