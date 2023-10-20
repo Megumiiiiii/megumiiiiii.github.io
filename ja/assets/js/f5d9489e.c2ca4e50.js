@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[1787],{8247:a=>{a.exports=JSON.parse('{"label":"IBC","permalink":"/ja/docs/tags/ibc","allTagsPath":"/ja/docs/tags","count":1,"items":[{"id":"what/entangle","title":"Entangle","description":"Official Links","permalink":"/ja/docs/what/entangle"}]}')}}]);
