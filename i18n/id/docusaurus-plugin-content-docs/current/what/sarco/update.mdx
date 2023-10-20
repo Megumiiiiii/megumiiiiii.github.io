@@ -1,5 +1,5 @@
 ---
-title: Migrate from Old Contract
+title: Migration
 sidebar_position: 2
 authors: [megumii]
 tags:
@@ -48,8 +48,9 @@ nano .env
 
 - Contoh
 
-:::tip .env
-`ETH_PRIVATE_KEY` is your Private Key which has ETH/Matic and $SARCO
+:::info .env
+1. `ETH_PRIVATE_KEY` is your Private Key which has ETH/Matic and $SARCO
+2. `NOTIFICATION_WEBHOOK_URL` is your discord webhook url. You can follow the instructions here to set up a discord webhook url: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 
 <Tabs>
 <TabItem value="Both Chain">
@@ -104,6 +105,7 @@ ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
 
 ## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
 #GAS_MULTIPLIER=
+NOTIFICATION_WEBHOOK_URL=https://discord.com/api/webhooks/hafkakakjajbasbkadsbaksdjbakfbakfaf
 
 ## Domain to use for your archaeologist
 ## This domain should be pointed with an A record to your server's IP
@@ -146,6 +148,7 @@ ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
 
 ## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
 #GAS_MULTIPLIER=
+NOTIFICATION_WEBHOOK_URL=https://discord.com/api/webhooks/hafkakakjajbasbkadsbaksdjbakfbakfaf
 
 ## Domain to use for your archaeologist
 ## This domain should be pointed with an A record to your server's IP
@@ -213,7 +216,7 @@ COMPOSE_PROFILES=register NETWORK=polygonMainnet docker compose run register
 COMPOSE_PROFILES=service NETWORK=all docker compose up -d
 ```
 
-### Lalu update profile Ethereum
+#### Lalu update profile Ethereum
 
 ```bash
 COMPOSE_PROFILES=service NETWORK=mainnet docker compose exec -it archaeologist sh

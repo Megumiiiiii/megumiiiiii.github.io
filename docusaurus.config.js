@@ -2,7 +2,9 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 // const lightCode = require('prism-react-renderer/themes/vsLight');
-const darkCode = require('prism-react-renderer/themes/okaidia');
+// const darkA = require('prism-react-renderer/themes/vsDark');
+const dark = require('prism-react-renderer/themes/nightOwl');
+// const darkC = require('prism-react-renderer/themes/duotoneDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -29,7 +31,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'id', 'ja'],
+    locales: ['en', 'id'],
   },
 
   presets: [
@@ -74,6 +76,10 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/miku.jpg',
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 3,
+      },
       docs: {
         sidebar: {
           hideable: true,
@@ -99,7 +105,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'What',
           },
           {to: '/blog', label: 'Random Post', position: 'left'},
           {
@@ -193,7 +199,7 @@ const config = {
         copyright: `<a href="https://github.com/Megumiiiiii/megumiiiiii.github.io/blob/main/LICENSE" target="_blank" rel="nofollow">Copyright</a> © ${new Date().getFullYear()} Elysian, Inc. Built with Docusaurus | Powered by Arweave and Github.`,
       },
       prism: {
-        theme: darkCode,
+        theme: dark,
         magicComments: [
           {
             className: 'theme-code-block-highlighted-line',

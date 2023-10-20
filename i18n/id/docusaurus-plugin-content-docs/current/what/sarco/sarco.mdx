@@ -90,6 +90,10 @@ Isi data Anda
 
 - ↓ ↓ ↓
 
+:::info .env
+1. `ETH_PRIVATE_KEY` is your Private Key which has ETH/Matic and $SARCO
+2. `NOTIFICATION_WEBHOOK_URL` is your discord webhook url. You can follow the instructions here to set up a discord webhook url: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+
 <Tabs>
 <TabItem value="Both Chain">
 
@@ -100,6 +104,7 @@ ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
 
 ## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
 #GAS_MULTIPLIER=
+NOTIFICATION_WEBHOOK_URL=https://discord.com/api/webhooks/hafkakakjajbasbkadsbaksdjbakfbakfaf
 
 ## Domain to use for your archaeologist
 ## This domain should be pointed with an A record to your server's IP
@@ -143,6 +148,7 @@ ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
 
 ## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
 #GAS_MULTIPLIER=
+NOTIFICATION_WEBHOOK_URL=https://discord.com/api/webhooks/hafkakakjajbasbkadsbaksdjbakfbakfaf
 
 ## Domain to use for your archaeologist
 ## This domain should be pointed with an A record to your server's IP
@@ -185,6 +191,7 @@ ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
 
 ## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
 #GAS_MULTIPLIER=
+NOTIFICATION_WEBHOOK_URL=https://discord.com/api/webhooks/hafkakakjajbasbkadsbaksdjbakfbakfaf
 
 ## Domain to use for your archaeologist
 ## This domain should be pointed with an A record to your server's IP
@@ -219,6 +226,8 @@ POLYGON_MAINNET_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
 ```
 </TabItem>
 </Tabs>
+
+:::
 
 ## $SARCO Token
 - Untuk mendapatkan $SARCO, Anda dapat menukarkannya di Uniswap
@@ -276,7 +285,7 @@ address                    0x897015991ABC646a69EC8701B8459aA806aCf70a
 
 ### Memulai Node
 ```bash
-COMPOSE_PROFILES=service docker compose up -d
+COMPOSE_PROFILES=service NETWORK=all docker compose up -d
 ```
 
 ## Perintah Berguna 
@@ -304,75 +313,213 @@ docker logs -f nginx-proxy
 ```bash
 cd ~/quickstart-archaeologist
 git pull
-COMPOSE_PROFILES=service docker compose stop
-COMPOSE_PROFILES=service docker compose pull
-COMPOSE_PROFILES=service docker compose up -d
+COMPOSE_PROFILES=service NETWORK=all docker compose stop
+COMPOSE_PROFILES=service NETWORK=all docker compose pull
+COMPOSE_PROFILES=service NETWORK=all docker compose up -d
 ```
 
 - Memulai ulang layanan
 ```bash
-COMPOSE_PROFILES=service docker compose stop
-COMPOSE_PROFILES=service docker compose up -d
+COMPOSE_PROFILES=service NETWORK=all docker compose stop
+COMPOSE_PROFILES=service NETWORK=all docker compose up -d
 ```
 
 - Jika Anda mengubah domain setelah mendaftar
 
+<Tabs>
+<TabItem value="Ethereum">
+
 ```bash
-docker compose exec -it archaeologist sh
-cli update -u
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -u -n mainnet
 ```
 ```bash
 exit
 ```
 
-- Memperbarui Biaya Penambangan
+</TabItem>
+<TabItem value="Polygon">
+
 ```bash
-docker compose exec -it archaeologist sh
-cli update -d 300
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -u -n polygonMainnet
+```
+```bash
+exit
+```
+
+</TabItem>
+</Tabs>
+
+- Memperbarui Biaya Penambangan
+
+<Tabs>
+<TabItem value="Ethereum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -d 300 -n mainnet
 ```
 ```bash
 exit
 ```
 300 dapat diubah menjadi jumlah yang lain
 
-- Memperbarui Free Bond 
+</TabItem>
+<TabItem value="Polygon">
+
 ```bash
-docker compose exec -it archaeologist sh
-cli update -f 100
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -d 300 -n polygonMainnet
+```
+```bash
+exit
+```
+300 dapat diubah menjadi jumlah yang lain
+
+</TabItem>
+</Tabs>
+
+
+- Memperbarui Free Bond 
+<Tabs>
+<TabItem value="Ethereum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -f 100 -n mainnet
 ```
 ```bash
 exit
 ```
 100 dapat diubah menjadi jumlah yang lain
 
+</TabItem>
+<TabItem value="Polygon">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -f 100 -n polygonMainnet
+```
+```bash
+exit
+```
+100 dapat diubah menjadi jumlah yang lain
+
+</TabItem>
+</Tabs>
+
+
 #### Cek Profil
-- Cek Profil
+- Check Profile
+
+<Tabs>
+<TabItem value="Ethereum">
+
 ```bash
-docker compose exec -it archaeologist sh
-cli view -p
+NETWORK=all docker compose exec -it archaeologist sh
+cli view -p -n mainnet
 ```
 ```bash
 exit
 ```
 
-- Klaim Hadiah
+</TabItem>
+<TabItem value="Polygon">
+
 ```bash
-docker compose exec -it archaeologist sh
-cli claim
+NETWORK=all docker compose exec -it archaeologist sh
+cli view -p -n polygonMainnet
 ```
 ```bash
 exit
 ```
 
-- Tarik Free Bond
+</TabItem>
+</Tabs>
+
+- Claim Rewards
+
+<Tabs>
+<TabItem value="Ethereum">
+
 ```bash
-docker compose exec -it archaeologist sh
-cli free-bond -w 10
+NETWORK=all docker compose exec -it archaeologist sh
+cli claim -n mainnet
 ```
 ```bash
 exit
 ```
-10 dapat diubah menjadi jumlah yang lain
+
+</TabItem>
+<TabItem value="Polygon">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli claim -n polygonMainnet
+```
+```bash
+exit
+```
+
+</TabItem>
+</Tabs>
+
+- Withdraw Free Bond
+
+<Tabs>
+<TabItem value="Ethereum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli free-bond -w 10 -n mainnet
+```
+```bash
+exit
+```
+10 bisa dubah berapapun
+
+</TabItem>
+<TabItem value="Polygon">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli free-bond -w 10 -n polygonMainnet
+```
+```bash
+exit
+```
+10 bisa dubah berapapun
+
+</TabItem>
+</Tabs>
+
+- any other
+
+<Tabs>
+<TabItem value="Ethereum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli help -n mainnet
+```
+```bash
+exit
+```
+
+</TabItem>
+<TabItem value="Polygon">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli help -n polygonMainnet
+```
+```bash
+exit
+```
+
+</TabItem>
+</Tabs>
 
 ### Mengatasi Masalah
 
