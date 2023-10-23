@@ -1,0 +1,79 @@
+---
+title: Snapshot
+sidebar_position: 5
+authors: [megumii]
+tags:
+  - Subsquid
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Install Subsquid cli
+
+```bash
+npm install --global @subsquid/cli@latest
+```
+
+### Create Folder & init
+
+```bash
+mkdir proc
+cd proc
+sqd init snapshot -t https://github.com/subsquid-quests/snapshot-squid
+cd snapshot
+```
+
+## Download key
+
+<Tabs>
+<TabItem value="VPS">
+
+- https://app.subsquid.io/quests
+- Move it to VPS, into this folder `/proc/single-proc/query-gateway/keys`
+- ![SS](/img/squidproc.png)
+
+</TabItem>
+<TabItem value="CodeSpace">
+
+- https://app.subsquid.io/quests
+- Upload to CodeSpace, into this folder `/proc/snapshot/query-gateway/keys`
+- ![SS](/img/snap.png)
+
+</TabItem>
+</Tabs>
+
+## Start Docker
+
+```bash
+docker compose up -d
+```
+
+## build
+
+```bash
+npm ci
+sqd build
+```
+
+```bash
+sqd migration:apply
+```
+
+### Run
+
+```bash
+sqd run .
+```
+
+Wait after 100%
+
+### After done
+ - Stop proc use CTRL+C
+ - Stop Docker
+
+ ```bash
+ docker compose down -v
+ ```
+
+ ---
