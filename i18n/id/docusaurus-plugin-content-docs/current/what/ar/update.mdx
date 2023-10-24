@@ -1,0 +1,62 @@
+---
+title: Update
+sidebar_position: 2
+authors: [megumii]
+tags:
+  - Arweave
+---
+
+## Hapus Container + Images
+
+```
+cd ~/ar-io-node
+sudo docker compose down -v
+```
+
+```bash
+sudo docker image prune -a
+```
+
+```bash
+sudo docker builder prune
+```
+
+## Pull
+
+```bash
+git pull
+```
+
+## Buat `.json` baru
+
+- Bisa menggunakan wallet yang sama dengan `AR_IO_WALLET=`, namun direkomendasikan menggunakan wallet baru
+
+```
+nano wallets/YourWalletAddress.json
+```
+
+- Contoh `nano wallets/a9RqasdbajdJANbhZaDbSkPaq9B8aEchPY_BgIB0Gck.json`
+- Lalu isi dengan Wallet Address yang kamu gunakan untuk nama file.
+```
+{YourWalletAddress}
+```
+
+## Edit `.env`
+
+```
+nano .env
+```
+
+- Tambahkan 2 baris ini
+
+```
+RUN_OBSERVER=true
+OBSERVER_WALLET=YourWalletAddress
+```
+
+## Then, UP!
+
+```bash
+docker compose up -d --build
+```
+
