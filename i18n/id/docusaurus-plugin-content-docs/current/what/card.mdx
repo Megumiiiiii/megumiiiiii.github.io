@@ -1,0 +1,230 @@
+---
+title: Card Chain
+sidebar_position: 6
+authors: [megumii]
+tags:
+  - IBC
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Official Links
+
+- [Twitter](https://twitter.com/CrowdControlNet)
+- [Discord](https://discord.gg/59PBBtXWGW)
+- [Source Guide](https://github.com/obajay)
+
+## Minimum Specifications
+
+| Spec | Size |
+|----------|----------|
+| CPU | 2 |
+| RAM | 8 GB |
+| SSD | 200 GB |
+
+## Install Dependencies
+
+```bash
+sudo apt -q update
+sudo apt -qy install curl git jq lz4 build-essential
+sudo apt -qy upgrade
+```
+
+```bash
+sudo rm -rf /usr/local/go
+curl -Ls https://go.dev/dl/go1.21.3.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
+eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
+```
+
+## Build
+
+```bash
+git clone https://github.com/DecentralCardGame/Cardchain
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.10.0/Cardchaind
+chmod +x Cardchaind
+mv $HOME/Cardchaind /usr/local/bin
+```
+
+### Add wallet / recover 
+
+<Tabs>
+<TabItem value="New Wallet">
+
+```bash
+Cardchaind keys add wallet
+```
+
+</TabItem>
+<TabItem value="Recover Wallet">
+
+```bash
+Cardchaind keys add wallet --recover
+```
+
+</TabItem>
+</Tabs>
+
+
+## Setup
+
+- Init
+
+:::caution edit YourNAME
+
+```
+Cardchaind config node tcp://localhost:13957
+Cardchaind init YourNAME --chain-id cardtestnet-5
+Cardchaind config chain-id cardtestnet-5
+wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
+```
+
+:::
+
+- Download Addrbook by [STAVR](https://github.com/obajay)
+
+```bash
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
+```
+
+### Set minimum gas etc.
+
+```bash
+sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
+external_address=$(wget -qO- eth0.me)
+sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
+peers="109adfd1645cc1289bd2753277d6c5c2a9112b76@45.136.28.158:26656, 447a7af037dc85213d98ef3f4dc07d05191f52e7@202.61.225.157:26656"
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
+seeds=""
+sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
+```
+
+### Prunning
+
+```bash
+pruning="custom" && \
+pruning_keep_recent="1000" && \
+pruning_keep_every="0" && \
+pruning_interval="10" && \
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.Cardchain/config/app.toml && \
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.Cardchain/config/app.toml && \
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.Cardchain/config/app.toml && \
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.Cardchain/config/app.toml
+```
+
+### Indexer
+
+```bash
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.Cardchain/config/config.toml
+```
+
+### Custom Port 
+
+```bash
+sed -i -e "s%^proxy_app = \"tcp://127.0.0.1:26658\"%proxy_app = \"tcp://127.0.0.1:13958\"%; s%^laddr = \"tcp://127.0.0.1:26657\"%laddr = \"tcp://127.0.0.1:13957\"%; s%^pprof_laddr = \"localhost:6060\"%pprof_laddr = \"localhost:13960\"%; s%^laddr = \"tcp://0.0.0.0:26656\"%laddr = \"tcp://0.0.0.0:13956\"%; s%^prometheus_listen_addr = \":26660\"%prometheus_listen_addr = \":13966\"%" $HOME/.Cardchain/config/config.toml
+sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:13917\"%; s%^address = \":8080\"%address = \":13980\"%; s%^address = \"localhost:9090\"%address = \"0.0.0.0:13990\"%; s%^address = \"localhost:9091\"%address = \"0.0.0.0:13991\"%; s%:8545%:13945%; s%:8546%:13946%; s%:6065%:13965%" $HOME/.Cardchain/config/app.toml
+```
+
+## Create Service
+
+```
+sudo tee <<EOF >/dev/null /etc/systemd/system/Cardchaind.service
+[Unit]
+Description=Cardchain Daemon
+After=network-online.target
+[Service]
+User=$USER
+ExecStart=$(which Cardchaind) start
+Restart=always
+RestartSec=10
+LimitNOFILE=65535
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+### State Sync by [STAVR](https://github.com/obajay/nodes-Guides/tree/main/Projects/Crowd_Control#statesync)
+
+```bash
+SNAP_RPC=http://crowd.rpc.t.stavr.tech:21207
+PEERS="ec585d7fb38b67619dcb79aad90722f0eaf0faa3@crowd.peer.stavr.tech:21206"
+sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.Cardchain/config/config.toml
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height) \
+&& BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)) \
+&& TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
+echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.Cardchain/config/config.toml; \
+Cardchaind tendermint unsafe-reset-all
+wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
+```
+
+### Run
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable Cardchaind
+sudo systemctl restart Cardchaind && sudo journalctl -u Cardchaind -f -o cat
+```
+
+#### Check logs
+
+```
+sudo journalctl -fu Cardchaind -o cat
+```
+
+#### Check syncInfo
+
+```
+Cardchaind status 2>&1 | jq .SyncInfo
+```
+
+### STAVR Explorer
+
+- [Explorer](https://explorer.stavr.tech/CARDCHAIN)
+
+## faucet
+
+- [Here](https://crowdcontrol.network/)
+- Connect wallet, complete capthca, done
+
+## Register validator
+
+- After Sync
+
+:::caution change YourNAME
+Jangan lupa edi YourNAME ke Nama mu
+
+```bash
+Cardchaind tx staking create-validator \
+--amount 1000000ubpf \
+--from wallet \
+--commission-max-change-rate "0.2" \
+--commission-max-rate "1" \
+--commission-rate "0.1" \
+--min-self-delegation "1" \
+--details="" \
+--identity="" \
+--pubkey  $(Cardchaind tendermint show-validator) \
+--moniker YourNAME \
+--fees 300ubpf \
+--chain-id cardtestnet-5 -y
+```
+:::
+
+### Delete
+
+:::danger Delete nodes
+⚠️ Jika ingin menghapus node ⚠️
+```js
+cd $HOME
+sudo systemctl stop Cardchaind
+sudo rm /etc/systemd/system/Cardchaind.service
+sudo rm -rf $HOME/.Cardchain/
+sudo rm -rf Cardchain
+sudo rm -rf $(which Cardchaind)
+```
+:::
