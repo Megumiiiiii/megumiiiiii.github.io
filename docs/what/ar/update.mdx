@@ -52,3 +52,28 @@ OBSERVER_WALLET=YourWalletAddress
 docker compose up -d --build
 ```
 
+## Update Gateway
+
+- Pull
+
+```
+cd ~/testnet-contract
+git pull
+```
+
+- Edit file
+
+```
+nano tools/update-gateway-settings.ts
+```
+
+edit `label`, `fqdn`, `observerWallet`
+
+![join](/img/obser.png)
+
+- Update
+
+```ts
+yarn ts-node tools/update-gateway-settings.ts
+```
+
