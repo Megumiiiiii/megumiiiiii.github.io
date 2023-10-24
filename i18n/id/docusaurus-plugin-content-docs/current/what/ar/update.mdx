@@ -27,19 +27,11 @@ sudo docker builder prune
 git pull
 ```
 
-## Buat `.json` baru
+## Import keyfile `.json` baru
 
-- Bisa menggunakan wallet yang sama dengan `AR_IO_WALLET=`, namun direkomendasikan menggunakan wallet baru
-
-```
-nano wallets/YourWalletAddress.json
-```
-
-- Contoh `nano wallets/a9RqasdbajdJANbhZaDbSkPaq9B8aEchPY_BgIB0Gck.json`
-- Lalu isi dengan Wallet Address yang kamu gunakan untuk nama file.
-```
-{YourWalletAddress}
-```
+- Bisa menggunakan `keyfile` yang sama untuk `join-network`, namun direkomendasikan menggunakan wallet baru. Jadi, generate wallet baru di [ARConnect](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap) dan import ke VPS
+- Send sedikit $AR ke wallet baru tadi
+- Pindahkan keyfile `.json` ke directory `~/ar-io-node/wallets` dan berinama `walletAddress.json`. Contoh `xFK3NdQ1utoPQ2tXMgNKFn9oZGw0Tl4ihNo7JY5Ldnk.json`
 
 ## Edit `.env`
 

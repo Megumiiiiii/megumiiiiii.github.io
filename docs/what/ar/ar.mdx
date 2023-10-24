@@ -78,7 +78,7 @@ cd ~/ar-io-node
 nano .env
 ```
 
-- Fill it with the following, replacing `domainmu.zzz` with your domain, `Password123` with your password, and `Address` with your wallet address from [ARConnect](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap)
+- Fill it with the following, replacing `domainmu.zzz` with your domain, `Password123` with your password, and `Address` with your wallet address from [ARConnect](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap), please generate 2 wallet
 
 ```tsx title=".env" 
 GRAPHQL_HOST=arweave.net
@@ -87,6 +87,8 @@ START_HEIGHT=1000000
 ARNS_ROOT_HOST=domainmu.zzz
 ADMIN_API_KEY=Password123
 AR_IO_WALLET=Address
+RUN_OBSERVER=true
+OBSERVER_WALLET=Address
 ```
 
 - Save it with `Ctrl+X`, `Y`, `Enter`
@@ -180,6 +182,11 @@ sudo nginx -t
 
 **OK!**
 
+## Import keyfile `.json`
+
+- Export the keyfile from ArConnect, use the `keyfile` used for `OBSERVER_WALLET` and import it to the VPS in the `~/ar-io-node/wallets` directory with the name `WalletAddress.json`. For example, `xFK3NdQ1utoPQ2tXMgNKFn9oZGw0Tl4ihNo7JY5Ldnk.json`.
+- Make sure it contains the $AR.
+
 ## Set Up Node
 
 ```bash
@@ -199,33 +206,6 @@ http://IP.VPS.MU:3000/4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M
 
 - If you see something like this, CONGRATULATIONS!
 - ![4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M](https://arweave.net/4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M)
-
-## If There's a Future Update
-
-### Stop the Node
-
-```bash
-cd ~/ar-io-node
-docker compose down
-```
-
-### Update the Repo
-
-```bash
-git pull
-```
-
-### Update the Image
-
-```bash
-sudo docker compose pull
-```
-
-### Re-build
-
-```bash
-sudo docker compose up -d --build
-```
 
 ## Request Test Tokens on Discord
 - Join [Discord](https://discord.gg/Y3DJuFb3qE)

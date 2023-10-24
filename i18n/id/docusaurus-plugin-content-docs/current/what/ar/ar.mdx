@@ -78,7 +78,7 @@ cd ~/ar-io-node
 nano .env
 ```
 
-- isi dengan ini, `domainmu.zzz` ganti dengan domainmu, `Password123` ganti dengan passwordmu, bebassss, `Address` ganti dengan wallet addressmu dari [ARConnect](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap)
+- isi dengan ini, `domainmu.zzz` ganti dengan domainmu, `Password123` ganti dengan passwordmu, bebassss, `Address` ganti dengan wallet addressmu dari [ARConnect](https://chrome.google.com/webstore/detail/arconnect/einnioafmpimabjcddiinlhmijaionap), silahkan generate 2 wallet
 
 ```ts title=".env"
 GRAPHQL_HOST=arweave.net
@@ -87,6 +87,8 @@ START_HEIGHT=1000000
 ARNS_ROOT_HOST=domainmu.zzz
 ADMIN_API_KEY=Password123
 AR_IO_WALLET=Address
+RUN_OBSERVER=true
+OBSERVER_WALLET=Address
 ```
 
 - Simpan, `CTRl+X` `Y` `Enter`
@@ -183,6 +185,10 @@ sudo nginx -t
 
 **OK!!**
 
+## Import keyfile `.json`
+
+- Export keyfile di ArConnect, pakai `keyfile` yang digunakan untuk `OBSERVER_WALLET` import ke VPS ke directory `~/ar-io-node/wallets` dan berinama `walletAddress.json`. Contoh `xFK3NdQ1utoPQ2tXMgNKFn9oZGw0Tl4ihNo7JY5Ldnk.json`
+- Pastikan ada $AR nya
 
 ## Setup Node
 
@@ -203,33 +209,6 @@ http://IP.VPS.MU:3000/4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M
 
 - Jika ada orang ini, SELAMAT!
 - ![4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M](https://arweave.net/4GnL_uFIAcuiE_w4nPWvg_Z2eHkLnnnNDufPkNwab5M)
-
-## Jika ada update mendatang
-
-### Stop node
-
-```bash
-cd ~/ar-io-node
-sudo docker compose down
-```
-
-### Update repo
-
-```bash
-git pull
-```
-
-### Update image
-
-```bash
-sudo docker compose pull
-```
-
-### Re-build
-
-```bash
-sudo docker compose up -d --build
-```
 
 ## Request Test Token di discord
 - Join [Discord](https://discord.gg/Y3DJuFb3qE)
