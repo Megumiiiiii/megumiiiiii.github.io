@@ -54,11 +54,25 @@ docker compose up -d --build
 
 ## Update Gateway
 
-- Pull
+- Move key
 
 ```
+cd $HOME
+mv $HOME/testnet-contract/key.json $HOME
+```
+
+- Delete directory
+
+```
+rm -r testnet-contract
+```
+- Clone
+
+```
+git clone https://github.com/ar-io/testnet-contract.git
+mv key.json $HOME/testnet-contract/
 cd ~/testnet-contract
-git pull
+yarn
 ```
 
 - Edit file
