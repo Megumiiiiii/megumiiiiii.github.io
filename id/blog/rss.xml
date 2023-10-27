@@ -4,10 +4,19 @@
         <title>Elysian Blog</title>
         <link>https://megumiiiiii.github.io/id/blog</link>
         <description>Elysian Blog</description>
-        <lastBuildDate>Sat, 14 Oct 2023 11:06:21 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Oct 2023 18:35:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>id</language>
+        <item>
+            <title><![CDATA[Quaver]]></title>
+            <link>https://megumiiiiii.github.io/id/blog/quaver</link>
+            <guid>https://megumiiiiii.github.io/id/blog/quaver</guid>
+            <pubDate>Fri, 27 Oct 2023 18:35:13 GMT</pubDate>
+            <description><![CDATA[Beatmap Info]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/873811#osu/1846226" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 186</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/IussrJnOeQ657kp0Dj5fXWS1wakaRg8ZCSpHUxVRF7c" type="video/mp4"></video>]]></content:encoded>
+            <category>Osu!</category>
+        </item>
         <item>
             <title><![CDATA[Tokiiro Serenade]]></title>
             <link>https://megumiiiiii.github.io/id/blog/serenade</link>
