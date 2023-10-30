@@ -1,0 +1,89 @@
+---
+title: Frame
+sidebar_position: 7
+tags:
+  - EVM 
+  - Non-Incentive
+---
+
+## Official Links
+
+- [Docs](https://www.docs.frame.xyz/validator)
+- [Twitter](https://x.com/frame_xyz)
+- [Discord](https://discord.gg/framexyz)
+
+## Minimum Specifications
+
+| Spec | Size |
+|----------|----------|
+| CPU | 2 |
+| RAM |  8 GB |
+| SSD | 50 GB |
+
+## Install Docker and More
+
+```bash 
+sudo apt update; sudo apt upgrade -y
+```
+
+```bash 
+sudo apt-get update && sudo apt install git build-essential -y && sudo apt install apt-transport-https ca-certificates curl software-properties-common -y && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" && sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+```
+
+## Create directory
+
+```bash
+mkdir frame
+cd frame
+mkdir data
+```
+
+## Clone repository
+
+```bash
+git clone https://github.com/frame-network/node-config.git
+```
+
+## Edit `testnet.json`
+
+```bash 
+nano node-config/testnet.json
+```
+
+- find `<SEPOLIA_RPC_HERE>` and replace with your Sepolia RPC, you can find [HERE](https://chainlist.org/chain/11155111)
+- Save
+
+## Run
+
+```bash
+docker run -d \
+--name frame \
+--rm \
+-it \
+-v $HOME/frame/node-data:/home/user/.frame \
+-v $HOME/frame/node-config/testnet.json:/home/user/testnet.json public.ecr.aws/o8e2k8j7/nitro-node:frame \
+--conf.file testnet.json
+```
+
+### Check logs
+
+```bash
+docker logs -f frame
+```
+
+### Troubleshooting
+
+1. rpc response
+    - If you facing an error like this
+```
+INFO [10-30|21:29:15.318] rpc response                             method=eth_getLogs logId=2 err="400 Bad Request: {\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":{\"method\":\"'eth_getLogs' is unavailable on our public API! Head over to https://bit.ly/gettinganodewithblast for more information.\"}}}" result=null attempt=0 args="[{\"address\":[\"0x62ca56aa7a475d4a9170855fd184ee60454f96a8\"],\"fromBlock\":\"0x4504c7\",\"toBlock\":\"0x4504c7\",\"topics\":[[\"0x5e3c1311ea442664e8b1611bfabef659120ea7a0a2cfc0667700bebc69cbffe1\"]]}]"
+Usage of /usr/local/bin/nitro:
+ERROR[10-30|21:29:15.318] error initializing database              err="failed getting delayed messages while attempting to get serialized chain config from init message: 400 Bad Request: {\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":{\"method\":\"'eth_getLogs' is unavailable on our public API! Head over to https://bit.ly/gettinganodewithblast for more information.\"}}}"
+```
+
+    - Change the RPC URL.
+    - If still doesn't work, open the Port
+    ```
+    sudo ufw allow 8547; sudo ufw allow 8548
+    ```
+
