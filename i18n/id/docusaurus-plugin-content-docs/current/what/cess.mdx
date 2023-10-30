@@ -46,8 +46,7 @@ sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport
 ### Install CESS
 
 ```bash
-cd $HOME
-mkdir .cess
+mkdir -p /opt/cess
 git clone https://github.com/CESSProject/cess-nodeadm
 cd cess-nodeadm
 git checkout tags/v0.4.4
@@ -72,9 +71,7 @@ cess config set
 
 - Lalu paste pharse dari wallet kedua
 
-- Ketik `$HOME/.cess`
-
-  - Jika ada `The directory: $HOME/.cess does not exist, do you need to create it for you? (y/n)` ketik `y`, Enter
+- Ketik `/opt/cess`
 
 - Terkahir, isi dengan `100`
 
