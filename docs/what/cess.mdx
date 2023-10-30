@@ -47,7 +47,8 @@ sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport
 ### Install CESS
 
 ```bash
-mkdir -p /opt/cess
+cd $HOME
+mkdir .cess
 git clone https://github.com/CESSProject/cess-nodeadm
 cd cess-nodeadm
 git checkout tags/v0.4.4
@@ -72,7 +73,7 @@ cess config set
 
 - Then paste the phrase from the second wallet
 
-- Type `/opt/cess`
+- Type `$HOME/.cess`
 
 - Finally, fill it with `100`
 
