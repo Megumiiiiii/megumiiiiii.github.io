@@ -73,17 +73,19 @@ docker logs -f frame
 
 ### Troubleshooting
 
-1. rpc response
-    - If you facing an error like this
+- If you facing an error like this
+
 ```
 INFO [10-30|21:29:15.318] rpc response                             method=eth_getLogs logId=2 err="400 Bad Request: {\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":{\"method\":\"'eth_getLogs' is unavailable on our public API! Head over to https://bit.ly/gettinganodewithblast for more information.\"}}}" result=null attempt=0 args="[{\"address\":[\"0x62ca56aa7a475d4a9170855fd184ee60454f96a8\"],\"fromBlock\":\"0x4504c7\",\"toBlock\":\"0x4504c7\",\"topics\":[[\"0x5e3c1311ea442664e8b1611bfabef659120ea7a0a2cfc0667700bebc69cbffe1\"]]}]"
 Usage of /usr/local/bin/nitro:
 ERROR[10-30|21:29:15.318] error initializing database              err="failed getting delayed messages while attempting to get serialized chain config from init message: 400 Bad Request: {\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":{\"method\":\"'eth_getLogs' is unavailable on our public API! Head over to https://bit.ly/gettinganodewithblast for more information.\"}}}"
 ```
 
+- Solusi
     - Ubah RPC URL.
     - Jika masih tidak bisa, buka Port
-    ```
-    sudo ufw allow 8547; sudo ufw allow 8548
-    ```
+
+```
+sudo ufw allow 8547; sudo ufw allow 8548
+```
 
