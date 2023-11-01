@@ -51,6 +51,7 @@ nano node-config/testnet.json
 ```
 
 - find `<SEPOLIA_RPC_HERE>` and replace with your Sepolia RPC, you can find [HERE](https://chainlist.org/chain/11155111)
+-  example: `"url": "https://rpc-sepolia"`
 - Save
 
 ## Run
@@ -60,8 +61,8 @@ docker run -d \
 --name frame \
 --rm \
 -it \
--v $HOME/frame/node-data:/home/user/.frame \
--v $HOME/frame/node-config/testnet.json:/home/user/testnet.json public.ecr.aws/o8e2k8j7/nitro-node:frame \
+-v $(pwd)/node-data:/home/user/.frame \
+-v $(pwd)/node-config/testnet.json:/home/user/testnet.json public.ecr.aws/o8e2k8j7/nitro-node:frame \
 --conf.file testnet.json
 ```
 
