@@ -8,7 +8,7 @@ const dark = require('prism-react-renderer/themes/nightOwl');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Elysian',
+  title: 'Kessoku',
   tagline: 'List all of my Guides and Random Post',
   favicon: 'img/a.png',
 
@@ -74,7 +74,54 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      metadata: [
+        {name: 'keywords', content: 'docs, documents, dokumentasi, guide, document, node, tutorial, how to, cara, tutorial node untuk pemula, cara menjalankan node'},
+        {name: 'twitter:card', content: 'summary_large_image'},
+      ],
+      headTags: [
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect',
+            href: 'https://megumii.xyz',
+          },
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect',
+            href: 'https://www.megumii.xyz',
+          },
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect',
+            href: 'ar://megumii',
+          },
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect',
+            href: 'https://megumii.eth.limo',
+          },
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect',
+            href: 'https://megumii.tez.page',
+          },
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect',
+            href: 'https://megumii.blessingway.xyz',
+          },
+        },
+      ],
       image: 'img/miku.jpg',
       tableOfContents: {
         minHeadingLevel: 2,
@@ -94,7 +141,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Elysian',
+        title: 'Kessoku',
         hideOnScroll: true,
         logo: {
           alt: 'A',
@@ -196,7 +243,7 @@ const config = {
           width: 'auto',
           height: 'auto',
         },
-        copyright: `<a href="https://github.com/Megumiiiiii/megumiiiiii.github.io/blob/main/LICENSE" target="_blank" rel="nofollow">Copyright</a> © ${new Date().getFullYear()} Elysian, Inc. Built with Docusaurus | Powered by Arweave and Github.`,
+        copyright: `<a href="https://github.com/Megumiiiiii/megumiiiiii.github.io/blob/main/LICENSE" target="_blank" rel="nofollow">Copyright</a> © ${new Date().getFullYear()} Kessoku, Inc. Built with Docusaurus | Powered by Arweave and Github.`,
       },
       prism: {
         theme: dark,
