@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Kessoku Blog</title>
-        <link>https://megumiiiiii.github.io/blog</link>
+        <link>https://k.megumii.xyz/blog</link>
         <description>Kessoku Blog</description>
         <lastBuildDate>Fri, 27 Oct 2023 18:35:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[Quaver]]></title>
-            <link>https://megumiiiiii.github.io/blog/quaver</link>
-            <guid>https://megumiiiiii.github.io/blog/quaver</guid>
+            <link>https://k.megumii.xyz/blog/quaver</link>
+            <guid>https://k.megumii.xyz/blog/quaver</guid>
             <pubDate>Fri, 27 Oct 2023 18:35:13 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/873811#osu/1846226" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 186</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/IussrJnOeQ657kp0Dj5fXWS1wakaRg8ZCSpHUxVRF7c" type="video/mp4"></video>]]></content:encoded>
@@ -19,8 +19,8 @@
         </item>
         <item>
             <title><![CDATA[Tokiiro Serenade]]></title>
-            <link>https://megumiiiiii.github.io/blog/serenade</link>
-            <guid>https://megumiiiiii.github.io/blog/serenade</guid>
+            <link>https://k.megumii.xyz/blog/serenade</link>
+            <guid>https://k.megumii.xyz/blog/serenade</guid>
             <pubDate>Sat, 14 Oct 2023 11:06:21 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/360654#osu/795140" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 138</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/8Wg3SHBx1slnjUxqfj7jA3_Z8LLv_p0tkxtEBg6mFbU" type="video/mp4"></video>]]></content:encoded>
@@ -28,16 +28,16 @@
         </item>
         <item>
             <title><![CDATA[Highlight]]></title>
-            <link>https://megumiiiiii.github.io/blog/yo</link>
-            <guid>https://megumiiiiii.github.io/blog/yo</guid>
+            <link>https://k.megumii.xyz/blog/yo</link>
+            <guid>https://k.megumii.xyz/blog/yo</guid>
             <pubDate>Fri, 13 Oct 2023 19:53:57 GMT</pubDate>
             <description><![CDATA[Please Stamp]]></description>
             <content:encoded><![CDATA[<div class="twitter-tweet twitter-tweet-rendered" style="display:flex;max-width:550px;width:100%;margin-top:10px;margin-bottom:10px"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:static;visibility:visible;width:492px;height:419px;display:block;flex-grow:1" title="Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1707010385155432923&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Fmegum%2FOneDrive%2FDocuments%2Findex.html&amp;theme=light&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1707010385155432923"></iframe></div> <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><div class="twitter-tweet twitter-tweet-rendered" style="display:flex;max-width:550px;width:100%;margin-top:10px;margin-bottom:10px"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:static;visibility:visible;width:492px;height:419px;display:block;flex-grow:1" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmlyZHdhdGNoX3Bpdm90c19lbmFibGVkIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19kdXBsaWNhdGVfc2NyaWJlc190b19zZXR0aW5ncyI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1716545943397335149&amp;lang=en&amp;origin=https%3A%2F%2Fpublish.twitter.com%2F%3Fquery%3Dhttps%253A%252F%252Ftwitter.com%252FOurBazAR%252Fstatus%252F1716545943397335149%26widget%3DTweet&amp;sessionId=6efb86803ef87bb9a786a41fe1bfbc1a958b4576&amp;theme=light&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1716545943397335149" __idm_id__="3948545"></iframe></div><div class="twitter-tweet twitter-tweet-rendered" style="display:flex;max-width:550px;width:100%;margin-top:10px;margin-bottom:10px"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:static;visibility:visible;width:492px;height:419px;display:block;flex-grow:1" title="Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-1&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1681212232439595009&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Fmegum%2FOneDrive%2FDocuments%2Findex.html&amp;theme=light&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1681212232439595009"></iframe></div> <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><iframe id="rufous-sandbox" scrolling="yes" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position:absolute;visibility:hidden;display:none;width:0px;height:0px;padding:0px;border:none" title="Twitter analytics iframe"></iframe><h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="please-stamp">Please Stamp<a href="#please-stamp" class="hash-link" aria-label="Direct link to Please Stamp" title="Direct link to Please Stamp">​</a></h3><ul><li>Go to <a href="https://bazar.g8way.io/#/collection/ADd6xeeWq_pYbu0m7ZlihV5CQkjOCKJIb9h7gWEDB6k" target="_blank" rel="noopener noreferrer">Bazar</a></li><li>Click it, no need any gas fees</li><li><img loading="lazy" alt="stamp" src="/assets/images/stamp-7b3918b98671219b5ddb4e7a6715e99c.png" width="1127" height="553" class="img_ev3q"></li></ul>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Seishun Complex]]></title>
-            <link>https://megumiiiiii.github.io/blog/seishun</link>
-            <guid>https://megumiiiiii.github.io/blog/seishun</guid>
+            <link>https://k.megumii.xyz/blog/seishun</link>
+            <guid>https://k.megumii.xyz/blog/seishun</guid>
             <pubDate>Tue, 10 Oct 2023 06:58:43 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1867294#osu/3842880" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 190</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/QO_ElN_ioqmiIYIJHYQYvJXEWbHpHYilAE0TTBoi_P8" type="video/mp4"></video>]]></content:encoded>
@@ -45,8 +45,8 @@
         </item>
         <item>
             <title><![CDATA[Yume Chizu]]></title>
-            <link>https://megumiiiiii.github.io/blog/yume</link>
-            <guid>https://megumiiiiii.github.io/blog/yume</guid>
+            <link>https://k.megumii.xyz/blog/yume</link>
+            <guid>https://k.megumii.xyz/blog/yume</guid>
             <pubDate>Tue, 10 Oct 2023 06:58:43 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1068768#osu/2237468" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 176</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/76J2RtMOav-Ez3S3BnTxVYuD618a5vANhYZ1TT-EoLs" type="video/mp4"></video>]]></content:encoded>
@@ -54,8 +54,8 @@
         </item>
         <item>
             <title><![CDATA[Star Beat]]></title>
-            <link>https://megumiiiiii.github.io/blog/star-beat</link>
-            <guid>https://megumiiiiii.github.io/blog/star-beat</guid>
+            <link>https://k.megumii.xyz/blog/star-beat</link>
+            <guid>https://k.megumii.xyz/blog/star-beat</guid>
             <pubDate>Mon, 09 Oct 2023 18:13:26 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/650607#osu/1402930" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 195</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/V9k9uuSQ4a6jubJbNJkkODnUpu815q9bP_hR0GGoh1w" type="video/mp4"></video>]]></content:encoded>
@@ -63,8 +63,8 @@
         </item>
         <item>
             <title><![CDATA[Heavy Rotation]]></title>
-            <link>https://megumiiiiii.github.io/blog/heavy</link>
-            <guid>https://megumiiiiii.github.io/blog/heavy</guid>
+            <link>https://k.megumii.xyz/blog/heavy</link>
+            <guid>https://k.megumii.xyz/blog/heavy</guid>
             <pubDate>Sun, 08 Oct 2023 08:40:54 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1556324#osu/3179304" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 178</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/pj9G7kAR4SkuNXbeUF0YisFPKkky3b3P244Wo1jcd6U" type="video/mp4"></video>]]></content:encoded>
@@ -72,8 +72,8 @@
         </item>
         <item>
             <title><![CDATA[C-Type]]></title>
-            <link>https://megumiiiiii.github.io/blog/c-type</link>
-            <guid>https://megumiiiiii.github.io/blog/c-type</guid>
+            <link>https://k.megumii.xyz/blog/c-type</link>
+            <guid>https://k.megumii.xyz/blog/c-type</guid>
             <pubDate>Sun, 08 Oct 2023 08:10:34 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/757146#osu/1620144" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 149.3</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/xTT-Tt7EmSdU_ALYDZSZqZqvk26KbA4rD7Q_gR5pIvA" type="video/mp4"></video>]]></content:encoded>
@@ -81,8 +81,8 @@
         </item>
         <item>
             <title><![CDATA[Pudding Funfair]]></title>
-            <link>https://megumiiiiii.github.io/blog/pudding</link>
-            <guid>https://megumiiiiii.github.io/blog/pudding</guid>
+            <link>https://k.megumii.xyz/blog/pudding</link>
+            <guid>https://k.megumii.xyz/blog/pudding</guid>
             <pubDate>Sun, 08 Oct 2023 08:10:34 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/993369#osu/2225466" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 150</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/ACKWqx4OoHjb2BVpGynXOAWZ7D1Me6jfWyAT62ejhbk" type="video/mp4"></video>]]></content:encoded>
@@ -90,8 +90,8 @@
         </item>
         <item>
             <title><![CDATA[And Again And Again]]></title>
-            <link>https://megumiiiiii.github.io/blog/and-again</link>
-            <guid>https://megumiiiiii.github.io/blog/and-again</guid>
+            <link>https://k.megumii.xyz/blog/and-again</link>
+            <guid>https://k.megumii.xyz/blog/and-again</guid>
             <pubDate>Tue, 03 Oct 2023 10:23:29 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/801074#osu/1681634" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 150</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/Sdgker22LW85KWozIzONFUzkHjaF4oW7ijIx9sXrAcQ" type="video/mp4"></video>]]></content:encoded>
@@ -99,8 +99,8 @@
         </item>
         <item>
             <title><![CDATA[Re Aoharu]]></title>
-            <link>https://megumiiiiii.github.io/blog/aoharu</link>
-            <guid>https://megumiiiiii.github.io/blog/aoharu</guid>
+            <link>https://k.megumii.xyz/blog/aoharu</link>
+            <guid>https://k.megumii.xyz/blog/aoharu</guid>
             <pubDate>Tue, 03 Oct 2023 10:23:29 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1935191#osu/4001171" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 180</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/T1ydJjyz4tzFG8Vxs3VD8pqAmoIDcYV91VH0WrFejeU" type="video/mp4"></video>]]></content:encoded>
@@ -108,8 +108,8 @@
         </item>
         <item>
             <title><![CDATA[Marshmary]]></title>
-            <link>https://megumiiiiii.github.io/blog/marshmary</link>
-            <guid>https://megumiiiiii.github.io/blog/marshmary</guid>
+            <link>https://k.megumii.xyz/blog/marshmary</link>
+            <guid>https://k.megumii.xyz/blog/marshmary</guid>
             <pubDate>Tue, 03 Oct 2023 10:23:29 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/962088#osu/2014470" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 182</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/g5GrUOC577qRtccBB1yIu31em8gPbvew129ArUS4X7M" type="video/mp4"></video>]]></content:encoded>
@@ -117,8 +117,8 @@
         </item>
         <item>
             <title><![CDATA[Arkadia]]></title>
-            <link>https://megumiiiiii.github.io/blog/arkadia</link>
-            <guid>https://megumiiiiii.github.io/blog/arkadia</guid>
+            <link>https://k.megumii.xyz/blog/arkadia</link>
+            <guid>https://k.megumii.xyz/blog/arkadia</guid>
             <pubDate>Mon, 02 Oct 2023 20:23:28 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1695872#osu/3616425" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 200</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/2HaguVRp-cZw7jXfoLIjdpYtzwc8jvzKk0mnd83R9J8" type="video/mp4"></video>]]></content:encoded>
@@ -126,8 +126,8 @@
         </item>
         <item>
             <title><![CDATA[Gurumi]]></title>
-            <link>https://megumiiiiii.github.io/blog/gurumi</link>
-            <guid>https://megumiiiiii.github.io/blog/gurumi</guid>
+            <link>https://k.megumii.xyz/blog/gurumi</link>
+            <guid>https://k.megumii.xyz/blog/gurumi</guid>
             <pubDate>Sat, 30 Sep 2023 15:36:05 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1312079#osu/2732132" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 185</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/bx5szOf1MxstkmvthtLiBCE7LLJZW8hIyfK4WgnWzIo" type="video/mp4"></video>]]></content:encoded>
@@ -135,8 +135,8 @@
         </item>
         <item>
             <title><![CDATA[Juveline]]></title>
-            <link>https://megumiiiiii.github.io/blog/juveline</link>
-            <guid>https://megumiiiiii.github.io/blog/juveline</guid>
+            <link>https://k.megumii.xyz/blog/juveline</link>
+            <guid>https://k.megumii.xyz/blog/juveline</guid>
             <pubDate>Sat, 30 Sep 2023 15:36:05 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1280204#osu/2659371" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 200</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/HoeHIGEBOTYgRMIgaJlxmQcoonkWJrinR-IE83PUQeo" type="video/mp4"></video>]]></content:encoded>
@@ -144,8 +144,8 @@
         </item>
         <item>
             <title><![CDATA[Non-breath Oblige]]></title>
-            <link>https://megumiiiiii.github.io/blog/buresu</link>
-            <guid>https://megumiiiiii.github.io/blog/buresu</guid>
+            <link>https://k.megumii.xyz/blog/buresu</link>
+            <guid>https://k.megumii.xyz/blog/buresu</guid>
             <pubDate>Sat, 30 Sep 2023 09:20:03 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/1889729#osu/3907767" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 148</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/JzgvfP7BhX78zm2u46BpkwbnTD1WrLFgF_bRuXFxY_M" type="video/mp4"></video>]]></content:encoded>
@@ -153,8 +153,8 @@
         </item>
         <item>
             <title><![CDATA[Colorful]]></title>
-            <link>https://megumiiiiii.github.io/blog/colorful</link>
-            <guid>https://megumiiiiii.github.io/blog/colorful</guid>
+            <link>https://k.megumii.xyz/blog/colorful</link>
+            <guid>https://k.megumii.xyz/blog/colorful</guid>
             <pubDate>Sat, 30 Sep 2023 09:20:03 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/931452#osu/1962198" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 192</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/GnDZJ_jT3xxtBqQ4iwFTnJjZ_NGnHw1aE4HmAUXmnEw" type="video/mp4"></video>]]></content:encoded>
@@ -162,8 +162,8 @@
         </item>
         <item>
             <title><![CDATA[Girl A]]></title>
-            <link>https://megumiiiiii.github.io/blog/girl-a</link>
-            <guid>https://megumiiiiii.github.io/blog/girl-a</guid>
+            <link>https://k.megumii.xyz/blog/girl-a</link>
+            <guid>https://k.megumii.xyz/blog/girl-a</guid>
             <pubDate>Sat, 30 Sep 2023 09:20:03 GMT</pubDate>
             <description><![CDATA[Beatmap Info]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="beatmap-info">Beatmap Info<a href="#beatmap-info" class="hash-link" aria-label="Direct link to Beatmap Info" title="Direct link to Beatmap Info">​</a></h2><ul><li><a href="https://osu.ppy.sh/beatmapsets/2064760#osu/4318886" target="_blank" rel="noopener noreferrer">Link</a></li><li>BPM: 260</li></ul><video width="100%" height="auto" controls="" loop="" src="https://arweave.net/Yko2NmADJdHuRIpLST96ieqKTspZH_PD2p7ynWFYDwE" type="video/mp4"></video>]]></content:encoded>

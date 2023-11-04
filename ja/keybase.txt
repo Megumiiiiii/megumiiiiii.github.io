@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/megumii
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://megumiiiiii.github.io
+  * I am megumii (https://keybase.io/megumii) on keybase.
+  * I have a public key with fingerprint B242 1751 E825 2946 220F  BC20 BCB4 C762 969C A9C7
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01208028b0bde071541125eae964336c4cb538beb3cf3425689c14235b7d4cbfd2730a",
+      "fingerprint": "b2421751e8252946220fbc20bcb4c762969ca9c7",
+      "host": "keybase.io",
+      "key_id": "bcb4c762969ca9c7",
+      "kid": "0101e5f7c177577e8f60d52440df5d6ddce4ac85e2e5284e3ca0177fd026dfb8f7d70a",
+      "uid": "30c9c2369eb7fa147192aa19789b1619",
+      "username": "megumii"
+    },
+    "merkle_root": {
+      "ctime": 1697713173,
+      "hash_meta": "f4d195ecfa1d74f7583c9ed148d78696e3ecb0df81646e93c07e48055ed683b7",
+      "seqno": 25050401
+    },
+    "revoke": {
+      "sig_ids": [
+        "ef7df2c13809708700e30e7e610bc4e30bec425a3334dbc0460f44135b83cdc50f"
+      ]
+    },
+    "service": {
+      "hostname": "megumiiiiii.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1697713192,
+  "expire_in": 157680000,
+  "prev": "61df8d3f903a74f9a039db79022ecd7ddb5ceadaeec2647b3cdb1e6fcaf99720",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMQGAnicbVN7UBVVHAYVE1JG8zHKZJObOlmMnnP2cXaxUkyTUdByHLXEbnseCyuX
+ey97H0p0JULHNC3BML1R2UNF0dTGV5maomGKWiolmqDiA6dm0BlMGx91lnKams4/
+u2f3+32/7/t+5+zv1jEuKf7rLbVkWeXa2vjD+4rDcRx2fbxIIn5WKKUVSXm8/cG9
+jAdDnjybSWkSgAjoAOkEEMYBhqoCIVK5yQ1NkWWNKpSosk44kaklK0jVdINCBckq
+wUz8sxjCMjClVMmyfTncCTi2LyRoCVIQxCrkOlKRoWgIAYtQBAglCsUaMjSDmgbF
+ojDXH3QrhDhiBvlQ2y++iY2nXd7/4O/rBpCrFqYQYxVjrlsaYCpSFMAslWmMUa6Y
+VFc54irSFS5TEwioxQDSmEV0CzPcrjvcTicDalAkawYn2DKhgqGBTBMaWDcI1KDh
+AoPc8Zn5XKDzeU4437alaKp4dfK83OP4/SE3WxqyXQTUDIyhDLEs/JnBXE8+D5mi
+0FIYNFRORQuGFQurukwNzqCiM6xrhsZlTolwoENN0bghU4C5ogNV5UzTZeLaD/IC
+n19KQypQgQKgkODwiD+Pu92Ddo6ILSilTZe4MGghCmUdGBjoGAAuA465BsUMRByA
+cCrGacqyrDBCgaIBS1GgmKuQxKgKLGlG1O3mRGzaTu7O6d/+3TU0xw7lhslfYws4
+/pCf+r0CkhsKBYJpbkKhwoBbM4sTz99sHmL7mDguoiLCnaDt94nEBPI/4RkoVeKz
+A7bDPbaLULGmA7HcPjwiKDUokmKyZQDZFGkaJpANRrABEOKUYcaISrnJTM4p0hQs
+jjAjkGsWNS3DwAj8kyZUhE4zR3CKCH1mKOxwKbpvb3anuPikuM4JHdx7FJeU2P3+
+7XrV6h734YvvrU/e/sD81+rOrUI/77z7Zt+slNxPbySXVmSNGNKVVR3JbKnz/jZu
+Rfn8g43HF8/d3TpQ+2bQmci6QT+N2D+5+erzSdsLyh9rmLOpMnH15xV1bXhMwysJ
+ZCpyRg/7eJ7cf+P6Dm83Xq6d5I+uTYzeSd5QO6GhskfNYF3ftejY7+XX6ZgFxR3H
+pjxX1G1kYVF2YevFQ7Puvrxn8tHkE825W/vqdb0Tni4baL/5w54+Wd+mHt9pVMbq
+rh19aWbNZlLzVdITR6YNWLWjZuXoHyfMy/jo9PkP4K+R+CHddxf3mN7vDd8Ly0+1
+lQx4S/bE1rbl19S/O7u676G9sZHxy7ZMmk/W3OpzpcvG6s0JgwumL3r04bPfNZ6f
++9DYJmNi4ie7xt2THrmwe85TvS+39bp4/vCiWyxQsKPAP6UpenBoXY8l34OFPe/q
+1vBOsStO3IGybhnesqm3w9uX0aoxU6u8pV1aejdtyxx32tp7/clzYFt6bHjnrS3Z
+F7SGXe9cuxxdebOh+UywuHzijPE190ryLnV5vStNMTKyFldM2VDaEKtekl0ZWR2r
+CmS2dk451n/YiqM3R4W1B5szfK0LBxTcmHbg1qhe4993Km73+6I+vb6yqfqZP0CF
+V910dl3jyc+uLk//sqXfhLPHFpQu3TFpoGnmbLtTltWSeXvN6BMl9ckbi0varmx9
+dvLccxev/nIpunRxz1PpM/XgyT8BhvsQVg==
+=I42w
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/megumii
+
+==================================================================
