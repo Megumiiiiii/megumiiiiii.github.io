@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[3686],{5971:e=>{e.exports=JSON.parse('{"title":"Tangle","description":"List Guides","slug":"/category/tangle","permalink":"/id/docs/category/tangle","navigation":{"previous":{"title":"CESS","permalink":"/id/docs/what/cess"},"next":{"title":"Tangle","permalink":"/id/docs/what/tangle/"}}}')}}]);
