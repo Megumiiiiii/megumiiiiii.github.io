@@ -9,7 +9,7 @@ const dark = require('prism-react-renderer/themes/nightOwl');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Kessoku',
-  tagline: 'All of my Guides and Random Post',
+  tagline: 'All of my Guides and Random Post(Mostly Osu!)',
   favicon: 'img/a.png',
 
   // Set the production url of your site here
@@ -75,21 +75,21 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-        {name: 'keywords', content: 'docs, documents, dokumentasi, guide, document, node, tutorial, how to, cara, tutorial node untuk pemula, cara menjalankan node'},
+        {name: 'keywords', content: 'megumii, by megumii, about megumii, megumii katou, megumii docs, megumii guide, guide by megumii, megumii github, docs, documents, dokumentasi, guide, document, node, tutorial, how to, cara, tutorial node untuk pemula, cara menjalankan node'},
         {name: 'twitter:card', content: 'summary_large_image'},
       ],
       headTags: [
         {
           tagName: 'link',
           attributes: {
-            rel: 'preconnect',
+            rel: 'canonical',
             href: 'https://megumii.xyz',
           },
         },
         {
           tagName: 'link',
           attributes: {
-            rel: 'preconnect',
+            rel: 'canonical',
             href: 'https://www.megumii.xyz',
           },
         },
@@ -103,21 +103,21 @@ const config = {
         {
           tagName: 'link',
           attributes: {
-            rel: 'preconnect',
+            rel: 'canonical',
             href: 'https://megumii.eth.limo',
           },
         },
         {
           tagName: 'link',
           attributes: {
-            rel: 'preconnect',
+            rel: 'canonical',
             href: 'https://megumii.tez.page',
           },
         },
         {
           tagName: 'link',
           attributes: {
-            rel: 'preconnect',
+            rel: 'canonical',
             href: 'https://megumii.blessingway.xyz',
           },
         },
