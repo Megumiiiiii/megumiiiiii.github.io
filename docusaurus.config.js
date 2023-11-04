@@ -9,11 +9,11 @@ const dark = require('prism-react-renderer/themes/nightOwl');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Kessoku',
-  tagline: 'List all of my Guides and Random Post',
+  tagline: 'All of my Guides and Random Post',
   favicon: 'img/a.png',
 
   // Set the production url of your site here
-  url: 'https://megumiiiiii.github.io',
+  url: 'https://k.megumii.xyz',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -31,7 +31,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'id'],
+    locales: ['en', 'id', 'ja'],
   },
 
   presets: [
