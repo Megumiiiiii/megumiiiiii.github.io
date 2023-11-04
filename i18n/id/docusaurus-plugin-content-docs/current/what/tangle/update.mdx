@@ -1,0 +1,60 @@
+---
+title: Update
+sidebar_position: 2
+authors: [megumii]
+tags:
+  - Substrate
+---
+
+## Download Versi terbaru
+
+```bash
+rm -r /usr/bin/tangle
+wget -O tangle https://github.com/webb-tools/tangle/releases/download/v5.0.0/tangle-standalone-linux-amd64 && chmod +x tangle
+sudo mv tangle /usr/bin/
+```
+
+#### Semua versi yang telah rilis bisa cek di [SINI](https://github.com/webb-tools/tangle/releases)
+
+## Update service
+
+:::danger edit **YourName**
+Ubah **YourName** ke namamu
+:::
+
+```ts title="tangle.service"
+sudo tee /etc/systemd/system/tangle.service > /dev/null << EOF
+[Unit]
+Description=Tangle Validator Node
+After=network-online.target
+StartLimitIntervalSec=0
+[Service]
+User=$USER
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/tangle \
+  --base-path $HOME/.tangle/data/validator/YourName \
+  --name YourName \
+  --chain tangle-testnet \
+  --node-key-file "/home/YourName/node-key" \
+  --port 30333 \
+  --telemetry-url "wss://telemetry.polkadot.io/submit/ 0" \
+  --validator \
+  --no-mdns
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+## Restart
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart tangle
+```
+
+### Cek logs 
+
+```bash
+sudo journalctl -u tangle -f --no-hostname -o cat
+```

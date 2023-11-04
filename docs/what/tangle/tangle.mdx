@@ -1,6 +1,7 @@
 ---
-title: Tangle
-sidebar_position: 4
+title: Installation
+sidebar_position: 1
+authors: [megumii]
 tags:
   - Substrate
 ---
@@ -13,10 +14,10 @@ tags:
 - [Website](https://www.webb.tools/)
 
 :::caution
-Perlu Ubuntu 22.04 atau lebih tinggi
+Need Ubuntu 22.04 or higher
 :::
 
-## Spek minimal
+## Minimum Specifications
 
 | Spec | Size |
 |----------|----------|
@@ -37,20 +38,20 @@ sudo apt install --assume-yes git clang curl libssl-dev llvm libudev-dev make pr
 sudo ufw allow ssh; sudo ufw allow 30333
 ```
 
-## Download Binary & Copy ke /usr/bin
+## Download Binary & Copy to /usr/bin
 
 ```bash
-wget -O tangle https://github.com/webb-tools/tangle/releases/download/v0.4.7/tangle-standalone-linux-amd64 && chmod +x tangle
+wget -O tangle https://github.com/webb-tools/tangle/releases/download/v0.5.0/tangle-standalone-linux-amd64 && chmod +x tangle
 sudo cp tangle /usr/bin/
 ```
 
-## Create service
+## Create a service
 
-:::danger
+:::danger edit **YourName**
 Change all **YourName** to your name
 :::
 
-```ts filename="tangle.service"
+```ts title="tangle.service"
 sudo tee /etc/systemd/system/tangle.service > /dev/null << EOF
 [Unit]
 Description=Tangle Validator Node
@@ -83,13 +84,13 @@ sudo systemctl enable tangle
 sudo systemctl start tangle
 ```
 
-### Check logs
+### Check the logs
 
 ```bash
 sudo journalctl -u tangle -f --no-hostname -o cat
 ```
 
-- Contoh Output:
+- Example Output:
 
 ```ts title="Output"
 2023-03-22 14:55:51 Tangle Standalone Node
@@ -123,7 +124,7 @@ sudo journalctl -u tangle -f --no-hostname -o cat
 ```
 
 
-- Contoh Output kalo dah sync:
+- Example Output after sync:
 
 ```json title="Output"
 2021-06-17 03:07:39 🔍 Discovered new external address for our node: /ip4/10.26.16.1/tcp/30333/ws/p2p/12D3KooWLtXFWf1oGrnxMGmPKPW54xWCHAXHbFh4Eap6KXmxoi9u
@@ -134,40 +135,40 @@ sudo journalctl -u tangle -f --no-hostname -o cat
 2021-06-17 03:08:00 ⚙️  Syncing 37.0 bps, target=#5553768 (22 peers), best: #27059 (0x5b73…6fc9), finalized #26624 (0x9dd9…27f8), ⬇ 14.3kiB/s ⬆ 4.4kiB/s
 ```
 
-### Bond TNT dan setup validator
+### Bond TNT and setup validator Account
 
 - Go to [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/accounts)
-- Create 2 Akun, 1 untuk Stash 1 untuk Controller
+- Create 2 New Account, 1 for Stash 1 for Controller
 - ![stash](/img/tan.png)
-- Pilih akun stash & controller, lalu masukan nominal
-- Kembali ke VPS
+- Choose Stash & Controller account, then fill the amount you want to stake
+- Then back to your VPS
 - Generate session key
 ```py  title="Session Keys"
 curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9944
 ```
-- Copy `0x` Output
-- Kembali ke [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/staking/actions)
-- Klik itu, **Set Session Key**
+- Copy the `0x` Output
+- Back to [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/staking/actions)
+- Click that, **Set Session Key**
 - ![stash](/img/sessi.png)
-- Isi dengan `0x` Output yang tadi
-- Lalu validate Validate
+- Fill it with the `0x` Output before
+- Then Validate
 
 ### Setting identity
 
 
-- Ke [Polkadot](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/accounts)
-- Pilih akun stash mu: Set on-chain Identity
-- Isi semua data yang mau
+- Go to [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/accounts)
+- Open the 3 dots next to your address: Set on-chain Identity
+- Enter all fields you want to set.
 
 ### Request judgment
 
 - Go to the [PolkadotJS](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-archive.tangle.tools#/extrinsics)
-- Pilih akunmu dan pilih : identity | requestJudgment
+- Select your account and extrinsic type: identity | requestJudgment
 
 ---
 
 :::danger
-⚠️ Jika Anda ingin menghapus ⚠️
+⚠️ If you want to delete ⚠️
 
 ```bash
 sudo systemctl stop tangle
