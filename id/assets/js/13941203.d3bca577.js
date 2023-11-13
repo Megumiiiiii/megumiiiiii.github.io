@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[9685],{9040:a=>{a.exports=JSON.parse('{"label":"Aleo","permalink":"/id/blog/tags/aleo","allTagsPath":"/id/blog/tags","count":1}')}}]);

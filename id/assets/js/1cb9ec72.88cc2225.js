@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[3216],{7421:e=>{e.exports=JSON.parse('[{"label":"Aleo","permalink":"/id/blog/tags/aleo","count":1},{"label":"Osu!","permalink":"/id/blog/tags/osu","count":17}]')}}]);

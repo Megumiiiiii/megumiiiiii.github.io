@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[3482],{9705:a=>{a.exports=JSON.parse('{"permalink":"/ja/blog/tags/aleo","page":1,"postsPerPage":1,"totalPages":1,"totalCount":1,"blogDescription":"Just a random post","blogTitle":"Random Post"}')}}]);
