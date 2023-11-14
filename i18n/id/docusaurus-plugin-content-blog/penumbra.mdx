@@ -1,0 +1,120 @@
+---
+slug: penumbra
+title: Penumbra Summoning Ceremony
+authors: [megumii]
+tags: [IBC]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Install Dependencies
+
+- any other
+```bash
+sudo apt-get install build-essential pkg-config libssl-dev clang git-lfs screen
+```
+
+- rustup
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+## Install pcli
+
+```bash
+git clone https://github.com/penumbra-zone/penumbra
+cd penumbra && git fetch && git checkout v0.63.1
+cargo build --release --bin pcli
+```
+
+### Generate/Import wallet
+
+<Tabs>
+<TabItem value="Generate Wallet">
+
+```bash
+cargo run --quiet --release --bin pcli init soft-kms generate
+```
+
+</TabItem>
+<TabItem value="Import Wallet">
+
+```bash
+cargo run --quiet --release --bin pcli init soft-kms import-phrase
+```
+
+</TabItem>
+</Tabs>
+
+### Faucet
+
+- View address
+```bash
+cargo run --quiet --release --bin pcli view address 0
+```
+
+- Request Faucet, [Discord](https://discord.gg/5aYkBpXD)
+
+#### Check balance
+
+```bash
+cargo run --quiet --release --bin pcli view sync
+```
+
+```bash
+cargo run --quiet --release --bin pcli view balance
+```
+
+## Contribute
+
+```bash
+screen -S penumbra
+cargo run --quiet --release --bin pcli -- ceremony contribute --phase 1 --bid 60penumbra --coordinator-address penumbra1qvqr8cvqyf4pwrl6svw9kj8eypf3fuunrcs83m30zxh57y2ytk94gygmtq5k82cjdq9y3mlaa3fwctwpdjr6fxnwuzrsy4ezm0u2tqpzw0sed82shzcr42sju55en26mavjnw4
+```
+:::info
+- The minimum bid for this ceremony is 60penumbra.
+- To change your bid, you can simply run the command again with a different bid amount. Note that each time you bid with the command above, this adds additional funds to all of the previous bids you've already submitted.
+:::
+
+Output:
+
+```js
+                               ⛔️WARNING️️⛔️:
+
+                        you are about to lose money!
+
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+This message ... is part of a system of messages...
+... we considered ourselves to be a fault-tolerant distributed system...
+This message is a warning about danger.
+The danger is in a particular location... the center of danger is the pcli binary...
+The danger is to your funds, and it can destroy them.
+The danger is unleashed only if you execute this software.
+🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+                           USE AT YOUR OWN RISK
+Scanning blocks from last sync height 0 to latest height 235664
+[2m] █████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   46786/235664  383/s ETA: 8m
+
+                           USE AT YOUR OWN RISK
+Scanning blocks from last sync height 235949 to latest height 235949
+[0s] ██████████████████████████████████████████████████       0/0       0/s ETA: 0s
+¸,ø¤º°` initiating summoning participation `°º¤ø,¸
+submitting bid 2penumbra for contribution slot from address penumbra1yt3q8shj4ld5ux5t89rha7w0aw2lhd53ypt52l7axvmty50z9g5uq3avhhlqazk4drvdn9rh3hxe4fcq45svn8muphl9kxfpx99pzjmnwjkz8p6dyj262lzlld39cymkwpy39t
+building transaction...
+finished proving in 8.624 seconds [3 actions, 3 proofs, 2389 bytes]
+broadcasting transaction and awaiting confirmation...
+transaction confirmed and detected: 5dfbe01d738babdbb7648da60147fc1f397448ce00e8817764d6b1c11c3ac3de @ height 235952
+connecting to coordinator...
+connected to coordinator!
+You may disconnect (CTRL+C) to increase your bid if you don't like your position in the queue.
+Otherwise, please keep this window open.
+
+[1s] █████████████████████████████████████████░░░░░░░░░ position 762 out of 912 connected summoners     (your bid: 97000000, most recent slot bid: 
+[2s] █████████████████████████████████████████░░░░░░░░░ position 762 out of 912 connected summoners     (your bid: 97000000, most recent slot bid: 
+[3s] █████████████████████████████████████████░░░░░░░░░ position 762 out of 912 connected summoners     (your bid: 97000000, most recent slot bid: 
+```
+
+#### Copy `transaction confirmed and detected:` then tweet
+[Example](https://twitter.com/megumii_tez/status/1724527866627641837)
