@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[2064],{9118:s=>{s.exports=JSON.parse('{"permalink":"/id/blog/tags/ibc","page":1,"postsPerPage":1,"totalPages":1,"totalCount":1,"blogDescription":"Just a random post","blogTitle":"Random Post"}')}}]);
