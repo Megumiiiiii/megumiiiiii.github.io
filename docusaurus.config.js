@@ -160,7 +160,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://megumii.ar-io.dev',
+            href: 'https://kessoku.xyz',
             label: 'Website',
             position: 'right',
           },

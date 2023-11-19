@@ -10,10 +10,10 @@ const textStyle = {
 const FeatureList = [
   {
     title: '',
-    Svg: require('@site/static/img/000.svg').default,
+    Svg: require('@site/static/img/ksk.svg').default,
     description: (
       <>
-        <span style={textStyle}><a href='https://megumii.blessingway.xyz' target="_blank" rel="nofollow">My Permaweb</a></span> 
+        <span style={textStyle}><a href='https://kessoku.blessingway.xyz' target="_blank" rel="nofollow">About Us</a></span> 
       </>
     ),
   },
