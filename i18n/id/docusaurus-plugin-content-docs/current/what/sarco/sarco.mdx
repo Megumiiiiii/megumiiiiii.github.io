@@ -95,7 +95,7 @@ Isi data Anda
 2. `NOTIFICATION_WEBHOOK_URL` is your discord webhook url. You can follow the instructions here to set up a discord webhook url: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 
 <Tabs>
-<TabItem value="Both Chain">
+<TabItem value="All Chain">
 
 ```py title=".env"
 ## Key used to encrypt secrets and sign ETH transactions
@@ -103,7 +103,7 @@ Isi data Anda
 ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
 
 ## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
-#GAS_MULTIPLIER=
+## GAS_MULTIPLIER=
 NOTIFICATION_WEBHOOK_URL=https://discord.com/api/webhooks/hafkakakjajbasbkadsbaksdjbakfbakfaf
 
 ## Domain to use for your archaeologist
@@ -119,7 +119,7 @@ DOMAIN=my.exampledomain.com
 ## 80001 = Polygon Mumbai
 ## example, to run on mainnet, goerli, and sepolia, set:
 ## CHAIN_IDS="1,5,11155111"
-CHAIN_IDS=1,137
+CHAIN_IDS=1,42161,137
 
 ## Here, you should define:
 ## - RPC provider urls.
@@ -131,8 +131,8 @@ CHAIN_IDS=1,137
 MAINNET_PROVIDER_URL=wss://eth-mainnet
 MAINNET_ENCRYPTION_MNEMONIC=never gonna give you up never gonna let you down
 
-# GOERLI_PROVIDER_URL=
-# GOERLI_ENCRYPTION_MNEMONIC=
+ARBITRUM_PROVIDER_URL==wss://arb-mainnet
+ARBITRUM_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
 
 POLYGON_MAINNET_PROVIDER_URL=wss://polygon-mainnet
 POLYGON_MAINNET_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
@@ -225,6 +225,49 @@ POLYGON_MAINNET_PROVIDER_URL=wss://polygon-mainnet
 POLYGON_MAINNET_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
 ```
 </TabItem>
+<TabItem value="Arbitrum Only">
+
+```py title=".env"
+## Key used to encrypt secrets and sign ETH transactions
+## The address associated with this key is your archaeologist identifier
+ETH_PRIVATE_KEY=ugfhttawfihqwoid132b1231b23
+
+## (optional) multiply gas price estimation by this amount (i.e. 2 means 2x RPC gas price estimate)
+#GAS_MULTIPLIER=
+NOTIFICATION_WEBHOOK_URL=https://discord.com/api/webhooks/hafkakakjajbasbkadsbaksdjbakfbakfaf
+
+## Domain to use for your archaeologist
+## This domain should be pointed with an A record to your server's IP
+DOMAIN=my.exampledomain.com
+
+## Comma-separated list of chain ids of each network you want to run your service on.
+## Supported Chain IDS:
+## 1 = Mainnet
+## 5 = Goerli
+## 11155111 = Sepolia
+## 84531 = Base Goerli
+## 80001 = Polygon Mumbai
+## example, to run on mainnet, goerli, and sepolia, set:
+## CHAIN_IDS="1,5,11155111"
+CHAIN_IDS=42161
+
+## Here, you should define:
+## - RPC provider urls.
+## - Mnemonics used to derive keypairs to encrypt sarcophagi.
+##   Generate a new one here - https://iancoleman.io/bip39/ or see README to generate one offline.
+## Uncomment and set, for each network chain id you want to run on, your own
+## private provider URL (infura, alchemy, etc) and a unique mnemonic for that network.
+## ================================================================================================
+##MAINNET_PROVIDER_URL=
+##MAINNET_ENCRYPTION_MNEMONIC=
+
+# GOERLI_PROVIDER_URL=
+# GOERLI_ENCRYPTION_MNEMONIC=
+
+ARBITRUM_PROVIDER_URL==wss://arb-mainnet
+ARBITRUM_ENCRYPTION_MNEMONIC=never gonna tell a lie and hurt you
+```
+</TabItem>
 </Tabs>
 
 :::
@@ -257,7 +300,16 @@ COMPOSE_PROFILES=register NETWORK=mainnet docker compose run register
 COMPOSE_PROFILES=register NETWORK=polygonMainnet docker compose run register
 ```
 - Y, Enter
-- Kemudian masukkan jumlah (disarankan: DiggingFee 1 - 500, CurseFee 1-5, dan FreeBond 1000)
+- Kemudian masukkan jumlah (disarankan: DiggingFee 1 - 10, CurseFee 1 - 5, dan FreeBond 1000)
+
+</TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+COMPOSE_PROFILES=register NETWORK=arbitrum docker compose run register
+```
+- Y, Enter
+- Kemudian masukkan jumlah (disarankan: DiggingFee 5 - 20, CurseFee 5 - 10, dan FreeBond 1000)
 
 </TabItem>
 </Tabs>
@@ -350,9 +402,20 @@ exit
 ```
 
 </TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -u -n arbitrum
+```
+```bash
+exit
+```
+
+</TabItem>
 </Tabs>
 
-- Memperbarui Biaya Penambangan
+- Memperbarui Digging Fee
 
 <Tabs>
 <TabItem value="Ethereum">
@@ -371,12 +434,24 @@ exit
 
 ```bash
 NETWORK=all docker compose exec -it archaeologist sh
-cli update -d 300 -n polygonMainnet
+cli update -d 7 -n polygonMainnet
 ```
 ```bash
 exit
 ```
-300 dapat diubah menjadi jumlah yang lain
+7 dapat diubah menjadi jumlah yang lain
+
+</TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -d 7 -n arbitrum
+```
+```bash
+exit
+```
+7 dapat diubah menjadi jumlah yang lain
 
 </TabItem>
 </Tabs>
@@ -402,6 +477,18 @@ exit
 ```bash
 NETWORK=all docker compose exec -it archaeologist sh
 cli update -f 100 -n polygonMainnet
+```
+```bash
+exit
+```
+100 dapat diubah menjadi jumlah yang lain
+
+</TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli update -f 100 -n arbitrum
 ```
 ```bash
 exit
@@ -439,6 +526,17 @@ exit
 ```
 
 </TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli view -p -n arbitrum
+```
+```bash
+exit
+```
+
+</TabItem>
 </Tabs>
 
 - Claim Rewards
@@ -460,6 +558,17 @@ exit
 ```bash
 NETWORK=all docker compose exec -it archaeologist sh
 cli claim -n polygonMainnet
+```
+```bash
+exit
+```
+
+</TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli claim -n arbitrum
 ```
 ```bash
 exit
@@ -495,6 +604,18 @@ exit
 10 bisa dubah berapapun
 
 </TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli free-bond -w 10 -n arbitrum
+```
+```bash
+exit
+```
+10 bisa dubah berapapun
+
+</TabItem>
 </Tabs>
 
 - any other
@@ -522,11 +643,22 @@ exit
 ```
 
 </TabItem>
+<TabItem value="Arbitrum">
+
+```bash
+NETWORK=all docker compose exec -it archaeologist sh
+cli help -n arbitrum
+```
+```bash
+exit
+```
+
+</TabItem>
 </Tabs>
 
 ### Mengatasi Masalah
 
-- Catatan Domain A
+- Domain Record
 
 Domain Anda harus memiliki catatan A yang menunjuk ke alamat IP server di mana layanan arkeolog dijalankan.
 https://www.nslookup.io/website-to-ip-lookup
