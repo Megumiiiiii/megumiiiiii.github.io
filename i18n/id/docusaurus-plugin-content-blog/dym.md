@@ -142,5 +142,5 @@ https://arweave.net/DATA_TX_ID_MU
 
 ### Catatan Penting!
 
-1. Jangan Upload gambar sembarangan, karena gambar itu akan permanen di internet
+1. Jangan Upload gambar pribadi sembarangan, karena gambar itu akan permanen di internet
 2. Jangan Upload karya orang lain, entar kena Copyright
