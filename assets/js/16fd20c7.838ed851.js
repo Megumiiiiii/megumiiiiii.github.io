@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[517],{7639:a=>{a.exports=JSON.parse('{"label":"IBC","permalink":"/blog/tags/ibc","allTagsPath":"/blog/tags","count":1}')}}]);

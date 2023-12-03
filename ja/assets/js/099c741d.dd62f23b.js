@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[4354],{8224:a=>{a.exports=JSON.parse('{"label":"EVM","permalink":"/ja/blog/tags/evm","allTagsPath":"/ja/blog/tags","count":1}')}}]);

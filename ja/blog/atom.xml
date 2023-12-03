@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://k.megumii.xyz/ja/blog</id>
     <title>Kessoku Blog</title>
-    <updated>2023-11-22T19:20:12.000Z</updated>
+    <updated>2023-12-03T15:49:53.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://k.megumii.xyz/ja/blog"/>
     <subtitle>Kessoku Blog</subtitle>
     <icon>https://k.megumii.xyz/ja/img/a.png</icon>
+    <entry>
+        <title type="html"><![CDATA[Web Mint]]></title>
+        <id>https://k.megumii.xyz/ja/blog/dym</id>
+        <link href="https://k.megumii.xyz/ja/blog/dym"/>
+        <updated>2023-12-03T15:49:53.000Z</updated>
+        <summary type="html"><![CDATA[English Coming Soon]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="english-coming-soon">English Coming Soon<a href="#english-coming-soon" class="hash-link" aria-label="English Coming Soon への直接リンク" title="English Coming Soon への直接リンク">​</a></h2>]]></content>
+        <author>
+            <name>Megumii</name>
+            <uri>https://megumii.blessingway.xyz</uri>
+        </author>
+        <category label="IBC" term="IBC"/>
+        <category label="EVM" term="EVM"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[First Step to join Permaweb with ArDrive & ArNS]]></title>
         <id>https://k.megumii.xyz/ja/blog/arns</id>
