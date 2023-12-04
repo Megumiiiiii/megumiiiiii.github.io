@@ -6,6 +6,8 @@ tags:
   - Substrate
 ---
 
+## PAUSE FOR NEW USER
+
 ## Official Links
 
 - [Docs](https://docs.webb.tools/docs/ecosystem-roles/validator/quickstart/)
@@ -41,6 +43,7 @@ sudo ufw allow ssh; sudo ufw allow 30333
 ## Download Binary & Copy to /usr/bin
 
 ```bash
+mkdir -p $HOME/.tangle
 wget -O tangle https://github.com/webb-tools/tangle/releases/download/v5.0.0/tangle-standalone-linux-amd64 && chmod +x tangle
 sudo cp tangle /usr/bin/
 ```
@@ -173,6 +176,7 @@ curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method":
 ```bash
 sudo systemctl stop tangle
 sudo systemctl disable tangle
+rm -r /usr/bin/tangle
 cd $HOME
 rm -r .tangle
 ```
