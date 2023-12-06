@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkelysian=self.webpackChunkelysian||[]).push([[5755],{449:e=>{e.exports=JSON.parse('{"label":"Non-Incentive","permalink":"/id/docs/tags/non-incentive","allTagsPath":"/id/docs/tags","count":1,"items":[{"id":"what/frame","title":"Frame","description":"Official Links","permalink":"/id/docs/what/frame"}]}')}}]);
