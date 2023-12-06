@@ -6,6 +6,9 @@ tags:
   - Non-Incentive
 ---
 
+:::info Use Ubuntu 22.04
+:::
+
 ## Install Dependencies
 
 ```bash
