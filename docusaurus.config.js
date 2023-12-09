@@ -9,7 +9,7 @@ const dark = require('prism-react-renderer/themes/nightOwl');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Kessoku',
-  tagline: 'All of my Guides and Random Post(Mostly Osu!)',
+  tagline: ' YANG COPAS NGGA BAWA SUMBER, LU KONTOL SI BANG',
   favicon: 'img/a.png',
 
   // Set the production url of your site here
