@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://k.megumii.xyz/ja/blog</id>
-    <title>Kessoku Blog</title>
+    <title>AKU BIKIN GINIAN BUKAN BUAT DI COPAS CUMA2 YA ANJING Blog</title>
     <updated>2023-12-03T15:49:53.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://k.megumii.xyz/ja/blog"/>
-    <subtitle>Kessoku Blog</subtitle>
+    <subtitle>AKU BIKIN GINIAN BUKAN BUAT DI COPAS CUMA2 YA ANJING Blog</subtitle>
     <icon>https://k.megumii.xyz/ja/img/a.png</icon>
     <entry>
         <title type="html"><![CDATA[Web Mint]]></title>

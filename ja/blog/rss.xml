@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Kessoku Blog</title>
+        <title>AKU BIKIN GINIAN BUKAN BUAT DI COPAS CUMA2 YA ANJING Blog</title>
         <link>https://k.megumii.xyz/ja/blog</link>
-        <description>Kessoku Blog</description>
+        <description>AKU BIKIN GINIAN BUKAN BUAT DI COPAS CUMA2 YA ANJING Blog</description>
         <lastBuildDate>Sun, 03 Dec 2023 15:49:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
