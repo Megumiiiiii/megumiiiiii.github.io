@@ -22,7 +22,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        <i>Yes this is a Permaweb on Arweave.</i>
+        <i>All Videos in Random Post are stored on Arweave.</i>
       </>
     ),
   },
@@ -31,7 +31,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        <i>And deployed on Github too.</i>
+        <i>And deployed on Github.</i>
       </>
     ),
   },
