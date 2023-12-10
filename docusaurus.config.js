@@ -8,7 +8,7 @@ const dark = require('prism-react-renderer/themes/nightOwl');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AKU BIKIN GINIAN BUKAN BUAT DI COPAS CUMA2 YA ANJING',
+  title: '𝄞',
   tagline: ' YANG COPAS NGGA BAWA SUMBER, LU KONTOL SI BANG',
   favicon: 'img/a.png',
 
