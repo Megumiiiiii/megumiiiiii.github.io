@@ -46,6 +46,22 @@ chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
 
+## Setup
+
+- Init
+
+:::caution edit YourNAME
+
+```
+Cardchaind config node tcp://localhost:13957
+Cardchaind config keyring-backend test
+Cardchaind init YourNAME --chain-id cardtestnet-6
+Cardchaind config chain-id cardtestnet-6
+wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
+```
+
+:::
+
 ### Add wallet / recover 
 
 <Tabs>
@@ -65,22 +81,6 @@ Cardchaind keys add wallet --recover
 </TabItem>
 </Tabs>
 
-
-## Setup
-
-- Init
-
-:::caution edit YourNAME
-
-```
-Cardchaind config node tcp://localhost:13957
-Cardchaind config keyring-backend test
-Cardchaind init YourNAME --chain-id cardtestnet-6
-Cardchaind config chain-id cardtestnet-6
-wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
-```
-
-:::
 
 ### Set minimum gas etc.
 
