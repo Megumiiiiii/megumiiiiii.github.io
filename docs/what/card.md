@@ -54,7 +54,7 @@ mv $HOME/Cardchaind /usr/local/bin
 
 ```
 Cardchaind config node tcp://localhost:13957
-Cardchaind keyring-backend test
+Cardchaind config keyring-backend test
 Cardchaind init YourNAME --chain-id cardtestnet-6
 Cardchaind config chain-id cardtestnet-6
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
