@@ -41,8 +41,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ## Build
 
 ```bash
-git clone https://github.com/DecentralCardGame/Cardchain
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.10.0/Cardchaind
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.11.0/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
@@ -75,18 +74,12 @@ Cardchaind keys add wallet --recover
 
 ```
 Cardchaind config node tcp://localhost:13957
-Cardchaind init YourNAME --chain-id cardtestnet-5
-Cardchaind config chain-id cardtestnet-5
+Cardchaind init YourNAME --chain-id cardtestnet-6
+Cardchaind config chain-id cardtestnet-6
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
 ```
 
 :::
-
-- Download Addrbook by [STAVR](https://github.com/obajay)
-
-```bash
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
-```
 
 ### Set minimum gas etc.
 
@@ -94,7 +87,7 @@ wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="109adfd1645cc1289bd2753277d6c5c2a9112b76@45.136.28.158:26656, 447a7af037dc85213d98ef3f4dc07d05191f52e7@202.61.225.157:26656"
+peers="5ed5398d201c0d40400055beceb4a9a93506d26a@202.61.225.157:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
@@ -144,25 +137,8 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-### State Sync by [STAVR](https://github.com/obajay/nodes-Guides/tree/main/Projects/Crowd_Control#statesync)
 
-```bash
-SNAP_RPC=http://crowd.rpc.t.stavr.tech:21207
-PEERS="ec585d7fb38b67619dcb79aad90722f0eaf0faa3@crowd.peer.stavr.tech:21206"
-sed -i.bak -e "s/^seeds *=.*/seeds = \"$SEEDS\"/; s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.Cardchain/config/config.toml
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height) \
-&& BLOCK_HEIGHT=$((LATEST_HEIGHT - 100)) \
-&& TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash); \
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.Cardchain/config/config.toml; \
-Cardchaind tendermint unsafe-reset-all
-wget -O $HOME/.Cardchain/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Crowd_Control/addrbook.json"
-```
-
-### Run
+## Run
 
 ```bash
 sudo systemctl daemon-reload
@@ -208,10 +184,11 @@ Cardchaind tx staking create-validator \
 --min-self-delegation "1" \
 --details="" \
 --identity="" \
+--security-contact "emailmu@email.co" \
 --pubkey  $(Cardchaind tendermint show-validator) \
 --moniker YourNAME \
 --fees 300ubpf \
---chain-id cardtestnet-5 -y
+--chain-id cardtestnet-6 -y
 ```
 :::
 
