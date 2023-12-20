@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="YANG COPAS NGGA BAWA SUMBER, LU KONTOL SI BANG">
+      description="𝄞 𝄞 𝄞">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

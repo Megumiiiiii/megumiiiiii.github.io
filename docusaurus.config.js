@@ -9,7 +9,7 @@ const dark = require('prism-react-renderer/themes/nightOwl');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '𝄞',
-  tagline: ' YANG COPAS NGGA BAWA SUMBER, LU KONTOL SI BANG',
+  tagline: '',
   favicon: 'img/a.png',
 
   // Set the production url of your site here
