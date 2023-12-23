@@ -41,7 +41,7 @@ eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ## Build
 
 ```bash
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.11.0/Cardchaind
+wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.12.0/Cardchaind
 chmod +x Cardchaind
 mv $HOME/Cardchaind /usr/local/bin
 ```
@@ -55,8 +55,8 @@ mv $HOME/Cardchaind /usr/local/bin
 ```
 Cardchaind config node tcp://localhost:13957
 Cardchaind config keyring-backend test
-Cardchaind init YourNAME --chain-id cardtestnet-6
-Cardchaind config chain-id cardtestnet-6
+Cardchaind init YourNAME --chain-id cardtestnet-7
+Cardchaind config chain-id cardtestnet-7
 wget http://45.136.28.158:3000/genesis.json -O $HOME/.Cardchain/config/genesis.json
 ```
 
@@ -88,7 +88,7 @@ Cardchaind keys add wallet --recover
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0ubpf\"/;" ~/.Cardchain/config/app.toml
 external_address=$(wget -qO- eth0.me)
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.Cardchain/config/config.toml
-peers="5ed5398d201c0d40400055beceb4a9a93506d26a@202.61.225.157:26656"
+peers="6a41c6269637733220857a021c8454fa2204987e@202.61.225.157:26656"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.Cardchain/config/config.toml
 seeds=""
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.Cardchain/config/config.toml
@@ -189,7 +189,7 @@ Cardchaind tx staking create-validator \
 --pubkey  $(Cardchaind tendermint show-validator) \
 --moniker YourNAME \
 --fees 300ubpf \
---chain-id cardtestnet-6 -y
+--chain-id cardtestnet-7 -y
 ```
 :::
 
