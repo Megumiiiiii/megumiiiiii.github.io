@@ -5,6 +5,10 @@ authors: [megumii]
 tags: [ZK]
 ---
 
+:::caution
+Need Ubuntu 22.04 or higher
+:::
+
 ## Install Dependencies
 
 ```
