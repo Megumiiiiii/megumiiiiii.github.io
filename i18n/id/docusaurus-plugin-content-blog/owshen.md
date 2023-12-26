@@ -38,3 +38,13 @@ owshen info
 1. Follow [Owshen Twitter](https://x.com/OwshenNetwork)
 2. Retweet + Like [THIS POST](https://x.com/OwshenNetwork/status/1739258666199449979)
 3. Komen wallet address
+
+## Cek web wallet
+
+1. Jalankan ini
+
+```
+owshen wallet
+```
+
+2. Lalu buka http://127.0.0.1:9000 di browser
