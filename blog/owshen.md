@@ -43,7 +43,7 @@ owshen info
 2. Retweet + Like [THIS POST](https://x.com/OwshenNetwork/status/1739258666199449979)
 3. Comment your wallet address
 
-## Check web wallet
+## Check web wallet (Optional)
 
 1. Run this
 
@@ -51,4 +51,4 @@ owshen info
 owshen wallet
 ```
 
-2. Open http://127.0.0.1:9000 in your browser
+2. Open http://YOURIP:9000 in your browser
